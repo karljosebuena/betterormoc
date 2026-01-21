@@ -8,7 +8,8 @@ export async function GET() {
     const { data, error } = await supabase
       .from('officials')
       .select('*')
-      .order('order_index', { ascending: true })
+      .order('display_order', { ascending: true })
+
 
     if (error) {
       return NextResponse.json({ error: error.message }, { status: 500 })
