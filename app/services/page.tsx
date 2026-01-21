@@ -2,7 +2,7 @@
 
 import { useServices } from '@/lib/hooks/use-data'
 import { ServiceCard } from '@/components/services/ServiceCard'
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo } from 'react'
 import { Search } from 'lucide-react'
 import { useSearchParams } from 'next/navigation'
 
@@ -11,17 +11,9 @@ export default function ServicesPage() {
     const searchParams = useSearchParams()
     const categoryFromUrl = searchParams.get('category')
 
+    // Derive selected category directly from URL
+    const selectedCategory = categoryFromUrl ? decodeURIComponent(categoryFromUrl) : 'all'
     const [searchQuery, setSearchQuery] = useState('')
-    const [selectedCategory, setSelectedCategory] = useState<string>('all')
-
-    // Update selected category when URL changes
-    useEffect(() => {
-        if (categoryFromUrl) {
-            setSelectedCategory(decodeURIComponent(categoryFromUrl))
-        } else {
-            setSelectedCategory('all')
-        }
-    }, [categoryFromUrl])
 
     // Get unique categories
     const categories = useMemo(() => {
@@ -45,7 +37,7 @@ export default function ServicesPage() {
     }, [services, selectedCategory, searchQuery])
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-gray-50" key={selectedCategory}>
             {/* Header */}
             <div className="bg-gradient-to-br from-green-600 to-green-800 py-16 text-white">
                 <div className="container">
@@ -82,7 +74,6 @@ export default function ServicesPage() {
                             <button
                                 key={category}
                                 onClick={() => {
-                                    setSelectedCategory(category)
                                     // Update URL without page reload
                                     const url = new URL(window.location.href)
                                     if (category === 'all') {
@@ -91,6 +82,8 @@ export default function ServicesPage() {
                                         url.searchParams.set('category', encodeURIComponent(category))
                                     }
                                     window.history.pushState({}, '', url)
+                                    // Force re-render by triggering a state update
+                                    setSearchQuery(searchQuery)
                                 }}
                                 className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${selectedCategory === category
                                         ? 'bg-green-600 text-white'
