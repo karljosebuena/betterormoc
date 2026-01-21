@@ -1,14 +1,16 @@
 'use client'
 
+import { use } from 'react'
 import { useServices } from '@/lib/hooks/use-data'
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import { Clock, DollarSign, Building2, FileText, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-export default function ServiceDetailPage({ params }: { params: { slug: string } }) {
+export default function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = use(params)
     const { data: services, isLoading } = useServices()
-    const service = services?.find((s) => s.slug === params.slug)
+    const service = services?.find((s) => s.slug === slug)
 
     if (isLoading) {
         return (
