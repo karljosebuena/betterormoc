@@ -112,7 +112,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                                     {service.requirements.map((req, index) => (
                                         <li key={index} className="flex items-start gap-3 text-gray-600">
                                             <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-green-600"></span>
-                                            <span className="capitalize">{req}</span>
+                                            <span className="capitalize">{String(req)}</span>
                                         </li>
                                     ))}
                                 </ul>
