@@ -2,13 +2,24 @@
 
 import { useServices } from '@/lib/hooks/use-data'
 import { ServiceCard } from '@/components/services/ServiceCard'
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { Search } from 'lucide-react'
+import { useSearchParams } from 'next/navigation'
 
 export default function ServicesPage() {
     const { data: services, isLoading } = useServices()
+    const searchParams = useSearchParams()
+    const categoryFromUrl = searchParams.get('category')
+
     const [searchQuery, setSearchQuery] = useState('')
     const [selectedCategory, setSelectedCategory] = useState<string>('all')
+
+    // Update selected category when URL parameter changes
+    useEffect(() => {
+        if (categoryFromUrl) {
+            setSelectedCategory(decodeURIComponent(categoryFromUrl))
+        }
+    }, [categoryFromUrl])
 
     // Get unique categories
     const categories = useMemo(() => {
@@ -65,8 +76,8 @@ export default function ServicesPage() {
                                 key={category}
                                 onClick={() => setSelectedCategory(category)}
                                 className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${selectedCategory === category
-                                    ? 'bg-green-600 text-white'
-                                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                                        ? 'bg-green-600 text-white'
+                                        : 'bg-white text-gray-700 hover:bg-gray-100'
                                     }`}
                             >
                                 {category === 'all' ? 'All Services' : category}
@@ -78,6 +89,7 @@ export default function ServicesPage() {
                 {/* Results Count */}
                 <div className="mb-6 text-sm text-gray-600">
                     Showing {filteredServices.length} {filteredServices.length === 1 ? 'service' : 'services'}
+                    {selectedCategory !== 'all' && ` in ${selectedCategory}`}
                 </div>
 
                 {/* Services Grid */}
