@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, ChevronDown } from 'lucide-react'
 
 const navigation = [
     { name: 'Home', href: '/' },
@@ -10,21 +10,35 @@ const navigation = [
         name: 'Services',
         href: '/services',
         dropdown: [
-            { name: 'Certificates', href: '/services/certificates' },
-            { name: 'Business', href: '/services/business' },
-            { name: 'Tax Payments', href: '/services/tax-payments' },
-            { name: 'Social Services', href: '/services/social-services' },
+            { name: 'Certificates', href: '/services?category=Certificates+%26+Vital+Records' },
+            { name: 'Business', href: '/services?category=Business%2C+Trade+%26+Investment' },
+            { name: 'Tax Payments', href: '/services?category=Tax+Payments' },
+            { name: 'Social Services', href: '/services?category=Social+Services+%26+Assistance' },
+            { name: 'Health', href: '/services?category=Health+Services' },
+            { name: 'Agriculture', href: '/services?category=Agriculture' },
+            { name: 'Infrastructure', href: '/services?category=Infrastructure' },
+            { name: 'Education', href: '/services?category=Education' },
+            { name: 'Public Safety', href: '/services?category=Public+Safety' },
+            { name: 'Environment', href: '/services?category=Environment' },
         ],
     },
     { name: 'Government', href: '/government' },
     { name: 'Statistics', href: '/statistics' },
-    { name: 'Legislative', href: '/legislative' },
+    {
+        name: 'Legislative',
+        href: '#',
+        dropdown: [
+            { name: 'Ordinance Framework', href: '/ordinances' },
+            { name: 'Resolution Framework', href: '/resolutions' },
+        ],
+    },
     { name: 'Transparency', href: '/budget' },
     { name: 'Contact', href: '/contact' },
 ]
 
 export function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
 
     return (
         <header className="sticky top-0 z-50 border-b border-gray-200 bg-white shadow-sm">
@@ -44,15 +58,43 @@ export function Header() {
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <nav className="hidden items-center gap-8 lg:flex">
+                    <nav className="hidden items-center gap-6 lg:flex">
                         {navigation.map((item) => (
-                            <Link
+                            <div
                                 key={item.name}
-                                href={item.href}
-                                className="text-sm font-medium text-gray-700 transition-colors hover:text-green-600"
+                                className="relative"
+                                onMouseEnter={() => item.dropdown && setActiveDropdown(item.name)}
+                                onMouseLeave={() => setActiveDropdown(null)}
                             >
-                                {item.name}
-                            </Link>
+                                {item.dropdown ? (
+                                    <>
+                                        <button className="flex items-center gap-1 text-sm font-medium text-gray-700 transition-colors hover:text-green-600">
+                                            {item.name}
+                                            <ChevronDown className="h-4 w-4" />
+                                        </button>
+                                        {activeDropdown === item.name && (
+                                            <div className="absolute left-0 top-full mt-2 w-56 rounded-lg border border-gray-200 bg-white py-2 shadow-lg">
+                                                {item.dropdown.map((subItem) => (
+                                                    <Link
+                                                        key={subItem.name}
+                                                        href={subItem.href}
+                                                        className="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-50 hover:text-green-600"
+                                                    >
+                                                        {subItem.name}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </>
+                                ) : (
+                                    <Link
+                                        href={item.href}
+                                        className="text-sm font-medium text-gray-700 transition-colors hover:text-green-600"
+                                    >
+                                        {item.name}
+                                    </Link>
+                                )}
+                            </div>
                         ))}
                     </nav>
 
@@ -87,14 +129,46 @@ export function Header() {
                     <div className="border-t border-gray-200 py-4 lg:hidden">
                         <nav className="flex flex-col gap-4">
                             {navigation.map((item) => (
-                                <Link
-                                    key={item.name}
-                                    href={item.href}
-                                    className="text-sm font-medium text-gray-700 transition-colors hover:text-green-600"
-                                    onClick={() => setMobileMenuOpen(false)}
-                                >
-                                    {item.name}
-                                </Link>
+                                <div key={item.name}>
+                                    {item.dropdown ? (
+                                        <>
+                                            <button
+                                                onClick={() =>
+                                                    setActiveDropdown(activeDropdown === item.name ? null : item.name)
+                                                }
+                                                className="flex w-full items-center justify-between text-sm font-medium text-gray-700"
+                                            >
+                                                {item.name}
+                                                <ChevronDown
+                                                    className={`h-4 w-4 transition-transform ${activeDropdown === item.name ? 'rotate-180' : ''
+                                                        }`}
+                                                />
+                                            </button>
+                                            {activeDropdown === item.name && (
+                                                <div className="ml-4 mt-2 space-y-2">
+                                                    {item.dropdown.map((subItem) => (
+                                                        <Link
+                                                            key={subItem.name}
+                                                            href={subItem.href}
+                                                            className="block text-sm text-gray-600 hover:text-green-600"
+                                                            onClick={() => setMobileMenuOpen(false)}
+                                                        >
+                                                            {subItem.name}
+                                                        </Link>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </>
+                                    ) : (
+                                        <Link
+                                            href={item.href}
+                                            className="text-sm font-medium text-gray-700 transition-colors hover:text-green-600"
+                                            onClick={() => setMobileMenuOpen(false)}
+                                        >
+                                            {item.name}
+                                        </Link>
+                                    )}
+                                </div>
                             ))}
                         </nav>
                     </div>
