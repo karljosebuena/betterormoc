@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function NotFound() {
     return (
         <div className="flex min-h-screen items-center justify-center bg-gray-50">
@@ -7,12 +9,12 @@ export default function NotFound() {
                 <p className="mb-8 text-gray-600">
                     The service you&apos;re looking for doesn&apos;t exist or has been moved.
                 </p>
-                <a
+                <Link
                     href="/services"
                     className="inline-flex items-center justify-center rounded-lg bg-green-600 px-8 py-3 font-semibold text-white transition-colors hover:bg-green-700"
                 >
                     Browse All Services
-                </a>
+                </Link>
             </div>
         </div>
     )
