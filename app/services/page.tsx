@@ -2,7 +2,7 @@
 
 import { useServices } from '@/lib/hooks/use-data'
 import { ServiceCard } from '@/components/services/ServiceCard'
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { Search } from 'lucide-react'
 import { useSearchParams } from 'next/navigation'
 
@@ -12,10 +12,16 @@ export default function ServicesPage() {
     const categoryFromUrl = searchParams.get('category')
 
     const [searchQuery, setSearchQuery] = useState('')
-    // Initialize from URL parameter
-    const [selectedCategory, setSelectedCategory] = useState<string>(
-        categoryFromUrl ? decodeURIComponent(categoryFromUrl) : 'all'
-    )
+    const [selectedCategory, setSelectedCategory] = useState<string>('all')
+
+    // Update selected category when URL changes
+    useEffect(() => {
+        if (categoryFromUrl) {
+            setSelectedCategory(decodeURIComponent(categoryFromUrl))
+        } else {
+            setSelectedCategory('all')
+        }
+    }, [categoryFromUrl])
 
     // Get unique categories
     const categories = useMemo(() => {
@@ -43,9 +49,14 @@ export default function ServicesPage() {
             {/* Header */}
             <div className="bg-gradient-to-br from-green-600 to-green-800 py-16 text-white">
                 <div className="container">
-                    <h1 className="mb-4 text-4xl font-bold">Municipal Services</h1>
+                    <h1 className="mb-4 text-4xl font-bold">
+                        {selectedCategory === 'all' ? 'Municipal Services' : selectedCategory}
+                    </h1>
                     <p className="text-lg text-green-50">
-                        Browse all available services from LGU Ormoc
+                        {selectedCategory === 'all'
+                            ? 'Browse all available services from LGU Ormoc'
+                            : `Services in ${selectedCategory}`
+                        }
                     </p>
                 </div>
             </div>
@@ -70,7 +81,17 @@ export default function ServicesPage() {
                         {categories.map((category) => (
                             <button
                                 key={category}
-                                onClick={() => setSelectedCategory(category)}
+                                onClick={() => {
+                                    setSelectedCategory(category)
+                                    // Update URL without page reload
+                                    const url = new URL(window.location.href)
+                                    if (category === 'all') {
+                                        url.searchParams.delete('category')
+                                    } else {
+                                        url.searchParams.set('category', encodeURIComponent(category))
+                                    }
+                                    window.history.pushState({}, '', url)
+                                }}
                                 className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${selectedCategory === category
                                         ? 'bg-green-600 text-white'
                                         : 'bg-white text-gray-700 hover:bg-gray-100'
