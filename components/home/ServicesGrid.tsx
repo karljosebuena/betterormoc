@@ -4,7 +4,7 @@ import { useServices } from '@/lib/hooks/use-data'
 import Link from 'next/link'
 import { FileText, Building2, Heart, Briefcase, Users, Shield } from 'lucide-react'
 
-const categoryIcons: Record<string, any> = {
+const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
     'Certificates & Vital Records': FileText,
     'Business, Trade & Investment': Briefcase,
     'Social Services & Assistance': Heart,

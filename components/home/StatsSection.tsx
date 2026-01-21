@@ -3,7 +3,7 @@
 import { useStatistics } from '@/lib/hooks/use-data'
 import { TrendingUp, Users, Building2, MapPin } from 'lucide-react'
 
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
     population: Users,
     economy: TrendingUp,
     services: Building2,

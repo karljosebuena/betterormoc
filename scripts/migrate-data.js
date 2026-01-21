@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 #!/usr/bin/env node
 
 /**
@@ -32,7 +34,7 @@ function jsonToSql(obj) {
 console.log('-- Services Data Migration\n');
 console.log('-- Transforming Solano services to Ormoc format\n');
 
-services.services.forEach((service, index) => {
+services.services.forEach((service) => {
   const slug = service.id;
   const title = service.title.replace('Solano', 'Ormoc');
   const category = service.category;
@@ -65,8 +67,8 @@ console.log(`  ('Hon. Leo Carmelo Locsin', 'City Vice Mayor', 'Office of the Vic
 console.log('');
 
 // Councilors (using Solano structure as template)
-officials.councilors.forEach((councilor, index) => {
-  const name = `Hon. Councilor ${index + 1}`; // Placeholder names
+officials.councilors.forEach(() => {
+  const name = `Hon. Councilor ${orderIndex - 1}`; // Placeholder names
   const position = 'Sangguniang Panlungsod Member';
   const department = 'Sangguniang Panlungsod';
   
@@ -79,7 +81,7 @@ officials.councilors.forEach((councilor, index) => {
 console.log('\n-- Ordinances Data Migration\n');
 console.log('-- Using Solano ordinances as template for Ormoc\n');
 
-ordinances.ordinances.forEach((ordinance, index) => {
+ordinances.ordinances.forEach((ordinance) => {
   const number = ordinance.ordinanceNo;
   const title = ordinance.title.replace('Solano', 'Ormoc').replace('Municipality', 'City');
   const datePassed = ordinance.sessionDate || null;
