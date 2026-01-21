@@ -5,6 +5,7 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { HotlineBar } from '@/components/layout/HotlineBar'
 import { InfoBar } from '@/components/layout/InfoBar'
+import { QueryProvider } from '@/components/providers/QueryProvider'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -67,11 +68,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="antialiased">
-        <HotlineBar />
-        <InfoBar />
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <QueryProvider>
+          <HotlineBar />
+          <InfoBar />
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </QueryProvider>
       </body>
     </html>
   )
