@@ -1,55 +1,50 @@
--- Ordinances table
+-- Create ordinances table
 CREATE TABLE IF NOT EXISTS ordinances (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  number TEXT NOT NULL,
-  title TEXT NOT NULL,
-  date_passed DATE,
-  description TEXT,
-  pdf_url TEXT,
-  category TEXT,
-  status TEXT DEFAULT 'active',
-  created_at TIMESTAMPTZ DEFAULT NOW(),
-  updated_at TIMESTAMPTZ DEFAULT NOW()
+    id BIGSERIAL PRIMARY KEY,
+    ordinance_number TEXT NOT NULL,
+    title TEXT NOT NULL,
+    description TEXT,
+    year INTEGER NOT NULL,
+    date_approved DATE,
+    pdf_url TEXT,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- Resolutions table
+-- Create resolutions table
 CREATE TABLE IF NOT EXISTS resolutions (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  number TEXT NOT NULL,
-  title TEXT NOT NULL,
-  date_passed DATE,
-  description TEXT,
-  pdf_url TEXT,
-  category TEXT,
-  status TEXT DEFAULT 'active',
-  created_at TIMESTAMPTZ DEFAULT NOW(),
-  updated_at TIMESTAMPTZ DEFAULT NOW()
+    id BIGSERIAL PRIMARY KEY,
+    resolution_number TEXT NOT NULL,
+    title TEXT NOT NULL,
+    description TEXT,
+    year INTEGER NOT NULL,
+    date_approved DATE,
+    pdf_url TEXT,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- Create indexes
-CREATE INDEX IF NOT EXISTS idx_ordinances_number ON ordinances(number);
-CREATE INDEX IF NOT EXISTS idx_ordinances_date ON ordinances(date_passed DESC);
-CREATE INDEX IF NOT EXISTS idx_ordinances_category ON ordinances(category);
-
-CREATE INDEX IF NOT EXISTS idx_resolutions_number ON resolutions(number);
-CREATE INDEX IF NOT EXISTS idx_resolutions_date ON resolutions(date_passed DESC);
-CREATE INDEX IF NOT EXISTS idx_resolutions_category ON resolutions(category);
-
--- Enable Row Level Security
+-- Enable RLS
 ALTER TABLE ordinances ENABLE ROW LEVEL SECURITY;
 ALTER TABLE resolutions ENABLE ROW LEVEL SECURITY;
 
 -- Create policies for public read access
-CREATE POLICY "Public read access for ordinances"
-  ON ordinances
-  FOR SELECT
-  USING (true);
+CREATE POLICY "Allow public read access on ordinances"
+    ON ordinances FOR SELECT
+    USING (true);
 
-CREATE POLICY "Public read access for resolutions"
-  ON resolutions
-  FOR SELECT
-  USING (true);
+CREATE POLICY "Allow public read access on resolutions"
+    ON resolutions FOR SELECT
+    USING (true);
+
+-- Create indexes
+CREATE INDEX idx_ordinances_year ON ordinances(year);
+CREATE INDEX idx_ordinances_number ON ordinances(ordinance_number);
+CREATE INDEX idx_resolutions_year ON resolutions(year);
+CREATE INDEX idx_resolutions_number ON resolutions(resolution_number);
 
 -- Add comments
-COMMENT ON TABLE ordinances IS 'Municipal ordinances from Sangguniang Bayan';
-COMMENT ON TABLE resolutions IS 'Municipal resolutions from Sangguniang Bayan';
+COMMENT ON TABLE ordinances IS 'Municipal ordinances and local legislation';
+COMMENT ON TABLE resolutions IS 'Municipal resolutions and official decisions';
+COMMENT ON COLUMN ordinances.ordinance_number IS 'Official ordinance number (e.g., ORD-2024-001)';
+COMMENT ON COLUMN resolutions.resolution_number IS 'Official resolution number (e.g., RES-2024-001)';
