@@ -7,7 +7,7 @@ export function ContactSection() {
                 <div className="mb-12 text-center">
                     <h2 className="mb-4 text-3xl font-bold text-gray-900">Get in Touch</h2>
                     <p className="mx-auto max-w-2xl text-lg text-gray-600">
-                        We're here to serve you
+                        We&apos;re here to serve you
                     </p>
                 </div>
 
