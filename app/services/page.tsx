@@ -2,7 +2,7 @@
 
 import { useServices } from '@/lib/hooks/use-data'
 import { ServiceCard } from '@/components/services/ServiceCard'
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo } from 'react'
 import { Search } from 'lucide-react'
 import { useSearchParams } from 'next/navigation'
 
@@ -12,14 +12,10 @@ export default function ServicesPage() {
     const categoryFromUrl = searchParams.get('category')
 
     const [searchQuery, setSearchQuery] = useState('')
-    const [selectedCategory, setSelectedCategory] = useState<string>('all')
-
-    // Update selected category when URL parameter changes
-    useEffect(() => {
-        if (categoryFromUrl) {
-            setSelectedCategory(decodeURIComponent(categoryFromUrl))
-        }
-    }, [categoryFromUrl])
+    // Initialize from URL parameter
+    const [selectedCategory, setSelectedCategory] = useState<string>(
+        categoryFromUrl ? decodeURIComponent(categoryFromUrl) : 'all'
+    )
 
     // Get unique categories
     const categories = useMemo(() => {
