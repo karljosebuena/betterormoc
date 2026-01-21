@@ -1,5 +1,6 @@
 // Re-export types
 export type { Database } from './types'
+import type { Database } from './types'
 
 // Re-export clients
 export { createClient as createBrowserClient } from './client'
