@@ -8,8 +8,9 @@ export async function GET() {
     const { data, error } = await supabase
       .from('ordinances')
       .select('*')
-      .order('date_passed', { ascending: false })
-      .limit(50)
+      .order('year', { ascending: false })
+      .order('date_approved', { ascending: false })
+      .limit(100)
 
     if (error) {
       return NextResponse.json({ error: error.message }, { status: 500 })
