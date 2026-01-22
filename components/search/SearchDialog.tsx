@@ -125,7 +125,6 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
                         {Object.entries(groupedResults).map(([type, items]) => {
                             if (items.length === 0) return null
 
-                            const IconComponent = typeIcons[type as keyof typeof typeIcons]
                             const label = typeLabels[type as keyof typeof typeLabels]
 
                             return (
@@ -133,9 +132,10 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
                                     <div className="mb-2 px-2 text-xs font-semibold uppercase tracking-wide text-gray-500">
                                         {label}
                                     </div>
-                                    {items.map((item, index) => {
+                                    {items.map((item) => {
                                         const globalIndex = results.findIndex((r) => r.id === item.id)
                                         const isSelected = globalIndex === selectedIndex
+                                        const IconComponent = typeIcons[item.type as keyof typeof typeIcons]
 
                                         return (
                                             <button
