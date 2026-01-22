@@ -116,7 +116,7 @@ export default function StatisticsPage() {
         stats: stats.sort((a, b) => a.label.localeCompare(b.label)),
     }))
 
-    const categories = ['all', ...categorizedData.map(c => c.category)].sort()
+    const categories = ['all', ...categorizedData.map(c => c.category)]
 
     const filteredData = selectedCategory === 'all'
         ? categorizedData

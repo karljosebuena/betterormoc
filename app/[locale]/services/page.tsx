@@ -5,6 +5,7 @@ import { useRouter, usePathname } from '@/i18n/navigation'
 import { useSearchParams } from 'next/navigation'
 import { useServices } from '@/lib/hooks/use-data'
 import { ServiceCard } from '@/components/services/ServiceCard'
+import { BusinessOnlineServices } from '@/components/services/BusinessOnlineServices'
 import { useState, useMemo } from 'react'
 import { Search } from 'lucide-react'
 
@@ -68,6 +69,9 @@ function ServicesPageContent() {
             </div>
 
             <div className="container py-12">
+                {/* Business Online Services - Show only for Business category */}
+                {selectedCategory === 'Business' && <BusinessOnlineServices />}
+
                 {/* Search and Filter */}
                 <div className="mb-8 space-y-4">
                     {/* Search */}

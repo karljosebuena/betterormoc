@@ -255,6 +255,7 @@ export interface OfficeDetails {
   location: string
   address: string
   phone: string
+  email?: string
   hours: string
   map_coordinates?: {
     lat: number

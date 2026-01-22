@@ -1,5 +1,5 @@
 import { OfficeDetails } from '@/lib/supabase/types'
-import { Building2, Clock, MapPin, Phone } from 'lucide-react'
+import { Building2, Clock, MapPin, Phone, Mail } from 'lucide-react'
 
 interface OfficeInfoCardProps {
     officeDetails?: OfficeDetails
@@ -54,6 +54,19 @@ export function OfficeInfoCard({ officeDetails, office }: OfficeInfoCardProps) {
                         {officeDetails.phone}
                     </a>
                 </div>
+
+                {/* Email */}
+                {officeDetails.email && (
+                    <div className="flex items-center gap-3">
+                        <Mail className="h-5 w-5 flex-shrink-0 text-blue-900" />
+                        <a
+                            href={`mailto:${officeDetails.email}`}
+                            className="font-medium text-blue-900 hover:underline"
+                        >
+                            {officeDetails.email}
+                        </a>
+                    </div>
+                )}
 
                 {/* Hours */}
                 <div className="flex items-start gap-3">
