@@ -97,7 +97,7 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
                         {Object.entries(groupedResults).map(([type, items]) => {
                             if (items.length === 0) return null
 
-                            const Icon = typeIcons[type as keyof typeof typeIcons]
+                            const IconComponent = typeIcons[type as keyof typeof typeIcons]
                             const label = typeLabels[type as keyof typeof typeLabels]
 
                             return (
@@ -109,7 +109,7 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
                                             onSelect={() => handleSelect(item.url)}
                                             className="flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm hover:bg-gray-100 aria-selected:bg-gray-100"
                                         >
-                                            <Icon className="h-4 w-4 text-gray-400" />
+                                            <IconComponent className="h-4 w-4 text-gray-400" />
                                             <div className="flex-1">
                                                 <div className="font-medium text-gray-900">{item.title}</div>
                                                 {item.description && (
