@@ -1,10 +1,3 @@
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-    title: 'Search - BetterOrmoc',
-    description: 'Search for services, officials, ordinances, and documents on BetterOrmoc.',
-}
-
 'use client'
 
 import { useSearchParams, useRouter } from 'next/navigation'
