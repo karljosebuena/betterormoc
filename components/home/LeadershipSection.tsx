@@ -43,7 +43,7 @@ export function LeadershipSection({ showPhotos = false }: LeadershipSectionProps
                             key={official.id}
                             className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md"
                         >
-                            {showPhotos ? (
+                            {showPhotos && (
                                 <div className="aspect-square bg-gradient-to-br from-blue-100 to-blue-200">
                                     {official.photo_url ? (
                                         <Image
@@ -58,10 +58,6 @@ export function LeadershipSection({ showPhotos = false }: LeadershipSectionProps
                                             <User className="h-24 w-24 text-blue-900" />
                                         </div>
                                     )}
-                                </div>
-                            ) : (
-                                <div className="flex aspect-square items-center justify-center bg-gradient-to-br from-blue-100 to-blue-200">
-                                    <User className="h-24 w-24 text-blue-900" />
                                 </div>
                             )}
                             <div className="p-6">
