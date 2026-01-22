@@ -22,6 +22,7 @@ import {
     Stethoscope,
     Camera
 } from 'lucide-react'
+import { StatisticsCharts } from '@/components/statistics/StatisticsCharts'
 
 interface Statistic {
     id: number
@@ -175,6 +176,11 @@ export default function StatisticsPage() {
             </div>
 
             <div className="container py-12">
+                {/* Charts Section */}
+                <div className="mb-12">
+                    <StatisticsCharts statistics={statistics} />
+                </div>
+
                 {/* Category Filter */}
                 <div className="mb-8">
                     <h2 className="mb-4 text-lg font-semibold text-gray-900">Filter by Category</h2>
