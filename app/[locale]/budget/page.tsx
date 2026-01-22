@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { DollarSign, FileText, TrendingUp, Users, Loader2, Building2, Heart } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
+import { DPWHProjects } from '@/components/budget/DPWHProjects'
 
 interface BudgetOverview {
     year: number
@@ -299,6 +300,23 @@ export default function BudgetPage() {
                             </div>
                         </div>
                     )}
+
+                    {/* DPWH Infrastructure Projects */}
+                    <div className="rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
+                        <div className="mb-6">
+                            <div className="mb-2 flex items-center gap-2">
+                                <Building2 className="h-6 w-6 text-blue-600" />
+                                <h2 className="text-2xl font-bold text-gray-900">DPWH Infrastructure Projects</h2>
+                            </div>
+                            <p className="text-gray-600">
+                                National government infrastructure projects implemented in Ormoc City
+                            </p>
+                            <p className="mt-1 text-sm text-gray-500">
+                                Implementing Agency: DPWH Leyte 2nd District Engineering Office
+                            </p>
+                        </div>
+                        <DPWHProjects />
+                    </div>
 
                     {/* Budget Documents */}
                     {documents.length > 0 && (
