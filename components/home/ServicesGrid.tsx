@@ -1,117 +1,102 @@
 'use client'
 
-import { useServices } from '@/lib/hooks/use-data'
 import { Link } from '@/i18n/navigation'
-import { FileText, Building2, Heart, Briefcase, Users, Shield } from 'lucide-react'
+import { FileText, Briefcase, Building2, FileCheck, Heart, Grid3x3, ArrowRight } from 'lucide-react'
 
-const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
-    'Certificates & Vital Records': FileText,
-    'Business, Trade & Investment': Briefcase,
-    'Social Services & Assistance': Heart,
-    'Health & Wellness': Heart,
-    'Taxation & Payments': Building2,
-    'Infrastructure & Public Works': Building2,
-    'Agriculture & Economic Development': Users,
-    'Public Safety & Security': Shield,
-    'Environment & Natural Resources': Users,
-    'Education & Scholarship': FileText,
-    'Government Services': Building2,
-    'Online Services': FileText,
-}
+const topServices = [
+    {
+        slug: 'birth-certificate',
+        title: 'Birth Certificate',
+        description: 'Birth, marriage, death certificates',
+        icon: FileText,
+        category: 'Certificates',
+    },
+    {
+        slug: 'business-permit-new',
+        title: 'Business Permit',
+        description: 'New permits and renewals',
+        icon: Briefcase,
+        category: 'Business',
+    },
+    {
+        slug: 'real-property-tax-payment',
+        title: 'Real Property Tax',
+        description: 'Property and business taxes',
+        icon: Building2,
+        category: 'Taxation',
+    },
+    {
+        slug: 'barangay-clearance',
+        title: 'Barangay Clearance',
+        description: 'Certificate of residence from your barangay',
+        icon: FileCheck,
+        category: 'Certificates',
+    },
+    {
+        slug: 'health-certificate',
+        title: 'Health Certificate',
+        description: 'Medical assistance & programs',
+        icon: Heart,
+        category: 'Health',
+    },
+]
 
 export function ServicesGrid() {
-    const { data: services, isLoading, error } = useServices()
-
-    // Group services by category
-    const servicesByCategory = services?.reduce((acc, service) => {
-        const category = service.category
-        if (!acc[category]) {
-            acc[category] = []
-        }
-        acc[category].push(service)
-        return acc
-    }, {} as Record<string, typeof services>)
-
-    if (isLoading) {
-        return (
-            <section id="services" className="section bg-gray-50">
-                <div className="container">
-                    <h2 className="mb-12 text-center text-3xl font-bold text-gray-900">
-                        Municipal Services
-                    </h2>
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                        {[...Array(6)].map((_, i) => (
-                            <div
-                                key={i}
-                                className="h-48 animate-pulse rounded-lg bg-gray-200"
-                            ></div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-        )
-    }
-
-    if (error) {
-        return (
-            <section id="services" className="section bg-gray-50">
-                <div className="container">
-                    <div className="rounded-lg bg-red-50 p-8 text-center">
-                        <p className="text-red-600">Failed to load services</p>
-                    </div>
-                </div>
-            </section>
-        )
-    }
-
     return (
         <section id="services" className="section bg-gray-50">
             <div className="container">
                 <div className="mb-12 text-center">
                     <h2 className="mb-4 text-3xl font-bold text-gray-900">
-                        Municipal Services
+                        Popular Services
                     </h2>
                     <p className="mx-auto max-w-2xl text-lg text-gray-600">
-                        Access government services quickly and easily
+                        Quick access to frequently requested municipal services
                     </p>
                 </div>
 
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                    {Object.entries(servicesByCategory || {}).map(([category, categoryServices]) => {
-                        const Icon = categoryIcons[category] || FileText
-                        const count = categoryServices.length
-
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {/* Service Cards */}
+                    {topServices.map((service) => {
+                        const Icon = service.icon
                         return (
                             <Link
-                                key={category}
-                                href={`/services?category=${encodeURIComponent(category)}`}
-                                className="group rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all hover:border-blue-900 hover:shadow-md"
+                                key={service.slug}
+                                href={`/services/${service.slug}`}
+                                className="group flex items-center gap-4 rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all hover:border-blue-900 hover:shadow-md"
                             >
-                                <div className="mb-4 flex items-start justify-between">
-                                    <div className="rounded-lg bg-green-100 p-3 text-blue-900 transition-colors group-hover:bg-blue-900 group-hover:text-white">
-                                        <Icon className="h-6 w-6" />
-                                    </div>
-                                    <span className="rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-600">
-                                        {count} {count === 1 ? 'service' : 'services'}
-                                    </span>
+                                <div className="flex-shrink-0 rounded-lg bg-blue-50 p-3 text-blue-900 transition-colors group-hover:bg-blue-900 group-hover:text-white">
+                                    <Icon className="h-6 w-6" />
                                 </div>
-                                <h3 className="mb-2 text-lg font-semibold text-gray-900 group-hover:text-blue-900">
-                                    {category}
-                                </h3>
-                                <p className="text-sm text-gray-600">
-                                    View all {category.toLowerCase()}
-                                </p>
+                                <div className="flex-1 min-w-0">
+                                    <h3 className="mb-1 text-lg font-semibold text-gray-900 group-hover:text-blue-900">
+                                        {service.title}
+                                    </h3>
+                                    <p className="text-sm text-gray-600 line-clamp-1">
+                                        {service.description}
+                                    </p>
+                                </div>
+                                <ArrowRight className="h-5 w-5 flex-shrink-0 text-gray-400 transition-transform group-hover:translate-x-1 group-hover:text-blue-900" />
                             </Link>
                         )
                     })}
-                </div>
 
-                <div className="mt-12 text-center">
+                    {/* View All Services Card */}
                     <Link
                         href="/services"
-                        className="inline-flex items-center justify-center rounded-lg bg-blue-900 px-8 py-3 text-base font-semibold text-white shadow-lg transition-all hover:bg-green-700 hover:shadow-xl"
+                        className="group flex items-center gap-4 rounded-lg border border-blue-900 bg-blue-900 p-6 shadow-md transition-all hover:bg-blue-800 hover:shadow-lg"
                     >
-                        View All Services
+                        <div className="flex-shrink-0 rounded-lg bg-white/20 p-3 text-white">
+                            <Grid3x3 className="h-6 w-6" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                            <h3 className="mb-1 text-lg font-semibold text-white">
+                                View All Services
+                            </h3>
+                            <p className="text-sm text-blue-100">
+                                Browse complete directory
+                            </p>
+                        </div>
+                        <ArrowRight className="h-5 w-5 flex-shrink-0 text-white transition-transform group-hover:translate-x-1" />
                     </Link>
                 </div>
             </div>
