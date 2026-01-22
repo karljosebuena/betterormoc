@@ -94,6 +94,13 @@ export default async function LocaleLayout({
 
     return (
         <html lang={locale} className={inter.variable}>
+            <head>
+                {/* Chart.js for statistics and budget visualizations */}
+                <Script
+                    src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"
+                    strategy="afterInteractive"
+                />
+            </head>
             <body className="antialiased">
                 <NextIntlClientProvider messages={messages}>
                     <QueryProvider>
@@ -107,11 +114,6 @@ export default async function LocaleLayout({
                     <Toaster position="top-right" richColors />
                 </NextIntlClientProvider>
             </body>
-            {/* Chart.js for statistics and budget visualizations */}
-            <Script
-                src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"
-                strategy="beforeInteractive"
-            />
         </html>
     )
 }
