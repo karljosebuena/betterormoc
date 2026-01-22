@@ -73,16 +73,18 @@ export function Header() {
                                             <ChevronDown className="h-4 w-4" />
                                         </button>
                                         {activeDropdown === item.name && (
-                                            <div className="absolute left-0 top-full mt-2 w-56 rounded-lg border border-gray-200 bg-white py-2 shadow-lg">
-                                                {item.dropdown.map((subItem) => (
-                                                    <Link
-                                                        key={subItem.name}
-                                                        href={subItem.href}
-                                                        className="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-900"
-                                                    >
-                                                        {subItem.name}
-                                                    </Link>
-                                                ))}
+                                            <div className="absolute left-0 top-full pt-1 w-56">
+                                                <div className="rounded-lg border border-gray-200 bg-white py-2 shadow-lg">
+                                                    {item.dropdown.map((subItem) => (
+                                                        <Link
+                                                            key={subItem.name}
+                                                            href={subItem.href}
+                                                            className="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-900"
+                                                        >
+                                                            {subItem.name}
+                                                        </Link>
+                                                    ))}
+                                                </div>
                                             </div>
                                         )}
                                     </>

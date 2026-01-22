@@ -17,10 +17,10 @@ export default function StatisticsPage() {
 
     return (
         <div className="min-h-screen bg-gray-50">
-            <div className="bg-gradient-to-br from-purple-600 to-purple-800 py-16 text-white">
+            <div className="bg-gradient-to-br from-blue-900 to-blue-950 py-16 text-white">
                 <div className="container">
                     <h1 className="mb-4 text-4xl font-bold">City Statistics</h1>
-                    <p className="text-lg text-purple-50">
+                    <p className="text-lg text-blue-50">
                         Key data and metrics about Ormoc City
                     </p>
                 </div>
@@ -44,7 +44,7 @@ export default function StatisticsPage() {
                                         key={stat.id}
                                         className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                                     >
-                                        <div className="mb-4 inline-flex rounded-lg bg-purple-100 p-3 text-purple-600">
+                                        <div className="mb-4 inline-flex rounded-lg bg-blue-100 p-3 text-blue-900">
                                             <Icon className="h-6 w-6" />
                                         </div>
                                         <div className="text-3xl font-bold text-gray-900">{stat.value}</div>
