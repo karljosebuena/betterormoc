@@ -35,6 +35,7 @@ const navigation = [
         ],
     },
     { name: 'Transparency', href: '/budget' },
+    { name: 'Search', href: '/search' },
     { name: 'Contact', href: '/contact' },
 ]
 
