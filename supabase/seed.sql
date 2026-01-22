@@ -1,6 +1,6 @@
 -- BetterOrmoc Seed Data
 -- Adapted from BetterSolano
--- Generated: 2026-01-21T16:51:24.893Z
+-- Generated: 2026-01-22T02:57:29.723Z
 
 -- Clear existing data
 TRUNCATE TABLE services, officials, ordinances, resolutions, statistics CASCADE;
@@ -10,175 +10,175 @@ TRUNCATE TABLE services, officials, ordinances, resolutions, statistics CASCADE;
 -- ============================================
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (1, 'Birth Certificate', 'birth-certificate', 'Certificates & Vital Records', 'Get a certified copy of birth certificate registered in Ormoc', '₱150', '15-30 minutes', 'Local Civil Registrar', '[]'::jsonb, NOW(), NOW());
+VALUES (1, 'Birth Certificate', 'birth-certificate', 'Certificates', 'Get a certified copy of birth certificate registered in Ormoc', '₱150', '15-30 minutes', 'Local Civil Registrar', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (2, 'Marriage Certificate', 'marriage-certificate', 'Certificates & Vital Records', 'Register or request certified true copy of marriage certificate', 'Free (Registration)', '5 minutes', 'Local Civil Registrar', '[]'::jsonb, NOW(), NOW());
+VALUES (2, 'Marriage Certificate', 'marriage-certificate', 'Certificates', 'Register or request certified true copy of marriage certificate', 'Free (Registration)', '5 minutes', 'Local Civil Registrar', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (3, 'Death Certificate', 'death-certificate', 'Certificates & Vital Records', 'Register death certificate and obtain burial or transfer permit', '₱50-150', '1 hour 35 minutes', 'Local Civil Registrar', '[]'::jsonb, NOW(), NOW());
+VALUES (3, 'Death Certificate', 'death-certificate', 'Certificates', 'Register death certificate and obtain burial or transfer permit', '₱50-150', '1 hour 35 minutes', 'Local Civil Registrar', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (4, 'Barangay Clearance', 'barangay-clearance', 'Certificates & Vital Records', 'Certificate of residence from your barangay', '₱50-100', 'Same day', 'Barangay Hall', '[]'::jsonb, NOW(), NOW());
+VALUES (4, 'Barangay Clearance', 'barangay-clearance', 'Certificates', 'Certificate of residence from your barangay', '₱50-100', 'Same day', 'Barangay Hall', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (5, 'Barangay ID', 'barangay-id', 'Certificates & Vital Records', 'Official barangay identification card', 'Free', '1-2 days', 'Barangay Hall', '[]'::jsonb, NOW(), NOW());
+VALUES (5, 'Barangay ID', 'barangay-id', 'Certificates', 'Official barangay identification card', 'Free', '1-2 days', 'Barangay Hall', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (6, 'Police Clearance', 'police-clearance', 'Certificates & Vital Records', 'Police clearance coordination through municipal office', 'Varies', '3-5 days', 'PNP Ormoc', '[]'::jsonb, NOW(), NOW());
+VALUES (6, 'Police Clearance', 'police-clearance', 'Certificates', 'Police clearance coordination through municipal office', 'Varies', '3-5 days', 'PNP Ormoc', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (7, 'Business Permit (New)', 'business-permit-new', 'Business, Trade & Investment', 'Apply for a new mayor''s permit to operate a business', 'Varies', '3-5 days', 'Business Permits & Licensing Office', '[]'::jsonb, NOW(), NOW());
+VALUES (7, 'Business Permit (New)', 'business-permit-new', 'Business', 'Apply for a new mayor''s permit to operate a business', 'Varies', '3-5 days', 'Business Permits & Licensing Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (8, 'Business Permit Renewal', 'business-permit-renewal', 'Business, Trade & Investment', 'Renew your annual business permit', 'Varies', 'Same day', 'Business Permits & Licensing Office', '[]'::jsonb, NOW(), NOW());
+VALUES (8, 'Business Permit Renewal', 'business-permit-renewal', 'Business', 'Renew your annual business permit', 'Varies', 'Same day', 'Business Permits & Licensing Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (9, 'Business Closure', 'business-closure', 'Business, Trade & Investment', 'File for business closure/termination', 'Free', '1-2 days', 'Business Permits & Licensing Office', '[]'::jsonb, NOW(), NOW());
+VALUES (9, 'Business Closure', 'business-closure', 'Business', 'File for business closure/termination', 'Free', '1-2 days', 'Business Permits & Licensing Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (10, 'Sanitary Permit', 'sanitary-permit', 'Business, Trade & Investment', 'Health and sanitation permit for businesses', 'Varies', '1-3 days', 'Municipal Health Office', '[]'::jsonb, NOW(), NOW());
+VALUES (10, 'Sanitary Permit', 'sanitary-permit', 'Business', 'Health and sanitation permit for businesses', 'Varies', '1-3 days', 'Municipal Health Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (11, 'Community Tax Certificate (Cedula)', 'community-tax-certificate-cedula', 'Business, Trade & Investment', 'Obtain cedula for individuals and businesses', '₱5+', 'Same day', 'Municipal Treasurer''s Office', '[]'::jsonb, NOW(), NOW());
+VALUES (11, 'Community Tax Certificate (Cedula)', 'community-tax-certificate-cedula', 'Business', 'Obtain cedula for individuals and businesses', '₱5+', 'Same day', 'Municipal Treasurer''s Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (12, 'Senior Citizen ID', 'senior-citizen-id', 'Social Services & Assistance', 'ID card and benefits for citizens 60 years and above', 'Free', '1-2 weeks', 'MSWDO / OSCA', '[]'::jsonb, NOW(), NOW());
+VALUES (12, 'Senior Citizen ID', 'senior-citizen-id', 'Social', 'ID card and benefits for citizens 60 years and above', 'Free', '1-2 weeks', 'MSWDO / OSCA', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (13, 'PWD ID & Services', 'pwd-id-services', 'Social Services & Assistance', 'ID and benefits for persons with disabilities', 'Free', '1-2 weeks', 'MSWDO', '[]'::jsonb, NOW(), NOW());
+VALUES (13, 'PWD ID & Services', 'pwd-id-services', 'Social', 'ID and benefits for persons with disabilities', 'Free', '1-2 weeks', 'MSWDO', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (14, 'Financial Assistance', 'financial-assistance', 'Social Services & Assistance', 'Emergency financial aid for qualified residents', 'Free', 'Varies', 'MSWDO', '[]'::jsonb, NOW(), NOW());
+VALUES (14, 'Financial Assistance', 'financial-assistance', 'Social', 'Emergency financial aid for qualified residents', 'Free', 'Varies', 'MSWDO', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (15, 'Burial Assistance', 'burial-assistance', 'Social Services & Assistance', 'Financial assistance for burial expenses', 'Free', '1-3 days', 'MSWDO', '[]'::jsonb, NOW(), NOW());
+VALUES (15, 'Burial Assistance', 'burial-assistance', 'Social', 'Financial assistance for burial expenses', 'Free', '1-3 days', 'MSWDO', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (16, 'Solo Parent ID', 'solo-parent-id', 'Social Services & Assistance', 'ID and benefits for solo parents', 'Free', '1-2 weeks', 'MSWDO', '[]'::jsonb, NOW(), NOW());
+VALUES (16, 'Solo Parent ID', 'solo-parent-id', 'Social', 'ID and benefits for solo parents', 'Free', '1-2 weeks', 'MSWDO', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (17, 'Vaccination Programs', 'vaccination-programs', 'Health & Wellness', 'Free immunization for children and adults', 'Free', 'Same day', 'Municipal Health Office', '[]'::jsonb, NOW(), NOW());
+VALUES (17, 'Vaccination Programs', 'vaccination-programs', 'Health', 'Free immunization for children and adults', 'Free', 'Same day', 'Municipal Health Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (18, 'Health Certificate', 'health-certificate', 'Health & Wellness', 'Medical certificate for employment or business', '₱100-200', 'Same day', 'Municipal Health Office', '[]'::jsonb, NOW(), NOW());
+VALUES (18, 'Health Certificate', 'health-certificate', 'Health', 'Medical certificate for employment or business', '₱100-200', 'Same day', 'Municipal Health Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (19, 'Medical Assistance', 'medical-assistance', 'Health & Wellness', 'Financial aid for medical expenses and hospitalization', 'Free', '1-3 days', 'Municipal Health Office / MSWDO', '[]'::jsonb, NOW(), NOW());
+VALUES (19, 'Medical Assistance', 'medical-assistance', 'Health', 'Financial aid for medical expenses and hospitalization', 'Free', '1-3 days', 'Municipal Health Office / MSWDO', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (20, 'Prenatal Checkup', 'prenatal-checkup', 'Health & Wellness', 'Free prenatal care for pregnant women', 'Free', 'Same day', 'Municipal Health Office', '[]'::jsonb, NOW(), NOW());
+VALUES (20, 'Prenatal Checkup', 'prenatal-checkup', 'Health', 'Free prenatal care for pregnant women', 'Free', 'Same day', 'Municipal Health Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (21, 'Real Property Tax Payment', 'real-property-tax-payment', 'Taxation & Payments', 'Pay annual real property tax (amilyar)', 'Varies', 'Same day', 'Municipal Treasurer''s Office', '[]'::jsonb, NOW(), NOW());
+VALUES (21, 'Real Property Tax Payment', 'real-property-tax-payment', 'Taxation', 'Pay annual real property tax (amilyar)', 'Varies', 'Same day', 'Municipal Treasurer''s Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (22, 'Business Tax Payment', 'business-tax-payment', 'Taxation & Payments', 'Pay quarterly or annual business taxes', 'Varies', 'Same day', 'Municipal Treasurer''s Office', '[]'::jsonb, NOW(), NOW());
+VALUES (22, 'Business Tax Payment', 'business-tax-payment', 'Taxation', 'Pay quarterly or annual business taxes', 'Varies', 'Same day', 'Municipal Treasurer''s Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (23, 'Tax Clearance', 'tax-clearance', 'Taxation & Payments', 'Certificate of no tax liability', '₱50-100', 'Same day', 'Municipal Treasurer''s Office', '[]'::jsonb, NOW(), NOW());
+VALUES (23, 'Tax Clearance', 'tax-clearance', 'Taxation', 'Certificate of no tax liability', '₱50-100', 'Same day', 'Municipal Treasurer''s Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (24, 'Agricultural Loans', 'agricultural-loans', 'Agriculture & Economic Development', 'Low-interest loans for farmers', 'Varies', '1-2 weeks', 'Municipal Agriculture Office', '[]'::jsonb, NOW(), NOW());
+VALUES (24, 'Agricultural Loans', 'agricultural-loans', 'Agriculture', 'Low-interest loans for farmers', 'Varies', '1-2 weeks', 'Municipal Agriculture Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (25, 'Crop Insurance', 'crop-insurance', 'Agriculture & Economic Development', 'Insurance coverage for crop damage', 'Subsidized', 'Varies', 'Municipal Agriculture Office', '[]'::jsonb, NOW(), NOW());
+VALUES (25, 'Crop Insurance', 'crop-insurance', 'Agriculture', 'Insurance coverage for crop damage', 'Subsidized', 'Varies', 'Municipal Agriculture Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (26, 'Fertilizer Assistance', 'fertilizer-assistance', 'Agriculture & Economic Development', 'Free or subsidized fertilizer for registered farmers', 'Free/Subsidized', 'Varies', 'Municipal Agriculture Office', '[]'::jsonb, NOW(), NOW());
+VALUES (26, 'Fertilizer Assistance', 'fertilizer-assistance', 'Agriculture', 'Free or subsidized fertilizer for registered farmers', 'Free/Subsidized', 'Varies', 'Municipal Agriculture Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (27, 'Building Permit', 'building-permit', 'Infrastructure & Public Works', 'Permit for new construction or renovation', 'Varies', '5-10 days', 'Municipal Engineering Office', '[]'::jsonb, NOW(), NOW());
+VALUES (27, 'Building Permit', 'building-permit', 'Infrastructure', 'Permit for new construction or renovation', 'Varies', '5-10 days', 'Municipal Engineering Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (28, 'Occupancy Permit', 'occupancy-permit', 'Infrastructure & Public Works', 'Certificate of completion for new buildings', 'Varies', '3-5 days', 'Municipal Engineering Office', '[]'::jsonb, NOW(), NOW());
+VALUES (28, 'Occupancy Permit', 'occupancy-permit', 'Infrastructure', 'Certificate of completion for new buildings', 'Varies', '3-5 days', 'Municipal Engineering Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (29, 'Road Maintenance Request', 'road-maintenance-request', 'Infrastructure & Public Works', 'Report road damage or request repairs', 'Free', 'Varies', 'Municipal Engineering Office', '[]'::jsonb, NOW(), NOW());
+VALUES (29, 'Road Maintenance Request', 'road-maintenance-request', 'Infrastructure', 'Report road damage or request repairs', 'Free', 'Varies', 'Municipal Engineering Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (30, 'Scholarship Programs', 'scholarship-programs', 'Education & Scholarship', 'Financial assistance for students', 'Free', 'Varies', 'Municipal Mayor''s Office', '[]'::jsonb, NOW(), NOW());
+VALUES (30, 'Scholarship Programs', 'scholarship-programs', 'Education', 'Financial assistance for students', 'Free', 'Varies', 'Municipal Mayor''s Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (31, 'Student Assistance', 'student-assistance', 'Education & Scholarship', 'Educational grants and allowances', 'Free', 'Varies', 'MSWDO', '[]'::jsonb, NOW(), NOW());
+VALUES (31, 'Student Assistance', 'student-assistance', 'Education', 'Educational grants and allowances', 'Free', 'Varies', 'MSWDO', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (32, 'Emergency Response', 'emergency-response', 'Public Safety & Security', '24/7 emergency assistance and rescue', 'Free', 'Immediate', 'MDRRMO', '[]'::jsonb, NOW(), NOW());
+VALUES (32, 'Emergency Response', 'emergency-response', 'Safety', '24/7 emergency assistance and rescue', 'Free', 'Immediate', 'MDRRMO', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (33, 'Disaster Preparedness', 'disaster-preparedness', 'Public Safety & Security', 'Training and resources for disaster readiness', 'Free', 'Varies', 'MDRRMO', '[]'::jsonb, NOW(), NOW());
+VALUES (33, 'Disaster Preparedness', 'disaster-preparedness', 'Safety', 'Training and resources for disaster readiness', 'Free', 'Varies', 'MDRRMO', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (34, 'Environmental Clearance', 'environmental-clearance', 'Environment & Natural Resources', 'Environmental compliance certificate for projects', 'Varies', '5-10 days', 'Municipal Environment Office', '[]'::jsonb, NOW(), NOW());
+VALUES (34, 'Environmental Clearance', 'environmental-clearance', 'Environment', 'Environmental compliance certificate for projects', 'Varies', '5-10 days', 'Municipal Environment Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (35, 'Tree Cutting Permit', 'tree-cutting-permit', 'Environment & Natural Resources', 'Permit to cut or trim trees', 'Varies', '3-5 days', 'Municipal Environment Office', '[]'::jsonb, NOW(), NOW());
+VALUES (35, 'Tree Cutting Permit', 'tree-cutting-permit', 'Environment', 'Permit to cut or trim trees', 'Varies', '3-5 days', 'Municipal Environment Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (36, 'SEEDO Slaughterhouse', 'seedo-slaughterhouse', 'Business, Trade & Investment', 'Hog, cattle, goat, and carabao slaughter with meat inspection services', '₱40-350', '37 min - 1.5 hrs', 'SEEDO Slaughterhouse', '[]'::jsonb, NOW(), NOW());
+VALUES (36, 'SEEDO Slaughterhouse', 'seedo-slaughterhouse', 'Business', 'Hog, cattle, goat, and carabao slaughter with meat inspection services', '₱40-350', '37 min - 1.5 hrs', 'SEEDO Slaughterhouse', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (37, 'MSWDO Services', 'mswdo-services', 'Social Services & Assistance', 'Social case studies, indigency certificates, AICS, PWD and senior citizen assistance', 'Free', '28 min - 1.5 hrs', 'MSWDO', '[]'::jsonb, NOW(), NOW());
+VALUES (37, 'MSWDO Services', 'mswdo-services', 'Social', 'Social case studies, indigency certificates, AICS, PWD and senior citizen assistance', 'Free', '28 min - 1.5 hrs', 'MSWDO', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (38, 'Waste Management Services', 'waste-management-services', 'Environment & Natural Resources', 'Garbage collection and disposal services', 'Included in tax', 'Scheduled', 'Municipal Environment Office', '[]'::jsonb, NOW(), NOW());
+VALUES (38, 'Waste Management Services', 'waste-management-services', 'Environment', 'Garbage collection and disposal services', 'Included in tax', 'Scheduled', 'Municipal Environment Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (39, 'SEEDO Public Market', 'seedo-public-market', 'Business, Trade & Investment', 'Market clearance, entrance fees, vendor services, and CTC issuance', '₱5-50', 'Same day', 'SEEDO Public Market', '[]'::jsonb, NOW(), NOW());
+VALUES (39, 'SEEDO Public Market', 'seedo-public-market', 'Business', 'Market clearance, entrance fees, vendor services, and CTC issuance', '₱5-50', 'Same day', 'SEEDO Public Market', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (40, 'Business Permits & Licensing Office', 'business-permits-licensing-office', 'Business, Trade & Investment', 'New permits, renewals, Mayor''s clearance, and other business permits', 'Varies', '1-5 days', 'Mayor''s Office - BPLS', '[]'::jsonb, NOW(), NOW());
+VALUES (40, 'Business Permits & Licensing Office', 'business-permits-licensing-office', 'Business', 'New permits, renewals, Mayor''s clearance, and other business permits', 'Varies', '1-5 days', 'Mayor''s Office - BPLS', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (41, 'Tricycle Franchising & Records', 'tricycle-franchising-records', 'Business, Trade & Investment', 'Apply for tricycle franchise (MTOF) and request records', 'Varies', '3-5 days', 'BPLS / SBO', '[]'::jsonb, NOW(), NOW());
+VALUES (41, 'Tricycle Franchising & Records', 'tricycle-franchising-records', 'Business', 'Apply for tricycle franchise (MTOF) and request records', 'Varies', '3-5 days', 'BPLS / SBO', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (42, 'Municipal Treasurer''s Office', 'municipal-treasurer-s-office', 'Taxation & Payments', 'Tax collection, cedula, clearances, and payment services', 'Varies', 'Same day', 'Municipal Treasurer''s Office', '[]'::jsonb, NOW(), NOW());
+VALUES (42, 'Municipal Treasurer''s Office', 'municipal-treasurer-s-office', 'Taxation', 'Tax collection, cedula, clearances, and payment services', 'Varies', 'Same day', 'Municipal Treasurer''s Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (43, 'Municipal Budget Office', 'municipal-budget-office', 'Taxation & Payments', 'Obligation requests, barangay budget review, and SEF budget preparation', 'Free', '15 min - 1 day', 'Municipal Budget Office', '[]'::jsonb, NOW(), NOW());
+VALUES (43, 'Municipal Budget Office', 'municipal-budget-office', 'Taxation', 'Obligation requests, barangay budget review, and SEF budget preparation', 'Free', '15 min - 1 day', 'Municipal Budget Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (44, 'Municipal Accounting Office', 'municipal-accounting-office', 'Taxation & Payments', 'Pre-audit of disbursements, payroll, check issuance, and financial reporting', 'Free', 'Varies', 'Municipal Accounting Office', '[]'::jsonb, NOW(), NOW());
+VALUES (44, 'Municipal Accounting Office', 'municipal-accounting-office', 'Taxation', 'Pre-audit of disbursements, payroll, check issuance, and financial reporting', 'Free', 'Varies', 'Municipal Accounting Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (45, 'Property Declaration', 'property-declaration', 'Taxation & Payments', 'Declaration of land, building and machineries for tax assessment', 'Varies', '3-5 days', 'Municipal Assessor''s Office', '[]'::jsonb, NOW(), NOW());
+VALUES (45, 'Property Declaration', 'property-declaration', 'Taxation', 'Declaration of land, building and machineries for tax assessment', 'Varies', '3-5 days', 'Municipal Assessor''s Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (46, 'Municipal Assessor''s Office', 'municipal-assessor-s-office', 'Taxation & Payments', 'Property assessment, tax declaration, and land records', 'Varies', '3-5 days', 'Municipal Assessor''s Office', '[]'::jsonb, NOW(), NOW());
+VALUES (46, 'Municipal Assessor''s Office', 'municipal-assessor-s-office', 'Taxation', 'Property assessment, tax declaration, and land records', 'Varies', '3-5 days', 'Municipal Assessor''s Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (47, 'Local Civil Registrar', 'local-civil-registrar', 'Certificates & Vital Records', 'Birth, marriage, death certificates and civil registry services', '₱150+', '15-30 minutes', 'Local Civil Registrar', '[]'::jsonb, NOW(), NOW());
+VALUES (47, 'Local Civil Registrar', 'local-civil-registrar', 'Certificates', 'Birth, marriage, death certificates and civil registry services', '₱150+', '15-30 minutes', 'Local Civil Registrar', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (48, 'Municipal Engineering Office', 'municipal-engineering-office', 'Infrastructure & Public Works', 'Building permits, infrastructure projects, and engineering services', 'Varies', '5-10 days', 'Municipal Engineering Office', '[]'::jsonb, NOW(), NOW());
+VALUES (48, 'Municipal Engineering Office', 'municipal-engineering-office', 'Infrastructure', 'Building permits, infrastructure projects, and engineering services', 'Varies', '5-10 days', 'Municipal Engineering Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (49, 'Municipal Planning & Development Office', 'municipal-planning-development-office', 'Infrastructure & Public Works', 'Zoning, land use, development permits, and planning services', 'Varies', '3-7 days', 'Municipal Planning Office', '[]'::jsonb, NOW(), NOW());
+VALUES (49, 'Municipal Planning & Development Office', 'municipal-planning-development-office', 'Infrastructure', 'Zoning, land use, development permits, and planning services', 'Varies', '3-7 days', 'Municipal Planning Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (50, 'Municipal Agriculture Office', 'municipal-agriculture-office', 'Agriculture & Economic Development', 'Agricultural assistance, farm registration, and livelihood programs', 'Free/Varies', 'Varies', 'Municipal Agriculture Office', '[]'::jsonb, NOW(), NOW());
+VALUES (50, 'Municipal Agriculture Office', 'municipal-agriculture-office', 'Agriculture', 'Agricultural assistance, farm registration, and livelihood programs', 'Free/Varies', 'Varies', 'Municipal Agriculture Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (51, 'General Services Office', 'general-services-office', 'Government Services', 'Property management, vehicle maintenance, and general municipal services', 'Free', 'Varies', 'General Services Office', '[]'::jsonb, NOW(), NOW());
+VALUES (51, 'General Services Office', 'general-services-office', 'Government', 'Property management, vehicle maintenance, and general municipal services', 'Free', 'Varies', 'General Services Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (52, 'Human Resource Management Office', 'human-resource-management-office', 'Government Services', 'Employment, personnel records, and HR services', 'Free', 'Varies', 'Human Resource Management Office', '[]'::jsonb, NOW(), NOW());
+VALUES (52, 'Human Resource Management Office', 'human-resource-management-office', 'Government', 'Employment, personnel records, and HR services', 'Free', 'Varies', 'Human Resource Management Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (53, 'Business Online Billing & Payment', 'business-online-billing-payment', 'Online Services', 'View and pay your business tax bills online via Filipizen', 'Varies', 'Instant', 'BPLS Office', '[]'::jsonb, NOW(), NOW());
+VALUES (53, 'Business Online Billing & Payment', 'business-online-billing-payment', 'Online', 'View and pay your business tax bills online via Filipizen', 'Varies', 'Instant', 'BPLS Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (54, 'New Business Application Online', 'new-business-application-online', 'Online Services', 'Apply for a new business permit online via Filipizen', 'Varies', '3-5 days', 'BPLS Office', '[]'::jsonb, NOW(), NOW());
+VALUES (54, 'New Business Application Online', 'new-business-application-online', 'Online', 'Apply for a new business permit online via Filipizen', 'Varies', '3-5 days', 'BPLS Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (55, 'Business Permit Renewal Online', 'business-permit-renewal-online', 'Online Services', 'Renew your existing business permit online via Filipizen', 'Varies', 'Same day', 'BPLS Office', '[]'::jsonb, NOW(), NOW());
+VALUES (55, 'Business Permit Renewal Online', 'business-permit-renewal-online', 'Online', 'Renew your existing business permit online via Filipizen', 'Varies', 'Same day', 'BPLS Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (56, 'Real Property Tax Online Billing & Payment', 'real-property-tax-online-billing-payment', 'Online Services', 'View and pay your real property tax (amilyar) online via Filipizen', 'Varies', 'Instant', 'Municipal Treasurer''s Office', '[]'::jsonb, NOW(), NOW());
+VALUES (56, 'Real Property Tax Online Billing & Payment', 'real-property-tax-online-billing-payment', 'Online', 'View and pay your real property tax (amilyar) online via Filipizen', 'Varies', 'Instant', 'Municipal Treasurer''s Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (57, 'Online Payment Order', 'online-payment-order', 'Online Services', 'Process payment orders for various municipal fees online via Filipizen', 'Varies', 'Instant', 'Municipal Treasurer''s Office', '[]'::jsonb, NOW(), NOW());
+VALUES (57, 'Online Payment Order', 'online-payment-order', 'Online', 'Process payment orders for various municipal fees online via Filipizen', 'Varies', 'Instant', 'Municipal Treasurer''s Office', '[]'::jsonb, NOW(), NOW());
 
 
 -- ============================================

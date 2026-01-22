@@ -12,6 +12,22 @@ const path = require('path');
 const BETTERSOLANO_DATA = '/Users/karljosebuena/Documents/personal/repos/bettersolano/data';
 const OUTPUT_FILE = '/Users/karljosebuena/Documents/personal/repos/betterormoc-ts/supabase/seed.sql';
 
+// Category mapping: simplify to 1-word names
+const CATEGORY_MAP = {
+  'Certificates & Vital Records': 'Certificates',
+  'Business, Trade & Investment': 'Business',
+  'Social Services & Assistance': 'Social',
+  'Health & Wellness': 'Health',
+  'Taxation & Payments': 'Taxation',
+  'Agriculture & Economic Development': 'Agriculture',
+  'Infrastructure & Public Works': 'Infrastructure',
+  'Education & Scholarship': 'Education',
+  'Public Safety & Security': 'Safety',
+  'Environment & Natural Resources': 'Environment',
+  'Government Services': 'Government',
+  'Online Services': 'Online'
+};
+
 // Helper to escape SQL strings
 function escapeSql(str) {
   if (!str) return 'NULL';
@@ -25,6 +41,11 @@ function adaptText(text) {
     .replace(/Solano/g, 'Ormoc')
     .replace(/Nueva Vizcaya/g, 'Leyte')
     .replace(/solano\.gov\.ph/g, 'ormoc.gov.ph');
+}
+
+// Helper to simplify category names
+function simplifyCategory(category) {
+  return CATEGORY_MAP[category] || category;
 }
 
 // Generate slug from title
@@ -67,7 +88,7 @@ servicesData.services.forEach((service, index) => {
   const id = index + 1;
   const title = adaptText(service.title);
   const slug = generateSlug(service.title);
-  const category = adaptText(service.category);
+  const category = simplifyCategory(adaptText(service.category));
   const description = adaptText(service.description);
   const fees = service.fee || 'Contact office';
   const processingTime = service.processingTime || 'Varies';
@@ -200,7 +221,7 @@ console.log(`   - 10 officials`);
 console.log(`   - ${ordinancesData.ordinances.length} ordinances`);
 console.log(`   - ${resolutionsData.resolutions.length} resolutions`);
 console.log(`   - 8 statistics`);
-console.log(`\n🚀 Next steps:`);
-console.log(`   1. Set up Supabase project`);
-console.log(`   2. Run migrations: supabase db reset`);
-console.log(`   3. Apply seed: psql -f supabase/seed.sql`);
+console.log(`\n🎨 Categories simplified to 1-word names:`);
+Object.entries(CATEGORY_MAP).forEach(([old, newCat]) => {
+  console.log(`   ${old} → ${newCat}`);
+});
