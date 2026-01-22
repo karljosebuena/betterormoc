@@ -6,6 +6,7 @@ import { Footer } from '@/components/layout/Footer'
 import { HotlineBar } from '@/components/layout/HotlineBar'
 import { InfoBar } from '@/components/layout/InfoBar'
 import { QueryProvider } from '@/components/providers/QueryProvider'
+import { Toaster } from 'sonner'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -75,6 +76,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </QueryProvider>
+        <Toaster position="top-right" richColors />
       </body>
     </html>
   )
