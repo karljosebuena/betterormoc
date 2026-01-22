@@ -78,11 +78,6 @@ export function NewsSection() {
                             key={index}
                             className="group overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md"
                         >
-                            <div className="aspect-video bg-gradient-to-br from-blue-100 to-blue-200">
-                                <div className="flex h-full items-center justify-center">
-                                    <FileText className="h-16 w-16 text-blue-900 opacity-50" />
-                                </div>
-                            </div>
                             <div className="p-6">
                                 <div className="mb-3 flex items-center gap-3 text-sm">
                                     <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700">
