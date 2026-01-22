@@ -109,13 +109,8 @@ export function StatisticsCharts({ statistics }: StatisticsChartsProps) {
         )
         .reduce((sum, s) => sum + parseInt(s.value.replace(/,/g, '')), 0)
 
-    // Calculate total businesses (sum from Economy Details)
-    const totalBusinesses = statistics
-        .filter(s => s.category === 'Economy Details')
-        .reduce((sum, s) => {
-            const value = parseInt(s.value.replace(/,/g, ''))
-            return isNaN(value) ? sum : sum + value
-        }, 0)
+    // Get official business count from LGU Ormoc website
+    const officialBusinessCount = statistics.find(s => s.label === 'Number of Business Establishments')?.value || '10,736'
 
     if (!hasHistoricalData && !hasBarangayData && !hasEconomyData) {
         return null
@@ -139,8 +134,10 @@ export function StatisticsCharts({ statistics }: StatisticsChartsProps) {
                 <div className="rounded-lg border border-green-200 bg-gradient-to-br from-green-50 to-green-100 p-6">
                     <div className="flex items-center justify-between">
                         <div>
-                            <p className="text-sm font-medium text-green-600">Total Barangays</p>
-                            <p className="mt-2 text-3xl font-bold text-green-900">110</p>
+                            <p className="text-sm font-medium text-green-600">Total Households</p>
+                            <p className="mt-2 text-3xl font-bold text-green-900">
+                                {statistics.find(s => s.label === 'Total Households')?.value || '56,048'}
+                            </p>
                         </div>
                         <BarChart3 className="h-12 w-12 text-green-600 opacity-50" />
                     </div>
@@ -148,9 +145,9 @@ export function StatisticsCharts({ statistics }: StatisticsChartsProps) {
                 <div className="rounded-lg border border-purple-200 bg-gradient-to-br from-purple-50 to-purple-100 p-6">
                     <div className="flex items-center justify-between">
                         <div>
-                            <p className="text-sm font-medium text-purple-600">Total Businesses</p>
+                            <p className="text-sm font-medium text-purple-600">Registered Businesses</p>
                             <p className="mt-2 text-3xl font-bold text-purple-900">
-                                {totalBusinesses > 0 ? totalBusinesses.toLocaleString() : '6,668'}
+                                {officialBusinessCount}
                             </p>
                         </div>
                         <TrendingUp className="h-12 w-12 text-purple-600 opacity-50" />
