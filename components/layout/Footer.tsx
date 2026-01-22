@@ -116,6 +116,17 @@ export function Footer() {
                         <p className="text-xs text-gray-500">
                             All public information sourced from official government portals.
                         </p>
+                        <p className="mt-1 text-xs text-gray-400">
+                            Official Website:{' '}
+                            <a
+                                href="https://ormoc.gov.ph"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-400 hover:text-blue-300 transition-colors"
+                            >
+                                ormoc.gov.ph
+                            </a>
+                        </p>
                     </div>
                     <div className="flex items-center gap-2 text-sm">
                         <span>Cost to the People of Ormoc =</span>

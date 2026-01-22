@@ -1,6 +1,7 @@
 import { HeroSection } from '@/components/home/HeroSection'
 import { ServicesGrid } from '@/components/home/ServicesGrid'
 import { StatsSection } from '@/components/home/StatsSection'
+import { OnlineServicesSection } from '@/components/home/OnlineServicesSection'
 import { LeadershipSection } from '@/components/home/LeadershipSection'
 import { WeatherMap } from '@/components/home/WeatherMap'
 import { HistorySection } from '@/components/home/HistorySection'
@@ -27,6 +28,7 @@ export default function Home() {
             <HeroSection />
             <ServicesGrid />
             <StatsSection />
+            <OnlineServicesSection />
             <LeadershipSection />
             <WeatherMap />
             <HistorySection />
