@@ -1,5 +1,6 @@
 import { Link } from '@/i18n/navigation'
 import { Facebook, Linkedin, Github, Heart } from 'lucide-react'
+import Image from 'next/image'
 
 const footerLinks = {
     quickLinks: [
@@ -26,9 +27,13 @@ export function Footer() {
                     {/* Brand */}
                     <div className="lg:col-span-2">
                         <div className="mb-4 flex items-center gap-3">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-900 to-blue-950 text-white">
-                                <span className="text-xl font-bold">B</span>
-                            </div>
+                            <Image
+                                src="/official_seal.webp"
+                                alt="Ormoc City Official Seal"
+                                width={40}
+                                height={40}
+                                className="h-10 w-10"
+                            />
                             <div className="flex flex-col">
                                 <span className="text-lg font-bold leading-none text-white">
                                     BetterOrmoc

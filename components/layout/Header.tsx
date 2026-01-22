@@ -6,6 +6,7 @@ import { Menu, X, ChevronDown } from 'lucide-react'
 import { SearchDialog } from '@/components/search/SearchDialog'
 import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher'
 import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 
 export function Header() {
     const t = useTranslations('Navigation')
@@ -56,7 +57,6 @@ export function Header() {
             ],
         },
         { name: t('budget'), href: '/budget' },
-        { name: t('search'), href: '/search' },
         { name: t('contact'), href: '/contact' },
     ]
 
@@ -68,9 +68,13 @@ export function Header() {
                     <div className="flex items-center justify-between py-4">
                         {/* Logo */}
                         <Link href="/" className="flex items-center gap-3">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-900 to-blue-950 text-white">
-                                <span className="text-xl font-bold">B</span>
-                            </div>
+                            <Image
+                                src="/official_seal.webp"
+                                alt="Ormoc City Official Seal"
+                                width={40}
+                                height={40}
+                                className="h-10 w-10"
+                            />
                             <div className="flex flex-col">
                                 <span className="text-lg font-bold leading-none text-gray-900">
                                     BetterOrmoc
@@ -113,14 +117,9 @@ export function Header() {
                                     ) : (
                                         <Link
                                             href={item.href}
-                                            className="flex items-center gap-2 text-sm font-medium text-gray-700 transition-colors hover:text-blue-900"
+                                            className="text-sm font-medium text-gray-700 transition-colors hover:text-blue-900"
                                         >
                                             {item.name}
-                                            {item.name === t('search') && (
-                                                <kbd className="hidden rounded bg-gray-100 px-1.5 py-0.5 text-xs text-gray-500 lg:inline-block">
-                                                    ⌘K
-                                                </kbd>
-                                            )}
                                         </Link>
                                     )}
                                 </div>

@@ -1,8 +1,7 @@
 'use client'
 
 import { useOfficials } from '@/lib/hooks/use-data'
-import Image from 'next/image'
-import { Mail, Phone } from 'lucide-react'
+import { Mail, Phone, User } from 'lucide-react'
 
 export function LeadershipSection() {
     const { data: officials, isLoading } = useOfficials()
@@ -39,20 +38,8 @@ export function LeadershipSection() {
                             key={official.id}
                             className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md"
                         >
-                            <div className="aspect-square bg-gradient-to-br from-blue-100 to-blue-200">
-                                {official.photo_url ? (
-                                    <Image
-                                        src={official.photo_url}
-                                        alt={official.name}
-                                        width={400}
-                                        height={400}
-                                        className="h-full w-full object-cover"
-                                    />
-                                ) : (
-                                    <div className="flex h-full items-center justify-center text-6xl font-bold text-blue-900">
-                                        {official.name.charAt(5)}
-                                    </div>
-                                )}
+                            <div className="flex aspect-square items-center justify-center bg-gradient-to-br from-blue-100 to-blue-200">
+                                <User className="h-24 w-24 text-blue-900" />
                             </div>
                             <div className="p-6">
                                 <h3 className="mb-1 text-xl font-bold text-gray-900">{official.name}</h3>

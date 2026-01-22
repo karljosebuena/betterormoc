@@ -6,7 +6,6 @@ import { LeadershipSection } from '@/components/home/LeadershipSection'
 import { WeatherMap } from '@/components/home/WeatherMap'
 import { HistorySection } from '@/components/home/HistorySection'
 import { NewsSection } from '@/components/home/NewsSection'
-import { ContactSection } from '@/components/home/ContactSection'
 import { generateMetadata as generateSEOMetadata, type Locale } from '@/lib/metadata'
 import { getTranslations } from 'next-intl/server'
 
@@ -33,7 +32,6 @@ export default function Home() {
             <WeatherMap />
             <HistorySection />
             <NewsSection />
-            <ContactSection />
         </>
     )
 }
