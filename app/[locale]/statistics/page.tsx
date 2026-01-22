@@ -13,7 +13,14 @@ import {
     Shield,
     Plane,
     MapPin,
-    Loader2
+    Loader2,
+    Clock,
+    Store,
+    Tractor,
+    Construction,
+    School,
+    Stethoscope,
+    Camera
 } from 'lucide-react'
 
 interface Statistic {
@@ -43,6 +50,15 @@ const categoryIcons: Record<string, { icon: React.ElementType; color: string }> 
     'Agriculture': { icon: Wheat, color: 'amber' },
     'Public Safety': { icon: Shield, color: 'orange' },
     'Tourism': { icon: Plane, color: 'cyan' },
+    'Barangay Population': { icon: Users, color: 'violet' },
+    'Historical Trends': { icon: Clock, color: 'slate' },
+    'Economy Details': { icon: Store, color: 'purple' },
+    'Agriculture Details': { icon: Tractor, color: 'amber' },
+    'Infrastructure Details': { icon: Construction, color: 'gray' },
+    'Education Details': { icon: School, color: 'indigo' },
+    'Health Details': { icon: Stethoscope, color: 'red' },
+    'Tourism Details': { icon: Plane, color: 'cyan' },
+    'Public Safety Details': { icon: Camera, color: 'orange' },
 }
 
 const colorClasses: Record<string, { bg: string; text: string; border: string; iconBg: string }> = {
@@ -57,6 +73,8 @@ const colorClasses: Record<string, { bg: string; text: string; border: string; i
     'amber': { bg: 'bg-amber-50', text: 'text-amber-900', border: 'border-amber-200', iconBg: 'bg-amber-100' },
     'orange': { bg: 'bg-orange-50', text: 'text-orange-900', border: 'border-orange-200', iconBg: 'bg-orange-100' },
     'cyan': { bg: 'bg-cyan-50', text: 'text-cyan-900', border: 'border-cyan-200', iconBg: 'bg-cyan-100' },
+    'violet': { bg: 'bg-violet-50', text: 'text-violet-900', border: 'border-violet-200', iconBg: 'bg-violet-100' },
+    'slate': { bg: 'bg-slate-50', text: 'text-slate-900', border: 'border-slate-200', iconBg: 'bg-slate-100' },
 }
 
 export default function StatisticsPage() {
@@ -166,8 +184,8 @@ export default function StatisticsPage() {
                                 key={category}
                                 onClick={() => setSelectedCategory(category)}
                                 className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${selectedCategory === category
-                                        ? 'bg-blue-900 text-white'
-                                        : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                                    ? 'bg-blue-900 text-white'
+                                    : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
                                     }`}
                             >
                                 {category === 'all' ? 'All Categories' : category}
