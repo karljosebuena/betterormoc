@@ -91,7 +91,7 @@ export function WeatherCard() {
                     </div>
                     <div>
                         <p className="text-sm text-gray-600">UV Index</p>
-                        <p className="text-2xl font-bold text-gray-900">Moderate</p>
+                        <p className="text-xl font-bold text-gray-900">Moderate</p>
                     </div>
                 </div>
             </div>
