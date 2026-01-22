@@ -40,7 +40,7 @@ const topStats = [
 
 export function StatsSection() {
     return (
-        <section className="section bg-white">
+        <section className="section bg-white py-16">
             <div className="container">
                 <div className="mb-12 text-center">
                     <h2 className="mb-4 text-3xl font-bold text-gray-900">Ormoc at a Glance</h2>

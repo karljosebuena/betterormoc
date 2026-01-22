@@ -65,8 +65,9 @@ export function HistorySection() {
 
                         <div className="mt-8 text-center">
                             <Link
-                                href="/about"
-                                className="inline-flex items-center gap-2 rounded-lg bg-green-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-green-700"
+                                href="https://ormoc.gov.ph/#archives"
+                                target="_blank"
+                                className="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 font-semibold text-blue-900 transition-colors hover:bg-blue-50"
                             >
                                 Learn More About Ormoc
                             </Link>

@@ -118,7 +118,7 @@ export function NewsSection() {
                 <div className="mt-12 text-center">
                     <button
                         onClick={handleViewAllNews}
-                        className="inline-flex items-center gap-2 rounded-lg border-2 border-green-600 px-8 py-3 font-semibold text-blue-900 transition-all hover:bg-blue-900 hover:text-white"
+                        className="inline-flex items-center gap-2 rounded-lg border-2 border-blue-900 px-8 py-3 font-semibold text-blue-900 transition-all hover:bg-blue-900 hover:text-white"
                     >
                         <TrendingUp className="h-5 w-5" />
                         View All News

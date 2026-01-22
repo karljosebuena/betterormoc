@@ -36,7 +36,7 @@ const onlineServices = [
 
 export function OnlineServicesSection() {
     return (
-        <section className="section bg-gradient-to-br from-blue-50 to-indigo-50">
+        <section className="section bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
             <div className="container">
                 <div className="mb-12 text-center">
                     <h2 className="mb-4 text-3xl font-bold text-gray-900">Online Services</h2>
