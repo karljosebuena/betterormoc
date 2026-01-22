@@ -100,6 +100,23 @@ export function StatisticsCharts({ statistics }: StatisticsChartsProps) {
     const hasEducationData = educationChartData.labels.length > 0
     const hasHealthData = healthChartData.labels.length > 0
 
+    // Calculate total schools (sum of all school types, avoiding duplicates)
+    const totalSchools = statistics
+        .filter(s =>
+            s.label === 'Elementary Schools (Public)' ||
+            s.label === 'High Schools (Public)' ||
+            s.label === 'Colleges and Universities'
+        )
+        .reduce((sum, s) => sum + parseInt(s.value.replace(/,/g, '')), 0)
+
+    // Calculate total businesses (sum from Economy Details)
+    const totalBusinesses = statistics
+        .filter(s => s.category === 'Economy Details')
+        .reduce((sum, s) => {
+            const value = parseInt(s.value.replace(/,/g, ''))
+            return isNaN(value) ? sum : sum + value
+        }, 0)
+
     if (!hasHistoricalData && !hasBarangayData && !hasEconomyData) {
         return null
     }
