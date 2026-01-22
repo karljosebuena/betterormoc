@@ -2,8 +2,13 @@
 
 import { useOfficials } from '@/lib/hooks/use-data'
 import { Mail, Phone, User } from 'lucide-react'
+import Image from 'next/image'
 
-export function LeadershipSection() {
+interface LeadershipSectionProps {
+    showPhotos?: boolean
+}
+
+export function LeadershipSection({ showPhotos = false }: LeadershipSectionProps) {
     const { data: officials, isLoading } = useOfficials()
 
     const topOfficials = officials?.slice(0, 3) // Mayor, Vice Mayor, and top official
@@ -38,9 +43,27 @@ export function LeadershipSection() {
                             key={official.id}
                             className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md"
                         >
-                            <div className="flex aspect-square items-center justify-center bg-gradient-to-br from-blue-100 to-blue-200">
-                                <User className="h-24 w-24 text-blue-900" />
-                            </div>
+                            {showPhotos ? (
+                                <div className="aspect-square bg-gradient-to-br from-blue-100 to-blue-200">
+                                    {official.photo_url ? (
+                                        <Image
+                                            src={official.photo_url}
+                                            alt={official.name}
+                                            width={400}
+                                            height={400}
+                                            className="h-full w-full object-cover"
+                                        />
+                                    ) : (
+                                        <div className="flex h-full items-center justify-center">
+                                            <User className="h-24 w-24 text-blue-900" />
+                                        </div>
+                                    )}
+                                </div>
+                            ) : (
+                                <div className="flex aspect-square items-center justify-center bg-gradient-to-br from-blue-100 to-blue-200">
+                                    <User className="h-24 w-24 text-blue-900" />
+                                </div>
+                            )}
                             <div className="p-6">
                                 <h3 className="mb-1 text-xl font-bold text-gray-900">{official.name}</h3>
                                 <p className="mb-4 text-sm font-medium text-blue-900">{official.position}</p>
