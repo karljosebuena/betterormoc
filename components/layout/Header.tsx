@@ -110,9 +110,14 @@ export function Header() {
                                     ) : (
                                         <Link
                                             href={item.href}
-                                            className="text-sm font-medium text-gray-700 transition-colors hover:text-blue-900"
+                                            className="flex items-center gap-2 text-sm font-medium text-gray-700 transition-colors hover:text-blue-900"
                                         >
                                             {item.name}
+                                            {item.name === 'Search' && (
+                                                <kbd className="hidden rounded bg-gray-100 px-1.5 py-0.5 text-xs text-gray-500 lg:inline-block">
+                                                    ⌘K
+                                                </kbd>
+                                            )}
                                         </Link>
                                     )}
                                 </div>
