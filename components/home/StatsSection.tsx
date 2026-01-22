@@ -9,7 +9,7 @@ const topStats = [
         value: '250,000+',
         label: 'Population',
         description: 'Estimated residents',
-        year: '2024',
+        year: '2025',
         icon: Users,
     },
     {
@@ -17,7 +17,7 @@ const topStats = [
         value: '110',
         label: 'Barangays',
         description: 'Administrative divisions',
-        year: '2024',
+        year: '2025',
         icon: MapPin,
     },
     {
@@ -25,7 +25,7 @@ const topStats = [
         value: '613.6 km²',
         label: 'Land Area',
         description: 'Total city coverage',
-        year: '2024',
+        year: '2025',
         icon: MapPin,
     },
     {
@@ -33,7 +33,7 @@ const topStats = [
         value: '1st Class',
         label: 'City Classification',
         description: 'Income classification',
-        year: '2024',
+        year: '2025',
         icon: Award,
     },
 ]
