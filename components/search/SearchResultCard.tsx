@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { FileText, Users, Scale, FileCheck } from 'lucide-react'
 import { SearchItem } from '@/lib/hooks/use-search'
 

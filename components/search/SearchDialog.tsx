@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react'
 import { Search, FileText, Users, Scale, FileCheck, X } from 'lucide-react'
-import { useRouter } from 'next/navigation'
+import { useRouter } from '@/i18n/navigation'
 import { useSearch } from '@/lib/hooks/use-search'
 
 interface SearchDialogProps {

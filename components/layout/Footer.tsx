@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { Facebook, Linkedin, Github, Heart } from 'lucide-react'
 
 const footerLinks = {
@@ -33,7 +33,7 @@ export function Footer() {
                                 <span className="text-lg font-bold leading-none text-white">
                                     BetterOrmoc
                                 </span>
-                                <span className="text-xs text-gray-400">Official Portal</span>
+                                <span className="text-xs text-gray-400">XOfficial Portal</span>
                             </div>
                         </div>
                         <p className="mb-4 max-w-md text-sm">

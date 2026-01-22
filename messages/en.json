@@ -1,0 +1,51 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "services": "Services",
+    "government": "Government",
+    "budget": "Budget",
+    "statistics": "Statistics",
+    "contact": "Contact",
+    "search": "Search",
+    "ordinances": "Ordinances",
+    "resolutions": "Resolutions",
+    "faq": "FAQ",
+    "accessibility": "Accessibility",
+    "about": "About"
+  },
+  "HomePage": {
+    "hero": {
+      "title": "Welcome to BetterOrmoc",
+      "subtitle": "Your Gateway to Ormoc City Services",
+      "description": "Access government services, connect with officials, and stay informed about your city.",
+      "cta": "Explore Services"
+    },
+    "stats": {
+      "services": "Services",
+      "officials": "Officials",
+      "ordinances": "Ordinances",
+      "resolutions": "Resolutions"
+    }
+  },
+  "Common": {
+    "learnMore": "Learn more",
+    "viewAll": "View all",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "search": "Search",
+    "close": "Close",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous"
+  },
+  "Disclaimer": {
+    "title": "Disclaimer:",
+    "message": "This is an unofficial community project, not affiliated with Ormoc City Government.",
+    "learnMore": "Learn more"
+  }
+}

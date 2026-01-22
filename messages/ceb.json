@@ -1,0 +1,51 @@
+{
+  "Navigation": {
+    "home": "Balay",
+    "services": "Mga Serbisyo",
+    "government": "Gobierno",
+    "budget": "Badyet",
+    "statistics": "Estadistika",
+    "contact": "Kontak",
+    "search": "Pangita",
+    "ordinances": "Mga Ordinansa",
+    "resolutions": "Mga Resolusyon",
+    "faq": "Mga Kanunay Pangutana",
+    "accessibility": "Accessibility",
+    "about": "Mahitungod"
+  },
+  "HomePage": {
+    "hero": {
+      "title": "Maayong Pag-abot sa BetterOrmoc",
+      "subtitle": "Imong Gateway sa mga Serbisyo sa Dakbayan sa Ormoc",
+      "description": "Pag-access sa mga serbisyo sa gobierno, konektahanay sa mga opisyal, ug magpabiling updated bahin sa imong dakbayan.",
+      "cta": "Susiha ang mga Serbisyo"
+    },
+    "stats": {
+      "services": "Mga Serbisyo",
+      "officials": "Mga Opisyal",
+      "ordinances": "Mga Ordinansa",
+      "resolutions": "Mga Resolusyon"
+    }
+  },
+  "Common": {
+    "learnMore": "Mahibal-an pa",
+    "viewAll": "Tan-awa tanan",
+    "loading": "Nag-load...",
+    "error": "May sayop nga nahitabo",
+    "search": "Pangita",
+    "close": "Sirado",
+    "submit": "Isumite",
+    "cancel": "Kanselahon",
+    "save": "I-save",
+    "edit": "I-edit",
+    "delete": "Tangtangon",
+    "back": "Balik",
+    "next": "Sunod",
+    "previous": "Miagi"
+  },
+  "Disclaimer": {
+    "title": "Pahinumdom:",
+    "message": "Kini usa ka dili opisyal nga proyekto sa komunidad, wala konektado sa Gobierno sa Dakbayan sa Ormoc.",
+    "learnMore": "Mahibal-an pa"
+  }
+}

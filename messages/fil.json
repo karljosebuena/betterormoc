@@ -1,0 +1,51 @@
+{
+  "Navigation": {
+    "home": "Tahanan",
+    "services": "Mga Serbisyo",
+    "government": "Pamahalaan",
+    "budget": "Badyet",
+    "statistics": "Estadistika",
+    "contact": "Makipag-ugnayan",
+    "search": "Maghanap",
+    "ordinances": "Mga Ordinansa",
+    "resolutions": "Mga Resolusyon",
+    "faq": "Mga Madalas Itanong",
+    "accessibility": "Accessibility",
+    "about": "Tungkol"
+  },
+  "HomePage": {
+    "hero": {
+      "title": "Maligayang Pagdating sa BetterOrmoc",
+      "subtitle": "Iyong Gateway sa mga Serbisyo ng Lungsod ng Ormoc",
+      "description": "Mag-access ng mga serbisyo ng gobyerno, makipag-ugnayan sa mga opisyal, at manatiling updated tungkol sa iyong lungsod.",
+      "cta": "Tuklasin ang mga Serbisyo"
+    },
+    "stats": {
+      "services": "Mga Serbisyo",
+      "officials": "Mga Opisyal",
+      "ordinances": "Mga Ordinansa",
+      "resolutions": "Mga Resolusyon"
+    }
+  },
+  "Common": {
+    "learnMore": "Matuto pa",
+    "viewAll": "Tingnan lahat",
+    "loading": "Naglo-load...",
+    "error": "May naganap na error",
+    "search": "Maghanap",
+    "close": "Isara",
+    "submit": "Isumite",
+    "cancel": "Kanselahin",
+    "save": "I-save",
+    "edit": "I-edit",
+    "delete": "Tanggalin",
+    "back": "Bumalik",
+    "next": "Susunod",
+    "previous": "Nakaraan"
+  },
+  "Disclaimer": {
+    "title": "Paalala:",
+    "message": "Ito ay isang hindi opisyal na proyekto ng komunidad, hindi konektado sa Pamahalaang Lungsod ng Ormoc.",
+    "learnMore": "Matuto pa"
+  }
+}

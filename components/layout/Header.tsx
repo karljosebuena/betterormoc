@@ -1,45 +1,14 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { Menu, X, ChevronDown, Search } from 'lucide-react'
+import { Link } from '@/i18n/navigation'
+import { Menu, X, ChevronDown } from 'lucide-react'
 import { SearchDialog } from '@/components/search/SearchDialog'
-
-const navigation = [
-    { name: 'Home', href: '/' },
-    {
-        name: 'Services',
-        href: '/services',
-        dropdown: [
-            { name: 'Certificates', href: '/services?category=Certificates' },
-            { name: 'Business', href: '/services?category=Business' },
-            { name: 'Tax Payments', href: '/services?category=Taxation' },
-            { name: 'Social Services', href: '/services?category=Social' },
-            { name: 'Health', href: '/services?category=Health' },
-            { name: 'Agriculture', href: '/services?category=Agriculture' },
-            { name: 'Infrastructure', href: '/services?category=Infrastructure' },
-            { name: 'Education', href: '/services?category=Education' },
-            { name: 'Public Safety', href: '/services?category=Safety' },
-            { name: 'Environment', href: '/services?category=Environment' },
-            { name: 'Online Services', href: '/services?category=Online' },
-        ],
-    },
-    { name: 'Government', href: '/government' },
-    { name: 'Statistics', href: '/statistics' },
-    {
-        name: 'Legislative',
-        href: '#',
-        dropdown: [
-            { name: 'Ordinance Framework', href: '/ordinances' },
-            { name: 'Resolution Framework', href: '/resolutions' },
-        ],
-    },
-    { name: 'Transparency', href: '/budget' },
-    { name: 'Search', href: '/search' },
-    { name: 'Contact', href: '/contact' },
-]
+import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher'
+import { useTranslations } from 'next-intl'
 
 export function Header() {
+    const t = useTranslations('Navigation')
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
     const [searchOpen, setSearchOpen] = useState(false)
@@ -57,6 +26,40 @@ export function Header() {
         return () => window.removeEventListener('keydown', handleKeyDown)
     }, [])
 
+    const navigation = [
+        { name: t('home'), href: '/' },
+        {
+            name: t('services'),
+            href: '/services',
+            dropdown: [
+                { name: 'Certificates', href: '/services?category=Certificates' },
+                { name: 'Business', href: '/services?category=Business' },
+                { name: 'Tax Payments', href: '/services?category=Taxation' },
+                { name: 'Social Services', href: '/services?category=Social' },
+                { name: 'Health', href: '/services?category=Health' },
+                { name: 'Agriculture', href: '/services?category=Agriculture' },
+                { name: 'Infrastructure', href: '/services?category=Infrastructure' },
+                { name: 'Education', href: '/services?category=Education' },
+                { name: 'Public Safety', href: '/services?category=Safety' },
+                { name: 'Environment', href: '/services?category=Environment' },
+                { name: 'Online Services', href: '/services?category=Online' },
+            ],
+        },
+        { name: t('government'), href: '/government' },
+        { name: t('statistics'), href: '/statistics' },
+        {
+            name: 'Legislative',
+            href: '#',
+            dropdown: [
+                { name: t('ordinances'), href: '/ordinances' },
+                { name: t('resolutions'), href: '/resolutions' },
+            ],
+        },
+        { name: t('budget'), href: '/budget' },
+        { name: t('search'), href: '/search' },
+        { name: t('contact'), href: '/contact' },
+    ]
+
     return (
         <>
             <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
@@ -72,7 +75,7 @@ export function Header() {
                                 <span className="text-lg font-bold leading-none text-gray-900">
                                     BetterOrmoc
                                 </span>
-                                <span className="text-xs text-gray-500">Official Portal</span>
+                                <span className="text-xs text-gray-500">XOfficial Portal</span>
                             </div>
                         </Link>
 
@@ -113,7 +116,7 @@ export function Header() {
                                             className="flex items-center gap-2 text-sm font-medium text-gray-700 transition-colors hover:text-blue-900"
                                         >
                                             {item.name}
-                                            {item.name === 'Search' && (
+                                            {item.name === t('search') && (
                                                 <kbd className="hidden rounded bg-gray-100 px-1.5 py-0.5 text-xs text-gray-500 lg:inline-block">
                                                     ⌘K
                                                 </kbd>
@@ -126,15 +129,7 @@ export function Header() {
 
                         {/* Language Selector */}
                         <div className="hidden items-center gap-2 lg:flex">
-                            <button className="rounded-md px-3 py-1.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100">
-                                EN
-                            </button>
-                            <button className="rounded-md px-3 py-1.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100">
-                                FIL
-                            </button>
-                            <button className="rounded-md px-3 py-1.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100">
-                                ILO
-                            </button>
+                            <LanguageSwitcher />
                         </div>
 
                         {/* Mobile Menu Button */}
@@ -196,6 +191,12 @@ export function Header() {
                                         )}
                                     </div>
                                 ))}
+                                <div className="mt-4 pt-4 border-t border-gray-100">
+                                    <div className="flex items-center gap-2">
+                                        <span className="text-sm font-medium text-gray-700">Language:</span>
+                                        <LanguageSwitcher />
+                                    </div>
+                                </div>
                             </nav>
                         </div>
                     )}
