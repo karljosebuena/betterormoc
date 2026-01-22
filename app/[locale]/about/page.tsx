@@ -1,6 +1,20 @@
 import { AlertCircle, Heart, Github, Mail } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
+import { generateMetadata as generateSEOMetadata, type Locale } from '@/lib/metadata'
+import { getTranslations } from 'next-intl/server'
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params
+    const t = await getTranslations({ locale, namespace: 'metadata.about' })
+
+    return generateSEOMetadata({
+        locale: locale as Locale,
+        title: t('title'),
+        description: t('description'),
+        path: '/about',
+    })
+}
 
 export default function AboutPage() {
     // We'll migrate the text to translation files in the next step

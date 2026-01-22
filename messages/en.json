@@ -43,9 +43,61 @@
     "next": "Next",
     "previous": "Previous"
   },
-  "Disclaimer": {
-    "title": "Disclaimer:",
-    "message": "This is an unofficial community project, not affiliated with Ormoc City Government.",
-    "learnMore": "Learn more"
+  "disclaimer": {
+    "title": "Important Notice",
+    "description": "BetterOrmoc is an independent, open-source project created to improve access to public information. This is not an official government website.",
+    "learnMore": "Learn more about this project"
+  },
+  "metadata": {
+    "defaultTitle": "BetterOrmoc",
+    "defaultDescription": "Empowering the people of Ormoc with transparent access to services, programs, and public funds of LGU Ormoc.",
+    "home": {
+      "title": "Home",
+      "description": "Access government services, programs, and public information for Ormoc City, Leyte, Philippines."
+    },
+    "services": {
+      "title": "Municipal Services",
+      "description": "Browse all available services from LGU Ormoc including permits, certificates, and assistance programs."
+    },
+    "government": {
+      "title": "Government Officials",
+      "description": "Meet the elected and appointed officials serving the people of Ormoc City."
+    },
+    "about": {
+      "title": "About BetterOrmoc",
+      "description": "Learn about our mission to improve transparency and access to public information in Ormoc City."
+    },
+    "statistics": {
+      "title": "City Statistics",
+      "description": "View demographic, economic, and social statistics for Ormoc City."
+    },
+    "budget": {
+      "title": "Budget Transparency",
+      "description": "Explore Ormoc City's budget allocation and financial transparency data."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Get in touch with LGU Ormoc or report issues and suggestions."
+    },
+    "search": {
+      "title": "Search Results",
+      "description": "Search for services, officials, ordinances, and more."
+    },
+    "ordinances": {
+      "title": "City Ordinances",
+      "description": "Browse local laws and ordinances passed by the Sangguniang Panlungsod of Ormoc."
+    },
+    "resolutions": {
+      "title": "City Resolutions",
+      "description": "View resolutions approved by the Sangguniang Panlungsod of Ormoc."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "description": "Find answers to common questions about government services and procedures."
+    },
+    "accessibility": {
+      "title": "Accessibility Statement",
+      "description": "Our commitment to making public information accessible to everyone."
+    }
   }
 }

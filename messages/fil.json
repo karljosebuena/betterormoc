@@ -47,5 +47,57 @@
     "title": "Paalala:",
     "message": "Ito ay isang hindi opisyal na proyekto ng komunidad, hindi konektado sa Pamahalaang Lungsod ng Ormoc.",
     "learnMore": "Matuto pa"
+  },
+  "metadata": {
+    "defaultTitle": "BetterOrmoc",
+    "defaultDescription": "Pagbibigay ng transparent na access sa mga serbisyo, programa, at pampublikong pondo ng LGU Ormoc.",
+    "home": {
+      "title": "Tahanan",
+      "description": "Mag-access ng mga serbisyo ng gobyerno, programa, at pampublikong impormasyon para sa Lungsod ng Ormoc, Leyte, Pilipinas."
+    },
+    "services": {
+      "title": "Mga Serbisyong Munisipal",
+      "description": "Tingnan ang lahat ng available na serbisyo mula sa LGU Ormoc kabilang ang mga permit, sertipiko, at programa ng tulong."
+    },
+    "government": {
+      "title": "Mga Opisyal ng Pamahalaan",
+      "description": "Kilalanin ang mga hinirang at itinalaga na opisyal na naglilingkod sa mga mamamayan ng Lungsod ng Ormoc."
+    },
+    "about": {
+      "title": "Tungkol sa BetterOrmoc",
+      "description": "Alamin ang aming misyon na pagbutihin ang transparency at access sa pampublikong impormasyon sa Lungsod ng Ormoc."
+    },
+    "statistics": {
+      "title": "Estadistika ng Lungsod",
+      "description": "Tingnan ang demographic, ekonomiko, at sosyal na estadistika para sa Lungsod ng Ormoc."
+    },
+    "budget": {
+      "title": "Transparency ng Badyet",
+      "description": "Tuklasin ang alokasyon ng badyet at datos ng financial transparency ng Lungsod ng Ormoc."
+    },
+    "contact": {
+      "title": "Makipag-ugnayan sa Amin",
+      "description": "Makipag-ugnayan sa LGU Ormoc o mag-ulat ng mga isyu at mungkahi."
+    },
+    "search": {
+      "title": "Mga Resulta ng Paghahanap",
+      "description": "Maghanap ng mga serbisyo, opisyal, ordinansa, at iba pa."
+    },
+    "ordinances": {
+      "title": "Mga Ordinansa ng Lungsod",
+      "description": "Tingnan ang mga lokal na batas at ordinansa na ipinasa ng Sangguniang Panlungsod ng Ormoc."
+    },
+    "resolutions": {
+      "title": "Mga Resolusyon ng Lungsod",
+      "description": "Tingnan ang mga resolusyon na inaprubahan ng Sangguniang Panlungsod ng Ormoc."
+    },
+    "faq": {
+      "title": "Mga Madalas Itanong",
+      "description": "Hanapin ang mga sagot sa karaniwang tanong tungkol sa mga serbisyo at pamamaraan ng gobyerno."
+    },
+    "accessibility": {
+      "title": "Pahayag ng Accessibility",
+      "description": "Ang aming pangako na gawing accessible ang pampublikong impormasyon para sa lahat."
+    }
   }
 }

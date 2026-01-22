@@ -47,5 +47,57 @@
     "title": "Pahinumdom:",
     "message": "Kini usa ka dili opisyal nga proyekto sa komunidad, wala konektado sa Gobierno sa Dakbayan sa Ormoc.",
     "learnMore": "Mahibal-an pa"
+  },
+  "metadata": {
+    "defaultTitle": "BetterOrmoc",
+    "defaultDescription": "Paghatag og transparent nga access sa mga serbisyo, programa, ug pampublikong pondo sa LGU Ormoc.",
+    "home": {
+      "title": "Balay",
+      "description": "Pag-access sa mga serbisyo sa gobierno, programa, ug pampublikong impormasyon para sa Dakbayan sa Ormoc, Leyte, Pilipinas."
+    },
+    "services": {
+      "title": "Mga Serbisyong Munisipal",
+      "description": "Tan-awa ang tanan nga available nga serbisyo gikan sa LGU Ormoc lakip ang mga permit, certificate, ug programa sa tabang."
+    },
+    "government": {
+      "title": "Mga Opisyal sa Gobierno",
+      "description": "Hibal-i ang mga pinili ug gitudlo nga mga opisyal nga nag-alagad sa mga tawo sa Dakbayan sa Ormoc."
+    },
+    "about": {
+      "title": "Mahitungod sa BetterOrmoc",
+      "description": "Hibal-i ang among misyon sa pagpauswag sa transparency ug access sa pampublikong impormasyon sa Dakbayan sa Ormoc."
+    },
+    "statistics": {
+      "title": "Estadistika sa Dakbayan",
+      "description": "Tan-awa ang demographic, ekonomiko, ug sosyal nga estadistika para sa Dakbayan sa Ormoc."
+    },
+    "budget": {
+      "title": "Transparency sa Badyet",
+      "description": "Susiha ang alokasyon sa badyet ug datos sa financial transparency sa Dakbayan sa Ormoc."
+    },
+    "contact": {
+      "title": "Kontak Kami",
+      "description": "Konektahanay sa LGU Ormoc o mag-report og mga isyu ug sugyot."
+    },
+    "search": {
+      "title": "Mga Resulta sa Pagpangita",
+      "description": "Pangitaa ang mga serbisyo, opisyal, ordinansa, ug uban pa."
+    },
+    "ordinances": {
+      "title": "Mga Ordinansa sa Dakbayan",
+      "description": "Tan-awa ang mga lokal nga balaod ug ordinansa nga gipasa sa Sangguniang Panlungsod sa Ormoc."
+    },
+    "resolutions": {
+      "title": "Mga Resolusyon sa Dakbayan",
+      "description": "Tan-awa ang mga resolusyon nga gi-aprubahan sa Sangguniang Panlungsod sa Ormoc."
+    },
+    "faq": {
+      "title": "Mga Kanunay Pangutana",
+      "description": "Pangitaa ang mga tubag sa kasagarang pangutana bahin sa mga serbisyo ug pamaagi sa gobierno."
+    },
+    "accessibility": {
+      "title": "Pahayag sa Accessibility",
+      "description": "Ang among saad sa paghimo sa pampublikong impormasyon nga accessible para sa tanan."
+    }
   }
 }
