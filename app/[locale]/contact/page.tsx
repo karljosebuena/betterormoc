@@ -176,6 +176,54 @@ export default function ContactPage() {
                                 </div>
                             </div>
                         </div>
+
+                        <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+                            <h3 className="mb-4 font-semibold text-gray-900">Police Stations & Law Enforcement</h3>
+                            <div className="space-y-3 text-sm text-gray-600">
+                                <div>
+                                    <p className="font-medium text-gray-900">OCPO Headquarters</p>
+                                    <a href="tel:09985986690" className="hover:text-blue-900">0998 598 6690</a>
+                                </div>
+                                <div>
+                                    <p className="font-medium text-gray-900">Police Station 1 (Cogon)</p>
+                                    <a href="tel:09985986691" className="hover:text-blue-900">0998 598 6691</a>
+                                    {' • '}
+                                    <a href="tel:09354417443" className="hover:text-blue-900">0935 441 7443</a>
+                                </div>
+                                <div>
+                                    <p className="font-medium text-gray-900">Police Station 2 (Cagbuhangin)</p>
+                                    <a href="tel:09985986693" className="hover:text-blue-900">0998 598 6693</a>
+                                </div>
+                                <div>
+                                    <p className="font-medium text-gray-900">Police Station 3 (Liloan)</p>
+                                    <a href="tel:09989674958" className="hover:text-blue-900">0998 967 4958</a>
+                                </div>
+                                <div>
+                                    <p className="font-medium text-gray-900">Police Station 4 (Linao)</p>
+                                    <a href="tel:09709250336" className="hover:text-blue-900">0970 925 0336</a>
+                                </div>
+                                <div>
+                                    <p className="font-medium text-gray-900">Police Station 5 (Dolores)</p>
+                                    <a href="tel:09700613278" className="hover:text-blue-900">0970 061 3278</a>
+                                </div>
+                                <div>
+                                    <p className="font-medium text-gray-900">Police Station 6 (Ipil)</p>
+                                    <a href="tel:09553627125" className="hover:text-blue-900">0955 362 7125</a>
+                                    {' • '}
+                                    <a href="tel:09700564173" className="hover:text-blue-900">0970 056 4173</a>
+                                </div>
+                                <div>
+                                    <p className="font-medium text-gray-900">Mobile Force Company</p>
+                                    <a href="tel:09989674959" className="hover:text-blue-900">0998 967 4959</a>
+                                    {' • '}
+                                    <a href="tel:5616253" className="hover:text-blue-900">561-6253</a>
+                                </div>
+                                <div>
+                                    <p className="font-medium text-gray-900">Coast Guard</p>
+                                    <a href="tel:09303135188" className="hover:text-blue-900">0930 313 5188</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Contact Form */}

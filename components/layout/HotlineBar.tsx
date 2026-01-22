@@ -6,39 +6,39 @@ import { Phone, Heart, Flame, Building, AlertTriangle, Truck } from 'lucide-reac
 const hotlines = [
     {
         icon: Phone,
-        label: 'Police',
-        number: '0927 400 8033',
-        href: 'tel:09274008033',
-    },
-    {
-        icon: Heart,
-        label: 'MSWDO',
-        number: '0916 284 0885',
-        href: 'tel:09162840885',
-    },
-    {
-        icon: Flame,
-        label: 'Fire',
-        number: '0936 062 0305',
-        href: 'tel:09360620305',
-    },
-    {
-        icon: Building,
-        label: 'DILG',
-        number: '0906 188 086',
-        href: 'tel:0906188086',
+        label: 'RESCUE',
+        number: '0905 570 5865',
+        href: 'tel:09055705865',
     },
     {
         icon: AlertTriangle,
-        label: 'MDRRMO',
-        number: '0926 383 3744',
-        href: 'tel:09263833744',
+        label: 'DRRM OPCEN',
+        number: '0998 241 2991',
+        href: 'tel:09982412991',
     },
     {
         icon: Truck,
-        label: 'R2TMC',
-        number: '0906 819 5569',
-        href: 'tel:09068195569',
+        label: 'RAPID RESCUE',
+        number: '0947 507 1433',
+        href: 'tel:09475071433',
+    },
+    {
+        icon: Flame,
+        label: 'Fire Protection',
+        number: '0915 170 0910',
+        href: 'tel:09151700910',
+    },
+    {
+        icon: Building,
+        label: 'OCPO HQ',
+        number: '0998 598 6690',
+        href: 'tel:09985986690',
+    },
+    {
+        icon: Heart,
+        label: 'Coast Guard',
+        number: '0930 313 5188',
+        href: 'tel:09303135188',
     },
 ]
 
