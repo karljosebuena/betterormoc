@@ -3,24 +3,24 @@ import { Calendar, FileText, TrendingUp } from 'lucide-react'
 const news = [
     {
         id: 1,
-        title: 'City Government Launches New Digital Services Platform',
-        excerpt: 'Ormoc City introduces BetterOrmoc.org to provide easier access to government services and information for all citizens.',
-        date: '2024-01-15',
-        category: 'Technology',
+        title: 'Mayor Lucy Torres-Gomez Wins Re-election',
+        excerpt: 'Mayor Lucy Torres-Gomez secured re-election with 90,153 votes. Her entire Ormoc Development Team swept all elective positions in the 2025 midterm elections.',
+        date: '2025-05-13',
+        category: 'Government',
     },
     {
         id: 2,
-        title: 'Infrastructure Projects Boost Local Economy',
-        excerpt: 'Major road improvements and public facilities construction create jobs and improve quality of life for residents.',
-        date: '2024-01-10',
-        category: 'Development',
+        title: 'P4.5 Billion Budget Approved for 2025',
+        excerpt: 'Ormoc City Council approved a P4.5 billion budget, including P2.7 billion for social services and P1.8 billion for infrastructure projects.',
+        date: '2024-10-15',
+        category: 'Budget',
     },
     {
         id: 3,
-        title: 'Free Medical Services Expanded to More Barangays',
-        excerpt: 'City health office extends free medical consultations and medicines to additional communities across Ormoc.',
-        date: '2024-01-05',
-        category: 'Health',
+        title: 'Environmental Stewardship Initiatives Launched',
+        excerpt: 'City government strengthens commitment to water purity and waste management. City Water Quality Testing Laboratory preparing for accreditation.',
+        date: '2025-09-19',
+        category: 'Environment',
     },
 ]
 

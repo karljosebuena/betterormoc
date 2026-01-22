@@ -3,6 +3,7 @@ import { ServicesGrid } from '@/components/home/ServicesGrid'
 import { StatsSection } from '@/components/home/StatsSection'
 import { LeadershipSection } from '@/components/home/LeadershipSection'
 import { WeatherMap } from '@/components/home/WeatherMap'
+import { HistorySection } from '@/components/home/HistorySection'
 import { NewsSection } from '@/components/home/NewsSection'
 import { ContactSection } from '@/components/home/ContactSection'
 import { generateMetadata as generateSEOMetadata, type Locale } from '@/lib/metadata'
@@ -28,6 +29,7 @@ export default function Home() {
             <StatsSection />
             <LeadershipSection />
             <WeatherMap />
+            <HistorySection />
             <NewsSection />
             <ContactSection />
         </>
