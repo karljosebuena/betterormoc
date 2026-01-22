@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic'
 import { useState } from 'react'
 import { ormocLocations } from '@/lib/data/locations'
 import { LocationList } from '@/components/maps/LocationList'
+import { BarangayCaptainsGrid } from '@/components/government/BarangayCaptainsGrid'
 
 // Dynamically import map to avoid SSR issues
 const LocationMap = dynamic(
@@ -206,6 +207,37 @@ export default function GovernmentPage() {
                         )}
                     </>
                 )}
+            </div>
+
+            {/* Barangay Captains Section */}
+            <div className="border-t border-gray-200 bg-white py-12">
+                <div className="container">
+                    <div className="mb-8">
+                        <h2 className="mb-2 text-3xl font-bold text-gray-900">Barangay Captains</h2>
+                        <p className="text-gray-600">
+                            110 Barangays serving the communities of Ormoc City
+                        </p>
+                    </div>
+
+                    {/* Disclaimer for Barangay Captains */}
+                    <div className="mb-6 rounded-lg border border-yellow-200 bg-yellow-50 p-4">
+                        <div className="flex items-start gap-3">
+                            <div className="mt-0.5 flex-shrink-0">
+                                <svg className="h-5 w-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                                </svg>
+                            </div>
+                            <div className="flex-1">
+                                <p className="text-sm text-yellow-800">
+                                    <strong className="font-semibold">Note:</strong> Barangay captain names are placeholders pending official verification.
+                                    Population data is from PSA 2020 Census.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <BarangayCaptainsGrid />
+                </div>
             </div>
         </div>
     )
