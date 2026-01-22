@@ -2,10 +2,30 @@
 
 import { useOfficials } from '@/lib/hooks/use-data'
 import Image from 'next/image'
-import { Mail, Phone, Building2 } from 'lucide-react'
+import { Mail, Phone, Building2, MapPin } from 'lucide-react'
+import dynamic from 'next/dynamic'
+import { useState } from 'react'
+import { ormocLocations } from '@/lib/data/locations'
+import { LocationList } from '@/components/maps/LocationList'
+
+// Dynamically import map to avoid SSR issues
+const LocationMap = dynamic(
+    () => import('@/components/maps/LocationMap').then((mod) => mod.LocationMap),
+    {
+        ssr: false,
+        loading: () => (
+            <div className="flex h-[500px] items-center justify-center rounded-lg bg-gray-100">
+                <div className="text-center">
+                    <div className="mb-2 text-gray-400">Loading map...</div>
+                </div>
+            </div>
+        ),
+    }
+)
 
 export default function GovernmentPage() {
     const { data: officials, isLoading } = useOfficials()
+    const [selectedLocation, setSelectedLocation] = useState<string | null>(null)
 
     return (
         <div className="min-h-screen bg-gray-50">
@@ -16,6 +36,38 @@ export default function GovernmentPage() {
                     <p className="text-lg text-blue-50">
                         Meet the officials serving Ormoc City
                     </p>
+                </div>
+            </div>
+
+            {/* Office Locations Map */}
+            <div className="border-b border-gray-200 bg-white py-12">
+                <div className="container">
+                    <div className="mb-8">
+                        <h2 className="mb-2 text-3xl font-bold text-gray-900">Office Locations</h2>
+                        <p className="text-gray-600">
+                            Find government offices and service centers across Ormoc City
+                        </p>
+                    </div>
+
+                    <div className="grid gap-6 lg:grid-cols-3">
+                        {/* Map */}
+                        <div className="lg:col-span-2">
+                            <LocationMap
+                                locations={ormocLocations}
+                                height="600px"
+                                selectedLocation={selectedLocation}
+                            />
+                        </div>
+
+                        {/* Location List */}
+                        <div className="max-h-[600px] overflow-y-auto rounded-lg border border-gray-200 bg-gray-50 p-4">
+                            <LocationList
+                                locations={ormocLocations}
+                                selectedLocation={selectedLocation}
+                                onSelectLocation={setSelectedLocation}
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
 
