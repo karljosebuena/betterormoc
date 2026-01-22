@@ -39,12 +39,12 @@ export default function ServicesPage() {
     return (
         <div className="min-h-screen bg-gray-50" key={selectedCategory}>
             {/* Header */}
-            <div className="bg-gradient-to-br from-green-600 to-green-800 py-16 text-white">
+            <div className="bg-gradient-to-br from-blue-900 to-blue-950 py-16 text-white">
                 <div className="container">
                     <h1 className="mb-4 text-4xl font-bold">
                         {selectedCategory === 'all' ? 'Municipal Services' : selectedCategory}
                     </h1>
-                    <p className="text-lg text-green-50">
+                    <p className="text-lg text-blue-50">
                         {selectedCategory === 'all'
                             ? 'Browse all available services from LGU Ormoc'
                             : `Services in ${selectedCategory}`
@@ -64,7 +64,7 @@ export default function ServicesPage() {
                             placeholder="Search services..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full rounded-lg border border-gray-300 py-3 pl-12 pr-4 focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500"
+                            className="w-full rounded-lg border border-gray-300 py-3 pl-12 pr-4 focus:border-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-900"
                         />
                     </div>
 
@@ -86,8 +86,8 @@ export default function ServicesPage() {
                                     setSearchQuery(searchQuery)
                                 }}
                                 className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${selectedCategory === category
-                                        ? 'bg-green-600 text-white'
-                                        : 'bg-white text-gray-700 hover:bg-gray-100'
+                                    ? 'bg-blue-900 text-white'
+                                    : 'bg-white text-gray-700 hover:bg-gray-100'
                                     }`}
                             >
                                 {category === 'all' ? 'All Services' : category}

@@ -1,6 +1,6 @@
 export function HeroSection() {
     return (
-        <section className="relative overflow-hidden bg-gradient-to-br from-green-600 via-green-700 to-green-800 py-20 text-white md:py-32">
+        <section className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-950 to-blue-950 py-20 text-white md:py-32">
             <div className="container relative z-10">
                 <div className="mx-auto max-w-4xl text-center">
                     <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
@@ -9,14 +9,14 @@ export function HeroSection() {
                             BetterOrmoc
                         </span>
                     </h1>
-                    <p className="mb-8 text-lg leading-relaxed text-green-50 md:text-xl">
+                    <p className="mb-8 text-lg leading-relaxed text-blue-50 md:text-xl">
                         Empowering the people of Ormoc with transparent access to the
                         services, programs, and public funds of LGU Ormoc.
                     </p>
                     <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                         <a
                             href="#services"
-                            className="inline-flex items-center justify-center rounded-lg bg-white px-8 py-3 text-base font-semibold text-green-700 shadow-lg transition-all hover:bg-green-50 hover:shadow-xl"
+                            className="inline-flex items-center justify-center rounded-lg bg-white px-8 py-3 text-base font-semibold text-green-700 shadow-lg transition-all hover:bg-blue-50 hover:shadow-xl"
                         >
                             Browse Services
                         </a>

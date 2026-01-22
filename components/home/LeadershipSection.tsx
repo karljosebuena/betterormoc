@@ -39,7 +39,7 @@ export function LeadershipSection() {
                             key={official.id}
                             className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md"
                         >
-                            <div className="aspect-square bg-gradient-to-br from-green-100 to-green-200">
+                            <div className="aspect-square bg-gradient-to-br from-blue-100 to-blue-200">
                                 {official.photo_url ? (
                                     <Image
                                         src={official.photo_url}
@@ -49,14 +49,14 @@ export function LeadershipSection() {
                                         className="h-full w-full object-cover"
                                     />
                                 ) : (
-                                    <div className="flex h-full items-center justify-center text-6xl font-bold text-green-600">
+                                    <div className="flex h-full items-center justify-center text-6xl font-bold text-blue-900">
                                         {official.name.charAt(5)}
                                     </div>
                                 )}
                             </div>
                             <div className="p-6">
                                 <h3 className="mb-1 text-xl font-bold text-gray-900">{official.name}</h3>
-                                <p className="mb-4 text-sm font-medium text-green-600">{official.position}</p>
+                                <p className="mb-4 text-sm font-medium text-blue-900">{official.position}</p>
                                 {official.department && (
                                     <p className="mb-4 text-sm text-gray-600">{official.department}</p>
                                 )}
@@ -64,7 +64,7 @@ export function LeadershipSection() {
                                     {official.email && (
                                         <div className="flex items-center gap-2 text-sm text-gray-600">
                                             <Mail className="h-4 w-4" />
-                                            <a href={`mailto:${official.email}`} className="hover:text-green-600">
+                                            <a href={`mailto:${official.email}`} className="hover:text-blue-900">
                                                 {official.email}
                                             </a>
                                         </div>
@@ -72,7 +72,7 @@ export function LeadershipSection() {
                                     {official.phone && (
                                         <div className="flex items-center gap-2 text-sm text-gray-600">
                                             <Phone className="h-4 w-4" />
-                                            <a href={`tel:${official.phone}`} className="hover:text-green-600">
+                                            <a href={`tel:${official.phone}`} className="hover:text-blue-900">
                                                 {official.phone}
                                             </a>
                                         </div>
@@ -86,7 +86,7 @@ export function LeadershipSection() {
                 <div className="mt-12 text-center">
                     <a
                         href="/government"
-                        className="inline-flex items-center justify-center rounded-lg border-2 border-green-600 px-8 py-3 text-base font-semibold text-green-600 transition-all hover:bg-green-600 hover:text-white"
+                        className="inline-flex items-center justify-center rounded-lg border-2 border-green-600 px-8 py-3 text-base font-semibold text-blue-900 transition-all hover:bg-blue-900 hover:text-white"
                     >
                         View All Officials
                     </a>

@@ -32,7 +32,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
 
     return (
         <div className="min-h-screen bg-gray-50">
-            <div className="bg-gradient-to-br from-green-600 to-green-800 py-12 text-white">
+            <div className="bg-gradient-to-br from-blue-900 to-blue-950 py-12 text-white">
                 <div className="container">
                     <Link
                         href="/services"
@@ -69,7 +69,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                             {service.fees && (
                                 <div className="rounded-lg border border-gray-200 bg-white p-6">
                                     <div className="mb-3 flex items-center gap-3">
-                                        <div className="rounded-lg bg-green-100 p-3 text-green-600">
+                                        <div className="rounded-lg bg-green-100 p-3 text-blue-900">
                                             <DollarSign className="h-6 w-6" />
                                         </div>
                                         <h3 className="font-semibold text-gray-900">Fees</h3>
@@ -107,13 +107,13 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                         {service.requirements && Array.isArray(service.requirements) && service.requirements.length > 0 && (
                             <div className="rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
                                 <div className="mb-4 flex items-center gap-3">
-                                    <FileText className="h-6 w-6 text-green-600" />
+                                    <FileText className="h-6 w-6 text-blue-900" />
                                     <h2 className="text-2xl font-bold text-gray-900">Requirements</h2>
                                 </div>
                                 <ul className="space-y-2">
                                     {service.requirements.map((req, index) => (
                                         <li key={index} className="flex items-start gap-3 text-gray-600">
-                                            <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-green-600"></span>
+                                            <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-900"></span>
                                             <span className="capitalize">{String(req)}</span>
                                         </li>
                                     ))}
@@ -134,14 +134,14 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                         )}
 
                         {/* Call to Action */}
-                        <div className="rounded-lg border border-green-200 bg-green-50 p-8 text-center">
+                        <div className="rounded-lg border border-green-200 bg-blue-50 p-8 text-center">
                             <h3 className="mb-2 text-xl font-bold text-gray-900">Need Help?</h3>
                             <p className="mb-6 text-gray-600">
                                 Contact us if you have questions about this service
                             </p>
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center justify-center rounded-lg bg-green-600 px-8 py-3 font-semibold text-white transition-colors hover:bg-green-700"
+                                className="inline-flex items-center justify-center rounded-lg bg-blue-900 px-8 py-3 font-semibold text-white transition-colors hover:bg-green-700"
                             >
                                 Contact Us
                             </Link>

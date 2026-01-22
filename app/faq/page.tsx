@@ -73,7 +73,7 @@ function FAQAccordion({ faq }: { faq: FAQItem }) {
             >
                 <span className="font-semibold text-gray-900">{faq.question}</span>
                 {isOpen ? (
-                    <ChevronUp className="h-5 w-5 flex-shrink-0 text-green-600" />
+                    <ChevronUp className="h-5 w-5 flex-shrink-0 text-blue-900" />
                 ) : (
                     <ChevronDown className="h-5 w-5 flex-shrink-0 text-gray-400" />
                 )}
@@ -97,10 +97,10 @@ export default function FAQPage() {
 
     return (
         <div className="min-h-screen bg-gray-50">
-            <div className="bg-gradient-to-br from-green-600 to-green-800 py-16 text-white">
+            <div className="bg-gradient-to-br from-blue-900 to-blue-950 py-16 text-white">
                 <div className="container">
                     <h1 className="mb-4 text-4xl font-bold">Frequently Asked Questions</h1>
-                    <p className="text-lg text-green-50">
+                    <p className="text-lg text-blue-50">
                         Find answers to common questions about our services
                     </p>
                 </div>
@@ -114,7 +114,7 @@ export default function FAQPage() {
                             key={category}
                             onClick={() => setSelectedCategory(category)}
                             className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${selectedCategory === category
-                                    ? 'bg-green-600 text-white'
+                                    ? 'bg-blue-900 text-white'
                                     : 'bg-white text-gray-700 hover:bg-gray-100'
                                 }`}
                         >
@@ -140,7 +140,7 @@ export default function FAQPage() {
                     </p>
                     <a
                         href="/contact"
-                        className="inline-flex items-center justify-center rounded-lg bg-green-600 px-8 py-3 font-semibold text-white transition-colors hover:bg-green-700"
+                        className="inline-flex items-center justify-center rounded-lg bg-blue-900 px-8 py-3 font-semibold text-white transition-colors hover:bg-green-700"
                     >
                         Contact Us
                     </a>

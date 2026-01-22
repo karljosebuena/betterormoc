@@ -10,9 +10,9 @@ export function ServiceCard({ service }: ServiceCardProps) {
     return (
         <Link
             href={`/services/${service.slug}`}
-            className="group block rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all hover:border-green-500 hover:shadow-md"
+            className="group block rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all hover:border-blue-900 hover:shadow-md"
         >
-            <h3 className="mb-3 text-lg font-semibold text-gray-900 group-hover:text-green-600">
+            <h3 className="mb-3 text-lg font-semibold text-gray-900 group-hover:text-blue-900">
                 {service.title}
             </h3>
 
@@ -45,7 +45,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
                 )}
             </div>
 
-            <div className="mt-4 inline-flex items-center text-sm font-medium text-green-600 group-hover:underline">
+            <div className="mt-4 inline-flex items-center text-sm font-medium text-blue-900 group-hover:underline">
                 Learn more →
             </div>
         </Link>

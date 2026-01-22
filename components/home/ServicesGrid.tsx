@@ -85,17 +85,17 @@ export function ServicesGrid() {
                             <Link
                                 key={category}
                                 href={`/services?category=${encodeURIComponent(category)}`}
-                                className="group rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all hover:border-green-500 hover:shadow-md"
+                                className="group rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all hover:border-blue-900 hover:shadow-md"
                             >
                                 <div className="mb-4 flex items-start justify-between">
-                                    <div className="rounded-lg bg-green-100 p-3 text-green-600 transition-colors group-hover:bg-green-600 group-hover:text-white">
+                                    <div className="rounded-lg bg-green-100 p-3 text-blue-900 transition-colors group-hover:bg-blue-900 group-hover:text-white">
                                         <Icon className="h-6 w-6" />
                                     </div>
                                     <span className="rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-600">
                                         {count} {count === 1 ? 'service' : 'services'}
                                     </span>
                                 </div>
-                                <h3 className="mb-2 text-lg font-semibold text-gray-900 group-hover:text-green-600">
+                                <h3 className="mb-2 text-lg font-semibold text-gray-900 group-hover:text-blue-900">
                                     {category}
                                 </h3>
                                 <p className="text-sm text-gray-600">
@@ -109,7 +109,7 @@ export function ServicesGrid() {
                 <div className="mt-12 text-center">
                     <Link
                         href="/services"
-                        className="inline-flex items-center justify-center rounded-lg bg-green-600 px-8 py-3 text-base font-semibold text-white shadow-lg transition-all hover:bg-green-700 hover:shadow-xl"
+                        className="inline-flex items-center justify-center rounded-lg bg-blue-900 px-8 py-3 text-base font-semibold text-white shadow-lg transition-all hover:bg-green-700 hover:shadow-xl"
                     >
                         View All Services
                     </Link>

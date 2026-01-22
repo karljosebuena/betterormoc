@@ -38,7 +38,7 @@ export default function ResolutionsPage() {
 
     return (
         <div className="min-h-screen bg-gray-50">
-            <div className="bg-gradient-to-br from-blue-600 to-blue-800 py-16 text-white">
+            <div className="bg-gradient-to-br from-blue-900 to-blue-950 py-16 text-white">
                 <div className="container">
                     <h1 className="mb-4 text-4xl font-bold">City Resolutions</h1>
                     <p className="text-lg text-blue-50">

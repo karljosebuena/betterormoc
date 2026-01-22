@@ -45,7 +45,7 @@ export function StatsSection() {
                                 key={stat.id}
                                 className="rounded-lg border border-gray-200 bg-gradient-to-br from-white to-gray-50 p-6 shadow-sm transition-shadow hover:shadow-md"
                             >
-                                <div className="mb-4 inline-flex rounded-lg bg-green-100 p-3 text-green-600">
+                                <div className="mb-4 inline-flex rounded-lg bg-green-100 p-3 text-blue-900">
                                     <Icon className="h-6 w-6" />
                                 </div>
                                 <div className="text-3xl font-bold text-gray-900">{stat.value}</div>

@@ -46,7 +46,7 @@ export function Header() {
                 <div className="flex items-center justify-between py-4">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-3">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-green-600 to-green-800 text-white">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-900 to-blue-950 text-white">
                             <span className="text-xl font-bold">B</span>
                         </div>
                         <div className="flex flex-col">
@@ -68,7 +68,7 @@ export function Header() {
                             >
                                 {item.dropdown ? (
                                     <>
-                                        <button className="flex items-center gap-1 text-sm font-medium text-gray-700 transition-colors hover:text-green-600">
+                                        <button className="flex items-center gap-1 text-sm font-medium text-gray-700 transition-colors hover:text-blue-900">
                                             {item.name}
                                             <ChevronDown className="h-4 w-4" />
                                         </button>
@@ -78,7 +78,7 @@ export function Header() {
                                                     <Link
                                                         key={subItem.name}
                                                         href={subItem.href}
-                                                        className="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-50 hover:text-green-600"
+                                                        className="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-900"
                                                     >
                                                         {subItem.name}
                                                     </Link>
@@ -89,7 +89,7 @@ export function Header() {
                                 ) : (
                                     <Link
                                         href={item.href}
-                                        className="text-sm font-medium text-gray-700 transition-colors hover:text-green-600"
+                                        className="text-sm font-medium text-gray-700 transition-colors hover:text-blue-900"
                                     >
                                         {item.name}
                                     </Link>
@@ -150,7 +150,7 @@ export function Header() {
                                                         <Link
                                                             key={subItem.name}
                                                             href={subItem.href}
-                                                            className="block text-sm text-gray-600 hover:text-green-600"
+                                                            className="block text-sm text-gray-600 hover:text-blue-900"
                                                             onClick={() => setMobileMenuOpen(false)}
                                                         >
                                                             {subItem.name}
@@ -162,7 +162,7 @@ export function Header() {
                                     ) : (
                                         <Link
                                             href={item.href}
-                                            className="text-sm font-medium text-gray-700 transition-colors hover:text-green-600"
+                                            className="text-sm font-medium text-gray-700 transition-colors hover:text-blue-900"
                                             onClick={() => setMobileMenuOpen(false)}
                                         >
                                             {item.name}

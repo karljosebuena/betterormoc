@@ -11,7 +11,7 @@ export default function NotFound() {
                 </p>
                 <Link
                     href="/services"
-                    className="inline-flex items-center justify-center rounded-lg bg-green-600 px-8 py-3 font-semibold text-white transition-colors hover:bg-green-700"
+                    className="inline-flex items-center justify-center rounded-lg bg-blue-900 px-8 py-3 font-semibold text-white transition-colors hover:bg-green-700"
                 >
                     Browse All Services
                 </Link>

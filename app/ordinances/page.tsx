@@ -38,10 +38,10 @@ export default function OrdinancesPage() {
 
     return (
         <div className="min-h-screen bg-gray-50">
-            <div className="bg-gradient-to-br from-green-600 to-green-800 py-16 text-white">
+            <div className="bg-gradient-to-br from-blue-900 to-blue-950 py-16 text-white">
                 <div className="container">
                     <h1 className="mb-4 text-4xl font-bold">City Ordinances</h1>
-                    <p className="text-lg text-green-50">
+                    <p className="text-lg text-blue-50">
                         Legislative measures passed by the Sangguniang Panlungsod
                     </p>
                 </div>
@@ -54,7 +54,7 @@ export default function OrdinancesPage() {
                             key={year}
                             onClick={() => setSelectedYear(year)}
                             className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${selectedYear === year
-                                    ? 'bg-green-600 text-white'
+                                    ? 'bg-blue-900 text-white'
                                     : 'bg-white text-gray-700 hover:bg-gray-100'
                                 }`}
                         >
@@ -75,11 +75,11 @@ export default function OrdinancesPage() {
                         >
                             <div className="mb-4 flex items-start justify-between">
                                 <div className="flex items-center gap-3">
-                                    <div className="rounded-lg bg-green-100 p-3 text-green-600">
+                                    <div className="rounded-lg bg-green-100 p-3 text-blue-900">
                                         <FileText className="h-6 w-6" />
                                     </div>
                                     <div>
-                                        <div className="text-sm font-medium text-green-600">Ordinance No. {ordinance.number}</div>
+                                        <div className="text-sm font-medium text-blue-900">Ordinance No. {ordinance.number}</div>
                                         <div className="flex items-center gap-2 text-sm text-gray-500">
                                             <Calendar className="h-4 w-4" />
                                             <span>{new Date(ordinance.date_passed).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>

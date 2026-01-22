@@ -57,7 +57,7 @@ export function WeatherMap() {
 
                 <div className="mx-auto max-w-4xl">
                     <div className="overflow-hidden rounded-2xl border border-blue-200 bg-white shadow-lg">
-                        <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-8 text-white">
+                        <div className="bg-gradient-to-r from-blue-800 to-blue-900 p-8 text-white">
                             <div className="flex items-center justify-between">
                                 <div>
                                     <p className="mb-2 text-sm font-medium text-blue-100">Ormoc City, Leyte</p>

@@ -10,10 +10,10 @@ export default function GovernmentPage() {
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Header */}
-            <div className="bg-gradient-to-br from-green-600 to-green-800 py-16 text-white">
+            <div className="bg-gradient-to-br from-blue-900 to-blue-950 py-16 text-white">
                 <div className="container">
                     <h1 className="mb-4 text-4xl font-bold">City Government</h1>
-                    <p className="text-lg text-green-50">
+                    <p className="text-lg text-blue-50">
                         Meet the officials serving Ormoc City
                     </p>
                 </div>
@@ -37,7 +37,7 @@ export default function GovernmentPage() {
                                         key={official.id}
                                         className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-md"
                                     >
-                                        <div className="aspect-square bg-gradient-to-br from-green-100 to-green-200">
+                                        <div className="aspect-square bg-gradient-to-br from-blue-100 to-blue-200">
                                             {official.photo_url ? (
                                                 <Image
                                                     src={official.photo_url}
@@ -47,14 +47,14 @@ export default function GovernmentPage() {
                                                     className="h-full w-full object-cover"
                                                 />
                                             ) : (
-                                                <div className="flex h-full items-center justify-center text-6xl font-bold text-green-600">
+                                                <div className="flex h-full items-center justify-center text-6xl font-bold text-blue-900">
                                                     {official.name.charAt(5)}
                                                 </div>
                                             )}
                                         </div>
                                         <div className="p-6">
                                             <h3 className="mb-1 text-xl font-bold text-gray-900">{official.name}</h3>
-                                            <p className="mb-4 text-sm font-medium text-green-600">{official.position}</p>
+                                            <p className="mb-4 text-sm font-medium text-blue-900">{official.position}</p>
                                             {official.department && (
                                                 <div className="mb-4 flex items-center gap-2 text-sm text-gray-600">
                                                     <Building2 className="h-4 w-4" />
@@ -65,7 +65,7 @@ export default function GovernmentPage() {
                                                 {official.email && (
                                                     <div className="flex items-center gap-2 text-sm text-gray-600">
                                                         <Mail className="h-4 w-4" />
-                                                        <a href={`mailto:${official.email}`} className="hover:text-green-600">
+                                                        <a href={`mailto:${official.email}`} className="hover:text-blue-900">
                                                             {official.email}
                                                         </a>
                                                     </div>
@@ -73,7 +73,7 @@ export default function GovernmentPage() {
                                                 {official.phone && (
                                                     <div className="flex items-center gap-2 text-sm text-gray-600">
                                                         <Phone className="h-4 w-4" />
-                                                        <a href={`tel:${official.phone}`} className="hover:text-green-600">
+                                                        <a href={`tel:${official.phone}`} className="hover:text-blue-900">
                                                             {official.phone}
                                                         </a>
                                                     </div>

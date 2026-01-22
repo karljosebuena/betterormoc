@@ -26,7 +26,7 @@ export function Footer() {
                     {/* Brand */}
                     <div className="lg:col-span-2">
                         <div className="mb-4 flex items-center gap-3">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-green-600 to-green-800 text-white">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-900 to-blue-950 text-white">
                                 <span className="text-xl font-bold">B</span>
                             </div>
                             <div className="flex flex-col">

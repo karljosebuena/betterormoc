@@ -16,7 +16,7 @@ export function ContactSection() {
                     <div className="space-y-6">
                         <div className="rounded-lg border border-gray-200 bg-gray-50 p-6">
                             <div className="mb-4 flex items-center gap-3">
-                                <div className="rounded-lg bg-green-100 p-3 text-green-600">
+                                <div className="rounded-lg bg-green-100 p-3 text-blue-900">
                                     <MapPin className="h-6 w-6" />
                                 </div>
                                 <div>
@@ -30,13 +30,13 @@ export function ContactSection() {
 
                         <div className="rounded-lg border border-gray-200 bg-gray-50 p-6">
                             <div className="mb-4 flex items-center gap-3">
-                                <div className="rounded-lg bg-green-100 p-3 text-green-600">
+                                <div className="rounded-lg bg-green-100 p-3 text-blue-900">
                                     <Phone className="h-6 w-6" />
                                 </div>
                                 <div>
                                     <h3 className="font-semibold text-gray-900">Phone</h3>
                                     <p className="text-sm text-gray-600">
-                                        <a href="tel:0927-400-8033" className="hover:text-green-600">
+                                        <a href="tel:0927-400-8033" className="hover:text-blue-900">
                                             0927-400-8033
                                         </a>
                                     </p>
@@ -46,13 +46,13 @@ export function ContactSection() {
 
                         <div className="rounded-lg border border-gray-200 bg-gray-50 p-6">
                             <div className="mb-4 flex items-center gap-3">
-                                <div className="rounded-lg bg-green-100 p-3 text-green-600">
+                                <div className="rounded-lg bg-green-100 p-3 text-blue-900">
                                     <Mail className="h-6 w-6" />
                                 </div>
                                 <div>
                                     <h3 className="font-semibold text-gray-900">Email</h3>
                                     <p className="text-sm text-gray-600">
-                                        <a href="mailto:info@ormoc.gov.ph" className="hover:text-green-600">
+                                        <a href="mailto:info@ormoc.gov.ph" className="hover:text-blue-900">
                                             info@ormoc.gov.ph
                                         </a>
                                     </p>
@@ -62,7 +62,7 @@ export function ContactSection() {
 
                         <div className="rounded-lg border border-gray-200 bg-gray-50 p-6">
                             <div className="mb-4 flex items-center gap-3">
-                                <div className="rounded-lg bg-green-100 p-3 text-green-600">
+                                <div className="rounded-lg bg-green-100 p-3 text-blue-900">
                                     <Clock className="h-6 w-6" />
                                 </div>
                                 <div>
@@ -84,7 +84,7 @@ export function ContactSection() {
                                 <input
                                     type="text"
                                     id="name"
-                                    className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500"
+                                    className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-900"
                                     placeholder="Your name"
                                 />
                             </div>
@@ -95,7 +95,7 @@ export function ContactSection() {
                                 <input
                                     type="email"
                                     id="email"
-                                    className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500"
+                                    className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-900"
                                     placeholder="your@email.com"
                                 />
                             </div>
@@ -106,13 +106,13 @@ export function ContactSection() {
                                 <textarea
                                     id="message"
                                     rows={4}
-                                    className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500"
+                                    className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-900"
                                     placeholder="How can we help you?"
                                 ></textarea>
                             </div>
                             <button
                                 type="submit"
-                                className="w-full rounded-lg bg-green-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-green-700"
+                                className="w-full rounded-lg bg-blue-900 px-6 py-3 font-semibold text-white transition-colors hover:bg-green-700"
                             >
                                 Send Message
                             </button>

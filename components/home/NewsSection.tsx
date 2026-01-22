@@ -41,9 +41,9 @@ export function NewsSection() {
                             key={item.id}
                             className="group overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md"
                         >
-                            <div className="aspect-video bg-gradient-to-br from-green-100 to-green-200">
+                            <div className="aspect-video bg-gradient-to-br from-blue-100 to-blue-200">
                                 <div className="flex h-full items-center justify-center">
-                                    <FileText className="h-16 w-16 text-green-600 opacity-50" />
+                                    <FileText className="h-16 w-16 text-blue-900 opacity-50" />
                                 </div>
                             </div>
                             <div className="p-6">
@@ -56,13 +56,13 @@ export function NewsSection() {
                                         <span>{new Date(item.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                                     </div>
                                 </div>
-                                <h3 className="mb-2 text-lg font-semibold text-gray-900 group-hover:text-green-600">
+                                <h3 className="mb-2 text-lg font-semibold text-gray-900 group-hover:text-blue-900">
                                     {item.title}
                                 </h3>
                                 <p className="mb-4 text-sm text-gray-600 line-clamp-2">
                                     {item.excerpt}
                                 </p>
-                                <button className="inline-flex items-center text-sm font-medium text-green-600 hover:underline">
+                                <button className="inline-flex items-center text-sm font-medium text-blue-900 hover:underline">
                                     Read more →
                                 </button>
                             </div>
@@ -71,7 +71,7 @@ export function NewsSection() {
                 </div>
 
                 <div className="mt-12 text-center">
-                    <button className="inline-flex items-center gap-2 rounded-lg border-2 border-green-600 px-8 py-3 font-semibold text-green-600 transition-all hover:bg-green-600 hover:text-white">
+                    <button className="inline-flex items-center gap-2 rounded-lg border-2 border-green-600 px-8 py-3 font-semibold text-blue-900 transition-all hover:bg-blue-900 hover:text-white">
                         <TrendingUp className="h-5 w-5" />
                         View All News
                     </button>

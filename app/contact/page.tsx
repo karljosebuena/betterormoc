@@ -36,10 +36,10 @@ export default function ContactPage() {
 
     return (
         <div className="min-h-screen bg-gray-50">
-            <div className="bg-gradient-to-br from-green-600 to-green-800 py-16 text-white">
+            <div className="bg-gradient-to-br from-blue-900 to-blue-950 py-16 text-white">
                 <div className="container">
                     <h1 className="mb-4 text-4xl font-bold">Contact Us</h1>
-                    <p className="text-lg text-green-50">
+                    <p className="text-lg text-blue-50">
                         Get in touch with the City Government of Ormoc
                     </p>
                 </div>
@@ -51,7 +51,7 @@ export default function ContactPage() {
                     <div className="space-y-6">
                         <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
                             <div className="mb-4 flex items-start gap-3">
-                                <div className="rounded-lg bg-green-100 p-3 text-green-600">
+                                <div className="rounded-lg bg-green-100 p-3 text-blue-900">
                                     <MapPin className="h-6 w-6" />
                                 </div>
                                 <div>
@@ -69,17 +69,17 @@ export default function ContactPage() {
 
                         <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
                             <div className="mb-4 flex items-start gap-3">
-                                <div className="rounded-lg bg-green-100 p-3 text-green-600">
+                                <div className="rounded-lg bg-green-100 p-3 text-blue-900">
                                     <Phone className="h-6 w-6" />
                                 </div>
                                 <div>
                                     <h3 className="mb-1 font-semibold text-gray-900">Phone</h3>
                                     <p className="text-sm text-gray-600">
-                                        <a href="tel:0927-400-8033" className="hover:text-green-600">
+                                        <a href="tel:0927-400-8033" className="hover:text-blue-900">
                                             0927-400-8033
                                         </a>
                                         <br />
-                                        <a href="tel:0916-284-0885" className="hover:text-green-600">
+                                        <a href="tel:0916-284-0885" className="hover:text-blue-900">
                                             0916-284-0885
                                         </a>
                                     </p>
@@ -89,13 +89,13 @@ export default function ContactPage() {
 
                         <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
                             <div className="mb-4 flex items-start gap-3">
-                                <div className="rounded-lg bg-green-100 p-3 text-green-600">
+                                <div className="rounded-lg bg-green-100 p-3 text-blue-900">
                                     <Mail className="h-6 w-6" />
                                 </div>
                                 <div>
                                     <h3 className="mb-1 font-semibold text-gray-900">Email</h3>
                                     <p className="text-sm text-gray-600">
-                                        <a href="mailto:info@ormoc.gov.ph" className="hover:text-green-600">
+                                        <a href="mailto:info@ormoc.gov.ph" className="hover:text-blue-900">
                                             info@ormoc.gov.ph
                                         </a>
                                     </p>
@@ -105,7 +105,7 @@ export default function ContactPage() {
 
                         <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
                             <div className="mb-4 flex items-start gap-3">
-                                <div className="rounded-lg bg-green-100 p-3 text-green-600">
+                                <div className="rounded-lg bg-green-100 p-3 text-blue-900">
                                     <Clock className="h-6 w-6" />
                                 </div>
                                 <div>
@@ -126,7 +126,7 @@ export default function ContactPage() {
                             <h2 className="mb-6 text-2xl font-bold text-gray-900">Send us a message</h2>
 
                             {submitStatus === 'success' && (
-                                <div className="mb-6 rounded-lg bg-green-50 p-4 text-green-800">
+                                <div className="mb-6 rounded-lg bg-blue-50 p-4 text-green-800">
                                     <p className="font-medium">Message sent successfully!</p>
                                     <p className="text-sm">We&apos;ll get back to you as soon as possible.</p>
                                 </div>
@@ -145,7 +145,7 @@ export default function ContactPage() {
                                             required
                                             value={formData.name}
                                             onChange={handleChange}
-                                            className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500"
+                                            className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-900"
                                             placeholder="Your full name"
                                         />
                                     </div>
@@ -160,7 +160,7 @@ export default function ContactPage() {
                                             required
                                             value={formData.email}
                                             onChange={handleChange}
-                                            className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500"
+                                            className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-900"
                                             placeholder="your@email.com"
                                         />
                                     </div>
@@ -177,7 +177,7 @@ export default function ContactPage() {
                                         required
                                         value={formData.subject}
                                         onChange={handleChange}
-                                        className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500"
+                                        className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-900"
                                         placeholder="What is this regarding?"
                                     />
                                 </div>
@@ -193,7 +193,7 @@ export default function ContactPage() {
                                         value={formData.message}
                                         onChange={handleChange}
                                         rows={6}
-                                        className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500"
+                                        className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-900"
                                         placeholder="How can we help you?"
                                     ></textarea>
                                 </div>
@@ -201,7 +201,7 @@ export default function ContactPage() {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="inline-flex items-center gap-2 rounded-lg bg-green-600 px-8 py-3 font-semibold text-white transition-colors hover:bg-green-700 disabled:cursor-not-allowed disabled:opacity-50"
+                                    className="inline-flex items-center gap-2 rounded-lg bg-blue-900 px-8 py-3 font-semibold text-white transition-colors hover:bg-green-700 disabled:cursor-not-allowed disabled:opacity-50"
                                 >
                                     {isSubmitting ? (
                                         <>

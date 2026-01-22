@@ -3,7 +3,7 @@ import { DollarSign, FileText, TrendingUp, Users } from 'lucide-react'
 export default function BudgetPage() {
     return (
         <div className="min-h-screen bg-gray-50">
-            <div className="bg-gradient-to-br from-blue-600 to-blue-800 py-16 text-white">
+            <div className="bg-gradient-to-br from-blue-900 to-blue-950 py-16 text-white">
                 <div className="container">
                     <h1 className="mb-4 text-4xl font-bold">Budget Transparency</h1>
                     <p className="text-lg text-blue-50">
@@ -35,7 +35,7 @@ export default function BudgetPage() {
                         </div>
 
                         <div className="rounded-lg border border-gray-200 bg-white p-6">
-                            <div className="mb-4 inline-flex rounded-lg bg-green-100 p-3 text-green-600">
+                            <div className="mb-4 inline-flex rounded-lg bg-green-100 p-3 text-blue-900">
                                 <TrendingUp className="h-6 w-6" />
                             </div>
                             <div className="text-2xl font-bold text-gray-900">₱1.8B</div>
@@ -114,7 +114,7 @@ export default function BudgetPage() {
                                     <span className="text-gray-600">32%</span>
                                 </div>
                                 <div className="h-3 w-full rounded-full bg-gray-200">
-                                    <div className="h-3 rounded-full bg-green-600" style={{ width: '32%' }}></div>
+                                    <div className="h-3 rounded-full bg-blue-900" style={{ width: '32%' }}></div>
                                 </div>
                             </div>
 

@@ -3,7 +3,7 @@ import { Eye, Ear, MousePointer, Keyboard, FileText, Mail } from 'lucide-react'
 export default function AccessibilityPage() {
     return (
         <div className="min-h-screen bg-gray-50">
-            <div className="bg-gradient-to-br from-blue-600 to-blue-800 py-16 text-white">
+            <div className="bg-gradient-to-br from-blue-900 to-blue-950 py-16 text-white">
                 <div className="container">
                     <h1 className="mb-4 text-4xl font-bold">Accessibility</h1>
                     <p className="text-lg text-blue-50">
@@ -120,18 +120,18 @@ export default function AccessibilityPage() {
                                 if you encounter accessibility barriers:
                             </p>
                             <div className="flex items-start gap-3 rounded-lg bg-gray-50 p-4">
-                                <Mail className="h-6 w-6 flex-shrink-0 text-green-600" />
+                                <Mail className="h-6 w-6 flex-shrink-0 text-blue-900" />
                                 <div>
                                     <p className="font-medium text-gray-900">Contact Us</p>
                                     <p className="text-sm text-gray-600">
                                         Email:{' '}
-                                        <a href="mailto:accessibility@ormoc.gov.ph" className="text-green-600 hover:underline">
+                                        <a href="mailto:accessibility@ormoc.gov.ph" className="text-blue-900 hover:underline">
                                             accessibility@ormoc.gov.ph
                                         </a>
                                     </p>
                                     <p className="mt-2 text-sm text-gray-600">
                                         Or use our{' '}
-                                        <a href="/contact" className="text-green-600 hover:underline">
+                                        <a href="/contact" className="text-blue-900 hover:underline">
                                             contact form
                                         </a>
                                     </p>
