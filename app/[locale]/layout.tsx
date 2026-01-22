@@ -65,6 +65,10 @@ export const metadata: Metadata = {
             'max-snippet': -1,
         },
     },
+    icons: {
+        icon: '/official_seal.webp',
+        apple: '/official_seal.webp',
+    },
 }
 
 export function generateStaticParams() {
