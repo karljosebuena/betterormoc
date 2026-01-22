@@ -64,8 +64,8 @@ export function WeatherCard() {
             </div>
 
             {/* Weather details grid */}
-            <div className="grid gap-4 p-6 sm:grid-cols-3">
-                <div className="flex items-center gap-3 rounded-lg bg-gray-50 p-4">
+            <div className="flex flex-wrap gap-4 p-6">
+                <div className="flex min-w-[150px] flex-1 items-center gap-3 rounded-lg bg-gray-50 p-4">
                     <div className="rounded-lg bg-blue-100 p-3 text-blue-600">
                         <Droplets className="h-6 w-6" />
                     </div>
@@ -75,7 +75,7 @@ export function WeatherCard() {
                     </div>
                 </div>
 
-                <div className="flex items-center gap-3 rounded-lg bg-gray-50 p-4">
+                <div className="flex min-w-[150px] flex-1 items-center gap-3 rounded-lg bg-gray-50 p-4">
                     <div className="rounded-lg bg-blue-100 p-3 text-blue-600">
                         <Wind className="h-6 w-6" />
                     </div>
@@ -85,13 +85,13 @@ export function WeatherCard() {
                     </div>
                 </div>
 
-                <div className="flex items-center gap-3 rounded-lg bg-gray-50 p-4">
+                <div className="flex min-w-[150px] flex-1 items-center gap-3 rounded-lg bg-gray-50 p-4">
                     <div className="rounded-lg bg-blue-100 p-3 text-blue-600">
                         <Sun className="h-6 w-6" />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                         <p className="text-sm text-gray-600">UV Index</p>
-                        <p className="text-xl font-bold text-gray-900">Moderate</p>
+                        <p className="text-2xl font-bold text-gray-900 whitespace-nowrap">Moderate</p>
                     </div>
                 </div>
             </div>
