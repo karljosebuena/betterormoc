@@ -63,7 +63,7 @@ export function Header() {
     return (
         <>
             <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
-            <header className="sticky top-0 z-50 border-b border-gray-200 bg-white shadow-sm">
+            <header className="sticky top-0 z-9999 border-b border-gray-200 bg-white shadow-sm">
                 <div className="container">
                     <div className="flex items-center justify-between py-4">
                         {/* Logo */}
