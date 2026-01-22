@@ -119,18 +119,6 @@ export function Header() {
                             ))}
                         </nav>
 
-                        {/* Search Button */}
-                        <button
-                            onClick={() => setSearchOpen(true)}
-                            className="hidden items-center gap-2 rounded-md border border-gray-300 px-3 py-1.5 text-sm text-gray-600 transition-colors hover:bg-gray-50 lg:flex"
-                        >
-                            <Search className="h-4 w-4" />
-                            <span>Search</span>
-                            <kbd className="ml-2 rounded bg-gray-100 px-1.5 py-0.5 text-xs text-gray-500">
-                                ⌘K
-                            </kbd>
-                        </button>
-
                         {/* Language Selector */}
                         <div className="hidden items-center gap-2 lg:flex">
                             <button className="rounded-md px-3 py-1.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100">
