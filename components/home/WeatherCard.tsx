@@ -64,8 +64,8 @@ export function WeatherCard() {
             </div>
 
             {/* Weather details grid */}
-            <div className="flex flex-wrap gap-4 p-6">
-                <div className="flex min-w-[150px] flex-1 items-center gap-3 rounded-lg bg-gray-50 p-4">
+            <div className="grid gap-4 p-6 sm:grid-cols-3">
+                <div className="flex items-center gap-3 rounded-lg bg-gray-50 p-4">
                     <div className="rounded-lg bg-blue-100 p-3 text-blue-600">
                         <Droplets className="h-6 w-6" />
                     </div>
@@ -75,23 +75,23 @@ export function WeatherCard() {
                     </div>
                 </div>
 
-                <div className="flex min-w-[150px] flex-1 items-center gap-3 rounded-lg bg-gray-50 p-4">
+                <div className="flex items-center gap-3 rounded-lg bg-gray-50 p-4">
                     <div className="rounded-lg bg-blue-100 p-3 text-blue-600">
                         <Wind className="h-6 w-6" />
                     </div>
                     <div>
                         <p className="text-sm text-gray-600">Wind Speed</p>
-                        <p className="text-2xl font-bold text-gray-900">{weather.windSpeed} km/h</p>
+                        <p className="text-2xl font-bold text-gray-900">{weather.windSpeed}km/h</p>
                     </div>
                 </div>
 
-                <div className="flex min-w-[150px] flex-1 items-center gap-3 rounded-lg bg-gray-50 p-4">
+                <div className="flex items-center gap-3 rounded-lg bg-gray-50 p-4">
                     <div className="rounded-lg bg-blue-100 p-3 text-blue-600">
                         <Sun className="h-6 w-6" />
                     </div>
-                    <div className="min-w-0">
+                    <div>
                         <p className="text-sm text-gray-600">UV Index</p>
-                        <p className="text-2xl font-bold text-gray-900 whitespace-nowrap">Moderate</p>
+                        <p className="text-xl font-bold text-gray-900">Moderate</p>
                     </div>
                 </div>
             </div>
