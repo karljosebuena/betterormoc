@@ -4,7 +4,7 @@ import { use } from 'react'
 import { useServices } from '@/lib/hooks/use-data'
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import { Clock, DollarSign, Building2, FileText, ArrowLeft } from 'lucide-react'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { notFound } from 'next/navigation'
 
 export default function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
