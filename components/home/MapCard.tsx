@@ -1,39 +1,54 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { MapPin } from 'lucide-react'
 
-// Fix for default marker icon in Next.js
-delete (L.Icon.Default.prototype as any)._getIconUrl
-L.Icon.Default.mergeOptions({
-    iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
-    iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-})
-
 export function MapCard() {
-    const mapRef = useRef<L.Map | null>(null)
+    const mapRef = useRef<any>(null)
     const containerRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
         if (!containerRef.current || mapRef.current) return
 
-        // Initialize map centered on Ormoc City Hall
-        const map = L.map(containerRef.current).setView([11.0132, 124.6052], 13)
+        const initMap = async () => {
+            try {
+                const L = (await import('leaflet')).default
 
-        // Add OpenStreetMap tiles
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-            maxZoom: 19,
-        }).addTo(map)
+                // Fix for default marker icon in Next.js
+                // Check if icon is already fixed to avoid errors on re-renders/HMR
+                if (!(L.Icon.Default.prototype as any)._fixed) {
+                    delete (L.Icon.Default.prototype as any)._getIconUrl
+                    L.Icon.Default.mergeOptions({
+                        iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+                        iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+                        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+                    })
+                        ; (L.Icon.Default.prototype as any)._fixed = true
+                }
 
-        // Add marker for Ormoc City Hall
-        const marker = L.marker([11.0132, 124.6052]).addTo(map)
-        marker.bindPopup('<b>Ormoc City Hall</b><br>Real Street, Ormoc City').openPopup()
+                if (!containerRef.current) return
 
-        mapRef.current = map
+                // Initialize map centered on Ormoc City Hall
+                const map = L.map(containerRef.current).setView([11.0132, 124.6052], 13)
+
+                // Add OpenStreetMap tiles
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                    maxZoom: 19,
+                }).addTo(map)
+
+                // Add marker for Ormoc City Hall
+                const marker = L.marker([11.0132, 124.6052]).addTo(map)
+                marker.bindPopup('<b>Ormoc City Hall</b><br>Real Street, Ormoc City').openPopup()
+
+                mapRef.current = map
+            } catch (error) {
+                console.error('Error loading Leaflet:', error)
+            }
+        }
+
+        initMap()
 
         // Cleanup
         return () => {

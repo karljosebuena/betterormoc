@@ -1,13 +1,15 @@
-import { HeroSection } from '@/components/home/HeroSection'
-import { ServicesGrid } from '@/components/home/ServicesGrid'
-import { StatsSection } from '@/components/home/StatsSection'
-import { OnlineServicesSection } from '@/components/home/OnlineServicesSection'
-import { LeadershipSection } from '@/components/home/LeadershipSection'
-import { WeatherMap } from '@/components/home/WeatherMap'
-import { HistorySection } from '@/components/home/HistorySection'
-import { NewsSection } from '@/components/home/NewsSection'
+import dynamic from 'next/dynamic'
 import { generateMetadata as generateSEOMetadata, type Locale } from '@/lib/metadata'
 import { getTranslations } from 'next-intl/server'
+import { HeroSection } from '@/components/home/HeroSection'
+
+const ServicesGrid = dynamic(() => import('@/components/home/ServicesGrid').then((mod) => mod.ServicesGrid))
+const StatsSection = dynamic(() => import('@/components/home/StatsSection').then((mod) => mod.StatsSection))
+const OnlineServicesSection = dynamic(() => import('@/components/home/OnlineServicesSection').then((mod) => mod.OnlineServicesSection))
+const LeadershipSection = dynamic(() => import('@/components/home/LeadershipSection').then((mod) => mod.LeadershipSection))
+const WeatherMap = dynamic(() => import('@/components/home/WeatherMap').then((mod) => mod.WeatherMap))
+const HistorySection = dynamic(() => import('@/components/home/HistorySection').then((mod) => mod.HistorySection))
+const NewsSection = dynamic(() => import('@/components/home/NewsSection').then((mod) => mod.NewsSection))
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params
