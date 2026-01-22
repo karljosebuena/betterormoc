@@ -16,8 +16,8 @@ export const ormocLocations: Location[] = [
     id: 'city-hall',
     name: 'Ormoc City Hall',
     type: 'government',
-    coordinates: [11.0059, 124.6074],
-    address: 'Real St, Ormoc City, Leyte 6541',
+    coordinates: [11.013031, 124.60476], // Verified coordinates from maptons.com
+    address: 'Anubing St., Brgy. Cogon, Ormoc City, Leyte 6541',
     description: 'Main government office of Ormoc City',
     services: [
       "Mayor's Office",
@@ -35,7 +35,7 @@ export const ormocLocations: Location[] = [
     id: 'local-civil-registrar',
     name: 'Local Civil Registrar Office',
     type: 'service-center',
-    coordinates: [11.0065, 124.608],
+    coordinates: [11.0132, 124.6048], // Near City Hall
     address: 'City Hall Complex, Ormoc City',
     description: 'Civil registration services - birth, marriage, death certificates',
     services: [
@@ -52,8 +52,8 @@ export const ormocLocations: Location[] = [
     id: 'city-health-office',
     name: 'City Health Office',
     type: 'health',
-    coordinates: [11.0055, 124.607],
-    address: 'Ormoc City, Leyte',
+    coordinates: [11.01381, 124.60383], // Verified coordinates from mapcarta.com
+    address: 'Anubing Street, Ormoc City, Leyte',
     description: 'Primary healthcare services and health programs',
     services: [
       'Medical Consultations',
@@ -69,7 +69,7 @@ export const ormocLocations: Location[] = [
     id: 'ormoc-city-police',
     name: 'Ormoc City Police Station',
     type: 'police',
-    coordinates: [11.0063, 124.6065],
+    coordinates: [11.0065, 124.6075], // Estimated near city center
     address: 'Ormoc City, Leyte',
     description: 'Main police station for Ormoc City',
     services: [
@@ -85,7 +85,7 @@ export const ormocLocations: Location[] = [
     id: 'ormoc-fire-station',
     name: 'Ormoc City Fire Station',
     type: 'fire',
-    coordinates: [11.0068, 124.6058],
+    coordinates: [11.0058, 124.6068], // Estimated near city center
     address: 'Ormoc City, Leyte',
     description: 'Fire protection and emergency services',
     services: [

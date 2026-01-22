@@ -26,6 +26,7 @@ const LocationMap = dynamic(
 export default function GovernmentPage() {
     const { data: officials, isLoading } = useOfficials()
     const [selectedLocation, setSelectedLocation] = useState<string | null>(null)
+    const [showLabels, setShowLabels] = useState(true)
 
     return (
         <div className="min-h-screen bg-gray-50">
@@ -42,11 +43,22 @@ export default function GovernmentPage() {
             {/* Office Locations Map */}
             <div className="border-b border-gray-200 bg-white py-12">
                 <div className="container">
-                    <div className="mb-8">
-                        <h2 className="mb-2 text-3xl font-bold text-gray-900">Office Locations</h2>
-                        <p className="text-gray-600">
-                            Find government offices and service centers across Ormoc City
-                        </p>
+                    <div className="mb-8 flex items-center justify-between">
+                        <div>
+                            <h2 className="mb-2 text-3xl font-bold text-gray-900">Office Locations</h2>
+                            <p className="text-gray-600">
+                                Find government offices and service centers across Ormoc City
+                            </p>
+                        </div>
+
+                        {/* Label Toggle Button */}
+                        <button
+                            onClick={() => setShowLabels(!showLabels)}
+                            className="flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50"
+                        >
+                            <MapPin className="h-4 w-4" />
+                            {showLabels ? 'Hide Labels' : 'Show Labels'}
+                        </button>
                     </div>
 
                     <div className="grid gap-6 lg:grid-cols-3">
@@ -56,6 +68,7 @@ export default function GovernmentPage() {
                                 locations={ormocLocations}
                                 height="600px"
                                 selectedLocation={selectedLocation}
+                                showLabels={showLabels}
                             />
                         </div>
 

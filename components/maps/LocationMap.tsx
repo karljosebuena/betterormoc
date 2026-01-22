@@ -23,6 +23,8 @@ interface LocationMapProps {
     zoom?: number
     height?: string
     selectedLocation?: string | null
+    showLabels?: boolean
+    onToggleLabels?: (show: boolean) => void
 }
 
 function MapController({ center, zoom }: { center: [number, number]; zoom: number }) {
@@ -37,10 +39,11 @@ function MapController({ center, zoom }: { center: [number, number]; zoom: numbe
 
 export function LocationMap({
     locations,
-    center = [11.0059, 124.6074],
+    center = [11.013031, 124.60476], // Updated to exact City Hall coordinates
     zoom = 14,
     height = '500px',
     selectedLocation = null,
+    showLabels = true,
 }: LocationMapProps) {
     useEffect(() => {
         fixLeafletIcons()
@@ -72,24 +75,40 @@ export function LocationMap({
             {locations.map((location) => {
                 const isSelected = location.id === selectedLocation
 
-                // Create custom colored icon
+                // Create custom colored icon with optional label
                 const customIcon = L.divIcon({
-                    className: 'custom-marker',
+                    className: 'custom-marker-container',
                     html: `
-            <div style="
-              background-color: ${locationTypeColors[location.type]};
-              width: 30px;
-              height: 30px;
-              border-radius: 50% 50% 50% 0;
-              transform: rotate(-45deg);
-              border: 3px solid white;
-              box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-              ${isSelected ? 'transform: rotate(-45deg) scale(1.2);' : ''}
-            "></div>
+            <div style="position: relative; display: flex; flex-direction: column; align-items: center;">
+              ${showLabels ? `
+                <div style="
+                  background-color: white;
+                  padding: 4px 8px;
+                  border-radius: 4px;
+                  font-size: 11px;
+                  font-weight: 600;
+                  color: #1f2937;
+                  white-space: nowrap;
+                  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+                  margin-bottom: 4px;
+                  border: 1px solid ${locationTypeColors[location.type]};
+                ">${location.name}</div>
+              ` : ''}
+              <div style="
+                background-color: ${locationTypeColors[location.type]};
+                width: 30px;
+                height: 30px;
+                border-radius: 50% 50% 50% 0;
+                transform: rotate(-45deg);
+                border: 3px solid white;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+                ${isSelected ? 'transform: rotate(-45deg) scale(1.2);' : ''}
+              "></div>
+            </div>
           `,
                     iconSize: [30, 30],
-                    iconAnchor: [15, 30],
-                    popupAnchor: [0, -30],
+                    iconAnchor: [15, showLabels ? 50 : 30],
+                    popupAnchor: [0, showLabels ? -50 : -30],
                 })
 
                 return (
