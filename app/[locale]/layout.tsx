@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import '../globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
@@ -106,6 +107,11 @@ export default async function LocaleLayout({
                     <Toaster position="top-right" richColors />
                 </NextIntlClientProvider>
             </body>
+            {/* Chart.js for statistics and budget visualizations */}
+            <Script
+                src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"
+                strategy="beforeInteractive"
+            />
         </html>
     )
 }
