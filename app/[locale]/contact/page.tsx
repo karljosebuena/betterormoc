@@ -79,17 +79,68 @@ export default function ContactPage() {
                                 <div className="rounded-lg bg-blue-100 p-3 text-blue-900">
                                     <Phone className="h-6 w-6" />
                                 </div>
-                                <div>
-                                    <h3 className="mb-1 font-semibold text-gray-900">Phone</h3>
-                                    <p className="text-sm text-gray-600">
-                                        <a href="tel:0927-400-8033" className="hover:text-blue-900">
-                                            0927-400-8033
-                                        </a>
-                                        <br />
-                                        <a href="tel:0916-284-0885" className="hover:text-blue-900">
-                                            0916-284-0885
-                                        </a>
-                                    </p>
+                                <div className="w-full">
+                                    <h3 className="mb-2 font-semibold text-gray-900">Main Office</h3>
+                                    <div className="space-y-1 text-sm text-gray-600">
+                                        <p>
+                                            <a href="tel:+63535608140" className="hover:text-blue-900">
+                                                GLOBE: (053) 560-8140
+                                            </a>
+                                        </p>
+                                        <p>
+                                            <a href="tel:+63538328888" className="hover:text-blue-900">
+                                                PLDT: (053) 832-8888
+                                            </a>
+                                        </p>
+                                        <p>
+                                            <a href="tel:+63532557395" className="hover:text-blue-900">
+                                                ORTELCO: (053) 255-7395
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="rounded-lg border border-red-200 bg-red-50 p-6 shadow-sm">
+                            <div className="mb-4 flex items-start gap-3">
+                                <div className="rounded-lg bg-red-100 p-3 text-red-900">
+                                    <Phone className="h-6 w-6" />
+                                </div>
+                                <div className="w-full">
+                                    <h3 className="mb-2 font-semibold text-red-900">Emergency Hotlines</h3>
+                                    <div className="space-y-2 text-sm text-gray-700">
+                                        <div>
+                                            <p className="font-medium text-red-900">RESCUE</p>
+                                            <p>
+                                                <a href="tel:09055705865" className="hover:text-red-900">0905 570 5865</a>
+                                                {' • '}
+                                                <a href="tel:09216714443" className="hover:text-red-900">0921 671 4443</a>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p className="font-medium text-red-900">DRRM OPCEN</p>
+                                            <p>
+                                                <a href="tel:09982412991" className="hover:text-red-900">0998 241 2991</a>
+                                                {' • '}
+                                                <a href="tel:09774593460" className="hover:text-red-900">0977 459 3460</a>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p className="font-medium text-red-900">RAPID RESCUE</p>
+                                            <p>
+                                                <a href="tel:09475071433" className="hover:text-red-900">0947 507 1433</a>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p className="font-medium text-red-900">Bureau of Fire Protection</p>
+                                            <p>
+                                                <a href="tel:09151700910" className="hover:text-red-900">0915 170 0910</a>
+                                                {' • '}
+                                                <a href="tel:09072726943" className="hover:text-red-900">0907 272 6943</a>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
