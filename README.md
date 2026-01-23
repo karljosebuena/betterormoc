@@ -17,6 +17,14 @@ A modern civic-tech platform providing transparent access to municipal services,
 - **Deployment**: Vercel
 - **CI/CD**: GitHub Actions
 
+## ✨ Key Features
+
+- **Split-Screen Hero**: Modern, responsive entry point with quick access to services.
+- **Autocomplete Search**: Instant results for municipal services and pages.
+- **Real-Time Data**: Live weather updates (Open-Meteo) and currency rates.
+- **Interactive Map**: Client-side optimized Leaflet map for location context.
+- **Performance First**: Lazy loading for heavy components to ensure fast initial paint.
+
 ## 📋 Prerequisites
 
 - Node.js 20+
@@ -82,8 +90,9 @@ betterormoc-ts/
 │   ├── page.tsx           # Homepage
 │   └── globals.css        # Global styles
 ├── components/            # React components
-│   ├── ui/               # Shadcn UI components
-│   └── layout/           # Layout components
+│   ├── home/             # Homepage components (Hero, Stats, Map, etc.)
+│   ├── layout/           # Shared layout components (Header, Footer, Bars)
+│   └── ui/               # Shadcn UI components
 ├── lib/                   # Utility functions
 │   ├── utils.ts          # Helper functions
 │   └── supabase/         # Supabase client
@@ -96,8 +105,8 @@ betterormoc-ts/
 ## 🎨 Design System
 
 Based on BetterSolano.org with:
-- Primary Color: `#1a5f2a` (Green)
-- Secondary Color: `#0032a0` (Blue)
+- Primary Color: `#1e3a8a` (Blue-900) - Used for primary actions and branding
+- Secondary Color: `#1a5f2a` (Green-800) - Used for accents and nature-related elements
 - Font: Inter (Google Fonts)
 
 ## 🤝 Contributing
