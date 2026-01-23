@@ -9,11 +9,16 @@ export function MapCard() {
     const containerRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
-        if (!containerRef.current || mapRef.current) return
+        if (!containerRef.current) return
+
+        let isMounted = true
 
         const initMap = async () => {
             try {
                 const L = (await import('leaflet')).default
+
+                // Prevent race condition if component unmounted during import
+                if (!isMounted) return
 
                 // Fix for default marker icon in Next.js
                 // Check if icon is already fixed to avoid errors on re-renders/HMR
@@ -28,6 +33,9 @@ export function MapCard() {
                 }
 
                 if (!containerRef.current) return
+
+                // Double check if map is already initialized
+                if (mapRef.current) return
 
                 // Initialize map centered on Ormoc City Hall
                 const map = L.map(containerRef.current).setView([11.0132, 124.6052], 13)
@@ -48,10 +56,13 @@ export function MapCard() {
             }
         }
 
-        initMap()
+        if (!mapRef.current) {
+            initMap()
+        }
 
         // Cleanup
         return () => {
+            isMounted = false
             if (mapRef.current) {
                 mapRef.current.remove()
                 mapRef.current = null
