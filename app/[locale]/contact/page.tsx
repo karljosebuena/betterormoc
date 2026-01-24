@@ -139,7 +139,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:border-blue-200 hover:shadow-md">
               <div className="mb-4 flex items-start gap-3">
                 <div className="rounded-lg bg-blue-100 p-3 text-blue-900">
                   <MapPin className="h-6 w-6" />
@@ -157,7 +157,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:border-blue-200 hover:shadow-md">
               <div className="mb-4 flex items-start gap-3">
                 <div className="rounded-lg bg-blue-100 p-3 text-blue-900">
                   <Phone className="h-6 w-6" />
@@ -196,7 +196,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:border-blue-200 hover:shadow-md">
               <div className="mb-4 flex items-start gap-3">
                 <div className="rounded-lg bg-blue-100 p-3 text-blue-900">
                   <Mail className="h-6 w-6" />
@@ -215,7 +215,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:border-blue-200 hover:shadow-md">
               <div className="mb-4 flex items-start gap-3">
                 <div className="rounded-lg bg-blue-100 p-3 text-blue-900">
                   <Clock className="h-6 w-6" />

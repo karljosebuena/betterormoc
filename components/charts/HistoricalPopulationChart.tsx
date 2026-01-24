@@ -48,10 +48,12 @@ export function HistoricalPopulationChart({
               fill: true,
               tension: 0.4,
               pointRadius: 4,
-              pointHoverRadius: 6,
+              pointHoverRadius: 8,
               pointBackgroundColor: 'rgb(59, 130, 246)',
               pointBorderColor: '#fff',
               pointBorderWidth: 2,
+              pointHoverBackgroundColor: 'rgb(37, 99, 235)',
+              pointHoverBorderWidth: 3,
             },
           ],
         },
@@ -87,6 +89,14 @@ export function HistoricalPopulationChart({
                 display: false,
               },
             },
+          },
+          animation: {
+            duration: 1500,
+            easing: 'easeInOutQuart',
+          },
+          interaction: {
+            intersect: false,
+            mode: 'index',
           },
         },
       })

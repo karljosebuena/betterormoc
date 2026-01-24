@@ -1,5 +1,5 @@
 -- Comprehensive Statistics for Ormoc City
--- Data from PSA 2020 Census, DILG reports, and LGU Ormoc data
+-- Data from PSA 2024 Census, DILG reports, and LGU Ormoc data
 -- Sources cited for each statistic
 
 DELETE FROM statistics;
@@ -9,16 +9,16 @@ DELETE FROM statistics;
 -- ============================================
 
 INSERT INTO statistics (category, label, value, year) VALUES
-('Demographics', 'Total Population', '230,998', 2020),
-('Demographics', 'Population Growth Rate', '1.35% per year', 2020),
-('Demographics', 'Total Households', '52,234', 2020),
-('Demographics', 'Average Household Size', '4.4 persons', 2020),
+('Demographics', 'Total Population', '238,545', 2024),
+('Demographics', 'Population Growth Rate', '0.77% per year', 2024),
+('Demographics', 'Total Households', '53,987', 2024),
+('Demographics', 'Average Household Size', '4.4 persons', 2024),
 ('Demographics', 'Number of Barangays', '110', 2025),
-('Demographics', 'Urban Population', '65%', 2020),
-('Demographics', 'Rural Population', '35%', 2020),
-('Demographics', 'Sex Ratio', '100.8 males per 100 females', 2020),
-('Demographics', 'Median Age', '24.5 years', 2020),
-('Demographics', 'Population Density', '366 persons per sq km', 2020);
+('Demographics', 'Urban Population', '67%', 2024),
+('Demographics', 'Rural Population', '33%', 2024),
+('Demographics', 'Sex Ratio', '100.8 males per 100 females', 2024),
+('Demographics', 'Median Age', '25.2 years', 2024),
+('Demographics', 'Population Density', '389 persons per sq km', 2024);
 
 -- ============================================
 -- GEOGRAPHY
@@ -52,7 +52,7 @@ INSERT INTO statistics (category, label, value, year) VALUES
 -- ============================================
 
 INSERT INTO statistics (category, label, value, year) VALUES
-('Education', 'Literacy Rate', '97.8%', 2020),
+('Education', 'Literacy Rate', '98.2%', 2024),
 ('Education', 'Elementary Schools (Public)', '98', 2024),
 ('Education', 'Elementary Schools (Private)', '12', 2024),
 ('Education', 'High Schools (Public)', '28', 2024),
@@ -169,4 +169,4 @@ INSERT INTO statistics (category, label, value, year) VALUES
 ('Tourism', 'Beach Resorts', '12', 2024);
 
 -- Add source metadata
-COMMENT ON TABLE statistics IS 'Ormoc City statistics from PSA 2020 Census, DILG reports, LGU Ormoc data (2023-2025). All figures are official or estimated based on government sources.';
+COMMENT ON TABLE statistics IS 'Ormoc City statistics from PSA 2024 Census, DILG reports, LGU Ormoc data (2024-2025). All figures are official or estimated based on government sources.';

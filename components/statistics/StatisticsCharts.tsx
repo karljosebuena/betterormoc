@@ -147,58 +147,58 @@ export function StatisticsCharts({ statistics }: StatisticsChartsProps) {
     <div className="space-y-12">
       {/* Quick Stats */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="rounded-lg border border-blue-200 bg-gradient-to-br from-blue-50 to-blue-100 p-6">
+        <div className="rounded-lg border border-blue-200 bg-gradient-to-br from-blue-50 to-blue-100 p-6 transition-all duration-300 hover:scale-[1.02] hover:border-blue-300 hover:shadow-lg">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-blue-600">
+              <p className="text-sm font-medium text-blue-600 transition-colors duration-300 group-hover:text-blue-700">
                 Total Population
               </p>
-              <p className="mt-2 text-3xl font-bold text-blue-900">
+              <p className="mt-2 text-3xl font-bold text-blue-900 transition-transform duration-300 group-hover:scale-105">
                 {statistics.find((s) => s.label === 'Total Population')
                   ?.value || '230,998'}
               </p>
             </div>
-            <Users className="h-12 w-12 text-blue-600 opacity-50" />
+            <Users className="h-12 w-12 text-blue-600 opacity-50 transition-all duration-300 group-hover:scale-110 group-hover:opacity-70" />
           </div>
         </div>
-        <div className="rounded-lg border border-green-200 bg-gradient-to-br from-green-50 to-green-100 p-6">
+        <div className="group rounded-lg border border-green-200 bg-gradient-to-br from-green-50 to-green-100 p-6 transition-all duration-300 hover:scale-[1.02] hover:border-green-300 hover:shadow-lg">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-green-600">
+              <p className="text-sm font-medium text-green-600 transition-colors duration-300 group-hover:text-green-700">
                 Total Households
               </p>
-              <p className="mt-2 text-3xl font-bold text-green-900">
+              <p className="mt-2 text-3xl font-bold text-green-900 transition-transform duration-300 group-hover:scale-105">
                 {statistics.find((s) => s.label === 'Total Households')
                   ?.value || '56,048'}
               </p>
             </div>
-            <BarChart3 className="h-12 w-12 text-green-600 opacity-50" />
+            <BarChart3 className="h-12 w-12 text-green-600 opacity-50 transition-all duration-300 group-hover:scale-110 group-hover:opacity-70" />
           </div>
         </div>
-        <div className="rounded-lg border border-purple-200 bg-gradient-to-br from-purple-50 to-purple-100 p-6">
+        <div className="group rounded-lg border border-purple-200 bg-gradient-to-br from-purple-50 to-purple-100 p-6 transition-all duration-300 hover:scale-[1.02] hover:border-purple-300 hover:shadow-lg">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-purple-600">
+              <p className="text-sm font-medium text-purple-600 transition-colors duration-300 group-hover:text-purple-700">
                 Registered Businesses
               </p>
-              <p className="mt-2 text-3xl font-bold text-purple-900">
+              <p className="mt-2 text-3xl font-bold text-purple-900 transition-transform duration-300 group-hover:scale-105">
                 {officialBusinessCount}
               </p>
             </div>
-            <TrendingUp className="h-12 w-12 text-purple-600 opacity-50" />
+            <TrendingUp className="h-12 w-12 text-purple-600 opacity-50 transition-all duration-300 group-hover:scale-110 group-hover:opacity-70" />
           </div>
         </div>
-        <div className="rounded-lg border border-indigo-200 bg-gradient-to-br from-indigo-50 to-indigo-100 p-6">
+        <div className="group rounded-lg border border-indigo-200 bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 transition-all duration-300 hover:scale-[1.02] hover:border-indigo-300 hover:shadow-lg">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-indigo-600">
+              <p className="text-sm font-medium text-indigo-600 transition-colors duration-300 group-hover:text-indigo-700">
                 Total Schools
               </p>
-              <p className="mt-2 text-3xl font-bold text-indigo-900">
+              <p className="mt-2 text-3xl font-bold text-indigo-900 transition-transform duration-300 group-hover:scale-105">
                 {totalSchools > 0 ? totalSchools.toLocaleString() : '134'}
               </p>
             </div>
-            <PieChart className="h-12 w-12 text-indigo-600 opacity-50" />
+            <PieChart className="h-12 w-12 text-indigo-600 opacity-50 transition-all duration-300 group-hover:scale-110 group-hover:opacity-70" />
           </div>
         </div>
       </div>
@@ -234,7 +234,7 @@ export function StatisticsCharts({ statistics }: StatisticsChartsProps) {
           </div>
           <BarangayPopulationChart data={barangayChartData} />
           <div className="mt-4 text-center text-sm text-gray-500">
-            Source: PSA 2020 Census
+            Source: PSA 2024 Census
           </div>
         </div>
       )}
