@@ -53,6 +53,8 @@ export function BarangayPopulationChart({
               backgroundColor: colors,
               borderColor: colors.map((c) => c.replace('0.8', '1')),
               borderWidth: 1,
+              hoverBackgroundColor: colors.map((c) => c.replace('0.8', '0.9')),
+              hoverBorderWidth: 2,
             },
           ],
         },
@@ -89,6 +91,21 @@ export function BarangayPopulationChart({
                 display: false,
               },
             },
+          },
+          animation: {
+            duration: 1500,
+            easing: 'easeOutQuart',
+            delay: (context: any) => {
+              let delay = 0;
+              if (context.type === 'data' && context.mode === 'default') {
+                delay = context.dataIndex * 50;
+              }
+              return delay;
+            },
+          },
+          interaction: {
+            intersect: false,
+            mode: 'index',
           },
         },
       })

@@ -109,6 +109,12 @@ export function SectorPieChart({
               },
             },
           },
+          animation: {
+            animateRotate: true,
+            animateScale: true,
+            duration: 1500,
+            easing: 'easeInOutQuart',
+          },
         },
       })
     }
