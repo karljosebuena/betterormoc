@@ -30,6 +30,9 @@ CREATE POLICY "Allow public read access on barangay_officials"
     FOR SELECT
     USING (true);
 
+-- Drop existing trigger if it exists (for idempotent migrations)
+DROP TRIGGER IF EXISTS update_barangay_officials_updated_at ON barangay_officials;
+
 -- Add trigger for updated_at
 CREATE TRIGGER update_barangay_officials_updated_at
     BEFORE UPDATE ON barangay_officials
