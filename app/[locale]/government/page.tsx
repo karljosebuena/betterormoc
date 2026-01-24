@@ -3,6 +3,7 @@
 import { useOfficials } from '@/lib/hooks/use-data'
 import Image from 'next/image'
 import { Mail, Phone, Building2, MapPin } from 'lucide-react'
+import { Link } from '@/i18n/navigation'
 import dynamic from 'next/dynamic'
 import { useState } from 'react'
 import { ormocLocations } from '@/lib/data/locations'
