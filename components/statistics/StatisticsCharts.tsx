@@ -107,7 +107,7 @@ export function StatisticsCharts({ statistics }: StatisticsChartsProps) {
       label: 'Barangay Health Stations',
       value: parseInt(
         statistics.find((s) => s.label === 'Barangay Health Stations')?.value ||
-          '0'
+        '0'
       ),
     },
   ].filter((h) => h.value > 0)
@@ -234,7 +234,7 @@ export function StatisticsCharts({ statistics }: StatisticsChartsProps) {
           </div>
           <BarangayPopulationChart data={barangayChartData} />
           <div className="mt-4 text-center text-sm text-gray-500">
-            Source: PSA 2020 Census
+            Source: PSA 2024 Census
           </div>
         </div>
       )}
@@ -244,59 +244,59 @@ export function StatisticsCharts({ statistics }: StatisticsChartsProps) {
         hasAgricultureData ||
         hasEducationData ||
         hasHealthData) && (
-        <div className="rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900">
-              Sector Distributions
-            </h2>
-            <p className="mt-1 text-gray-600">
-              Breakdown of key sectors in Ormoc City
-            </p>
+          <div className="rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-gray-900">
+                Sector Distributions
+              </h2>
+              <p className="mt-1 text-gray-600">
+                Breakdown of key sectors in Ormoc City
+              </p>
+            </div>
+            <div className="grid gap-8 md:grid-cols-2">
+              {hasEconomyData && (
+                <SectorPieChart
+                  title="Economy: Business Types"
+                  data={economyChartData}
+                />
+              )}
+              {hasAgricultureData && (
+                <SectorPieChart
+                  title="Agriculture: Crop Production"
+                  data={agricultureChartData}
+                  colors={[
+                    'rgba(245, 158, 11, 0.8)',
+                    'rgba(251, 146, 60, 0.8)',
+                    'rgba(253, 186, 116, 0.8)',
+                    'rgba(254, 215, 170, 0.8)',
+                  ]}
+                />
+              )}
+              {hasEducationData && (
+                <SectorPieChart
+                  title="Education: Student Distribution"
+                  data={educationChartData}
+                  colors={[
+                    'rgba(99, 102, 241, 0.8)',
+                    'rgba(129, 140, 248, 0.8)',
+                    'rgba(165, 180, 252, 0.8)',
+                  ]}
+                />
+              )}
+              {hasHealthData && (
+                <SectorPieChart
+                  title="Health: Facility Distribution"
+                  data={healthChartData}
+                  colors={[
+                    'rgba(239, 68, 68, 0.8)',
+                    'rgba(248, 113, 113, 0.8)',
+                    'rgba(252, 165, 165, 0.8)',
+                  ]}
+                />
+              )}
+            </div>
           </div>
-          <div className="grid gap-8 md:grid-cols-2">
-            {hasEconomyData && (
-              <SectorPieChart
-                title="Economy: Business Types"
-                data={economyChartData}
-              />
-            )}
-            {hasAgricultureData && (
-              <SectorPieChart
-                title="Agriculture: Crop Production"
-                data={agricultureChartData}
-                colors={[
-                  'rgba(245, 158, 11, 0.8)',
-                  'rgba(251, 146, 60, 0.8)',
-                  'rgba(253, 186, 116, 0.8)',
-                  'rgba(254, 215, 170, 0.8)',
-                ]}
-              />
-            )}
-            {hasEducationData && (
-              <SectorPieChart
-                title="Education: Student Distribution"
-                data={educationChartData}
-                colors={[
-                  'rgba(99, 102, 241, 0.8)',
-                  'rgba(129, 140, 248, 0.8)',
-                  'rgba(165, 180, 252, 0.8)',
-                ]}
-              />
-            )}
-            {hasHealthData && (
-              <SectorPieChart
-                title="Health: Facility Distribution"
-                data={healthChartData}
-                colors={[
-                  'rgba(239, 68, 68, 0.8)',
-                  'rgba(248, 113, 113, 0.8)',
-                  'rgba(252, 165, 165, 0.8)',
-                ]}
-              />
-            )}
-          </div>
-        </div>
-      )}
+        )}
     </div>
   )
 }

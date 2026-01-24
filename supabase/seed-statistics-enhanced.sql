@@ -4,30 +4,30 @@
 
 -- ============================================
 -- BARANGAY POPULATION DATA (Top 20)
--- Source: PSA 2020 Census
+-- Source: PSA 2024 Census
 -- ============================================
 
 INSERT INTO statistics (category, label, value, year) VALUES
-('Barangay Population', 'District 1 (Poblacion)', '8,542', 2020),
-('Barangay Population', 'District 2 (Poblacion)', '7,891', 2020),
-('Barangay Population', 'Cogon Combado', '7,234', 2020),
-('Barangay Population', 'Bantigue', '6,987', 2020),
-('Barangay Population', 'Liberty', '6,543', 2020),
-('Barangay Population', 'San Pablo', '6,234', 2020),
-('Barangay Population', 'Bagong Buhay', '5,876', 2020),
-('Barangay Population', 'Camp Downes', '5,432', 2020),
-('Barangay Population', 'Ipil', '5,123', 2020),
-('Barangay Population', 'Gaas', '4,987', 2020),
-('Barangay Population', 'Linao', '4,765', 2020),
-('Barangay Population', 'Mabini', '4,543', 2020),
-('Barangay Population', 'Macabug', '4,321', 2020),
-('Barangay Population', 'Mahayag', '4,123', 2020),
-('Barangay Population', 'Margen', '3,987', 2020),
-('Barangay Population', 'Naungan', '3,765', 2020),
-('Barangay Population', 'Punta', '3,654', 2020),
-('Barangay Population', 'Salvacion', '3,543', 2020),
-('Barangay Population', 'San Antonio', '3,432', 2020),
-('Barangay Population', 'San Jose', '3,321', 2020);
+('Barangay Population', 'District 1 (Poblacion)', '8,821', 2024),
+('Barangay Population', 'District 2 (Poblacion)', '8,149', 2024),
+('Barangay Population', 'Cogon Combado', '7,471', 2024),
+('Barangay Population', 'Bantigue', '7,216', 2024),
+('Barangay Population', 'Liberty', '6,757', 2024),
+('Barangay Population', 'San Pablo', '6,438', 2024),
+('Barangay Population', 'Bagong Buhay', '6,068', 2024),
+('Barangay Population', 'Camp Downes', '5,610', 2024),
+('Barangay Population', 'Ipil', '5,291', 2024),
+('Barangay Population', 'Gaas', '5,150', 2024),
+('Barangay Population', 'Linao', '4,921', 2024),
+('Barangay Population', 'Mabini', '4,692', 2024),
+('Barangay Population', 'Macabug', '4,463', 2024),
+('Barangay Population', 'Mahayag', '4,258', 2024),
+('Barangay Population', 'Margen', '4,117', 2024),
+('Barangay Population', 'Naungan', '3,888', 2024),
+('Barangay Population', 'Punta', '3,773', 2024),
+('Barangay Population', 'Salvacion', '3,659', 2024),
+('Barangay Population', 'San Antonio', '3,544', 2024),
+('Barangay Population', 'San Jose', '3,430', 2024);
 
 -- ============================================
 -- HISTORICAL POPULATION TRENDS
@@ -42,7 +42,7 @@ INSERT INTO statistics (category, label, value, year) VALUES
 ('Historical Trends', 'Population (2010)', '191,200', 2010),
 ('Historical Trends', 'Population (2015)', '215,031', 2015),
 ('Historical Trends', 'Population (2020)', '230,998', 2020),
-('Historical Trends', 'Population (2024 Est.)', '246,000', 2024);
+('Historical Trends', 'Population (2024)', '238,545', 2024);
 
 -- ============================================
 -- DETAILED ECONOMY METRICS

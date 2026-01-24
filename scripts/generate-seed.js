@@ -207,8 +207,8 @@ sql += `
 
 INSERT INTO statistics (id, category, label, value, year, created_at, updated_at)
 VALUES 
-(1, 'population', 'Total Population', '230,998', 2020, NOW(), NOW()),
-(2, 'population', 'Households', '52,140', 2020, NOW(), NOW()),
+(1, 'population', 'Total Population', '238,545', 2024, NOW(), NOW()),
+(2, 'population', 'Households', '53,987', 2024, NOW(), NOW()),
 (3, 'economy', 'GDP Growth', '6.2%', 2023, NOW(), NOW()),
 (4, 'economy', 'Employment Rate', '94.5%', 2023, NOW(), NOW()),
 (5, 'services', 'Barangays', '110', 2024, NOW(), NOW()),
