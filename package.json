@@ -12,7 +12,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "db:seed": "supabase db push --db-url \"$SUPABASE_DB_URL\" --include-seed",
-    "db:seed-file": "psql \"$SUPABASE_DB_URL\" -f supabase/seed-all-data.sql",
+    "db:seed-production": "psql \"$SUPABASE_DB_URL\" -f supabase/seed-production.sql",
     "db:reset": "supabase db reset --db-url \"$SUPABASE_DB_URL\"",
     "db:push": "supabase db push --db-url \"$SUPABASE_DB_URL\""
   },

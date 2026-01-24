@@ -21,11 +21,11 @@ if [ -z "$SUPABASE_DB_URL" ]; then
 fi
 
 echo "✅ SUPABASE_DB_URL is set"
-echo "📂 Running seed file: supabase/seed-all-data.sql"
+echo "📂 Running production seed file: supabase/seed-production.sql"
 echo ""
 
 # Run the seed file
-psql "$SUPABASE_DB_URL" -f supabase/seed-all-data.sql
+psql "$SUPABASE_DB_URL" -f supabase/seed-production.sql
 
 echo ""
 echo "✅ Database seeding complete!"
