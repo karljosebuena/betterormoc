@@ -97,11 +97,10 @@ function ServicesPageContent() {
               <button
                 key={category}
                 onClick={() => handleCategoryChange(category)}
-                className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
-                  selectedCategory === category
-                    ? 'bg-blue-900 text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
+                className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 ${selectedCategory === category
+                    ? 'bg-blue-900 text-white scale-105 shadow-md'
+                    : 'bg-white text-gray-700 hover:bg-gray-100 hover:scale-105 hover:shadow-sm'
+                  }`}
               >
                 {category === 'all' ? 'All Services' : category}
               </button>
