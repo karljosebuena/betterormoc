@@ -75,6 +75,68 @@ export default function GovernmentPage() {
         </div>
       </div>
 
+      {/* Quick Navigation */}
+      <div className="border-b border-gray-200 bg-white py-8">
+        <div className="container">
+          <div className="grid gap-4 sm:grid-cols-2">
+            <Link
+              href="/government/officials"
+              className="group flex items-center gap-4 rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:border-blue-300"
+            >
+              <div className="rounded-lg bg-blue-100 p-4 transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-600">
+                <Building2 className="h-8 w-8 text-blue-900 transition-colors duration-300 group-hover:text-white" />
+              </div>
+              <div className="flex-1">
+                <h3 className="mb-1 text-lg font-bold text-gray-900">City Officials</h3>
+                <p className="text-sm text-gray-600">
+                  Mayor, Vice Mayor & Sangguniang Panlungsod
+                </p>
+              </div>
+              <svg
+                className="h-6 w-6 text-gray-400 transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </Link>
+            <Link
+              href="/government/barangays"
+              className="group flex items-center gap-4 rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:border-green-300"
+            >
+              <div className="rounded-lg bg-green-100 p-4 transition-all duration-300 group-hover:scale-110 group-hover:bg-green-600">
+                <MapPin className="h-8 w-8 text-green-900 transition-colors duration-300 group-hover:text-white" />
+              </div>
+              <div className="flex-1">
+                <h3 className="mb-1 text-lg font-bold text-gray-900">Barangay Captains</h3>
+                <p className="text-sm text-gray-600">
+                  110 Barangays serving Ormoc communities
+                </p>
+              </div>
+              <svg
+                className="h-6 w-6 text-gray-400 transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </div>
+
       {/* Office Locations Map */}
       <div className="border-b border-gray-200 bg-white py-12">
         <div className="container">
