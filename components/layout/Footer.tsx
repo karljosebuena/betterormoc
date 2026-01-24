@@ -40,7 +40,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <div className="mb-4 flex items-center gap-3">
               <Image
-                src="/official_seal.webp"
+                src="/icon.png"
                 alt="Ormoc City Official Seal"
                 width={40}
                 height={40}

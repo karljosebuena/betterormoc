@@ -15,7 +15,7 @@ const faqs: FAQItem[] = [
     category: 'General',
     question: 'What is BetterOrmoc.org?',
     answer:
-      'BetterOrmoc.org is the official transparency portal of the City Government of Ormoc. It provides easy access to government services, public records, and information about city programs and initiatives.',
+      'BetterOrmoc.org is the NOT an official transparency portal of the City Government of Ormoc. It provides easy access to government services, public records, and information about city programs and initiatives.',
   },
   {
     category: 'General',
