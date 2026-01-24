@@ -13,24 +13,22 @@ TRUNCATE TABLE barangay_officials CASCADE;
 -- NOTE: All names are placeholders pending official verification from DILG
 -- TODO: Update with real data from https://dilg.gov.ph/barangay-officials-directory/search
 
--- Insert Barangay Captains for all 110 barangays
--- Using existing table structure: barangay_name, captain_name, district, population
+-- Insert placeholder barangay captains
+-- This migration doesn't depend on the barangays table existing
+-- The actual barangay names and data will be populated when seed-production.sql runs
+
+-- For now, just create a simple placeholder structure
+-- When barangays table exists, this can be updated via another migration or seed file
+
 INSERT INTO barangay_officials (barangay_name, captain_name, district, population, contact_number, email)
-SELECT 
-  b.name as barangay_name,
-  'Hon. [Captain Name - ' || b.name || ']' as captain_name,
-  b.district,
-  b.population_2024,
-  NULL as contact_number,
-  NULL as email
-FROM barangays b
-ORDER BY b.name
-ON CONFLICT (barangay_name) DO UPDATE
-SET 
-  captain_name = EXCLUDED.captain_name,
-  district = EXCLUDED.district,
-  population = EXCLUDED.population,
-  updated_at = NOW();
+VALUES
+  ('Placeholder Barangay 1', 'Hon. [Captain Name - Pending]', 1, 0, NULL, NULL),
+  ('Placeholder Barangay 2', 'Hon. [Captain Name - Pending]', 1, 0, NULL, NULL),
+  ('Placeholder Barangay 3', 'Hon. [Captain Name - Pending]', 1, 0, NULL, NULL)
+ON CONFLICT (barangay_name) DO NOTHING;
+
+-- NOTE: The full 110 barangay captains will be populated by seed-production.sql
+-- which runs after migrations and has access to the barangays table data
 
 -- Add table comment
 COMMENT ON TABLE barangay_officials IS 'Barangay captains for all 110 barangays in Ormoc City. Data pending verification from DILG Barangay Officials Directory.';
