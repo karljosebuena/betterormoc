@@ -142,7 +142,7 @@ export default function GovernmentPage() {
                 {officials?.slice(0, 2).map((official) => (
                   <div
                     key={official.id}
-                    className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-md"
+                    className="group overflow-hidden rounded-lg border border-gray-200 bg-white shadow-md transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:border-blue-300"
                   >
                     <div className="aspect-square bg-gradient-to-br from-blue-100 to-blue-200">
                       {official.photo_url ? (
@@ -212,7 +212,7 @@ export default function GovernmentPage() {
                   {officials.slice(2).map((official) => (
                     <div
                       key={official.id}
-                      className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md"
+                      className="group overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:border-blue-200"
                     >
                       <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200">
                         {official.photo_url ? (
@@ -278,7 +278,7 @@ export default function GovernmentPage() {
                 <p className="text-sm text-yellow-800">
                   <strong className="font-semibold">Note:</strong> Barangay
                   captain names are placeholders pending official verification.
-                  Population data is from PSA 2020 Census.
+                  Population data is from PSA 2024 Census.
                 </p>
               </div>
             </div>
