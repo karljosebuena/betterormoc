@@ -31,30 +31,37 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
     const router = useRouter()
     const inputRef = useRef<HTMLInputElement>(null)
 
-    // Reset query when dialog closes
+    // Reset query when dialog closes and focus input when it opens
     useEffect(() => {
-        if (!open) {
-            setQuery('')
-            setSelectedIndex(0)
-        } else {
+        if (open) {
             // Focus input when dialog opens
             setTimeout(() => inputRef.current?.focus(), 100)
         }
     }, [open])
 
-    // Reset selected index when results change
-    useEffect(() => {
+    // Reset state when dialog closes (using callback pattern)
+    const handleClose = () => {
+        setQuery('')
         setSelectedIndex(0)
-    }, [results])
+        onOpenChange(false)
+    }
+
+    // Reset selected index when results change
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    useEffect(() => {
+        if (results.length > 0) {
+            setSelectedIndex(0)
+        }
+    }, [results.length])
 
     const handleSelect = (url: string) => {
         router.push(url)
-        onOpenChange(false)
+        handleClose()
     }
 
     const handleKeyDown = (e: React.KeyboardEvent) => {
         if (e.key === 'Escape') {
-            onOpenChange(false)
+            handleClose()
         } else if (e.key === 'ArrowDown') {
             e.preventDefault()
             setSelectedIndex((prev) => Math.min(prev + 1, results.length - 1))
@@ -72,7 +79,7 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
     return (
         <div
             className="fixed inset-0 z-50 bg-black/50"
-            onClick={() => onOpenChange(false)}
+            onClick={handleClose}
         >
             <div className="container flex min-h-screen items-start justify-center pt-[20vh]">
                 <div
@@ -169,7 +176,7 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
                                 <button
                                     onClick={() => {
                                         router.push(`/search?q=${encodeURIComponent(query)}`)
-                                        onOpenChange(false)
+                                        handleClose()
                                     }}
                                     className="w-full rounded-md bg-blue-900 px-4 py-2 text-sm font-medium text-white hover:bg-blue-800"
                                 >

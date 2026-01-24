@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { Search, ArrowRight, X, FileText } from 'lucide-react'
+import { ArrowRight, X, FileText } from 'lucide-react'
 import { useRouter } from '@/i18n/navigation'
 import { useSearch } from '@/lib/hooks/use-search'
 import { Link } from '@/i18n/navigation'
@@ -13,7 +13,6 @@ interface SearchAutocompleteProps {
 
 export function SearchAutocomplete({ placeholder, popularServices }: SearchAutocompleteProps) {
     const [query, setQuery] = useState('')
-    const [isOpen, setIsOpen] = useState(false)
     const [selectedIndex, setSelectedIndex] = useState(0)
     const { results, totalResults } = useSearch(query)
     const router = useRouter()
@@ -24,31 +23,27 @@ export function SearchAutocomplete({ placeholder, popularServices }: SearchAutoc
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
             if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
-                setIsOpen(false)
+                inputRef.current?.blur()
             }
         }
         document.addEventListener('mousedown', handleClickOutside)
         return () => document.removeEventListener('mousedown', handleClickOutside)
     }, [])
 
-    // Reset selected index when results change
-    useEffect(() => {
-        setSelectedIndex(0)
-    }, [results])
+    // Derive isOpen from query length instead of using effect
+    const shouldShowDropdown = query.length > 0
 
-    // Show dropdown when typing
+    // Reset selected index when results change
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     useEffect(() => {
-        if (query.length > 0) {
-            setIsOpen(true)
-        } else {
-            setIsOpen(false)
+        if (results.length > 0) {
+            setSelectedIndex(0)
         }
-    }, [query])
+    }, [results.length])
 
     const handleSelect = (url: string) => {
         router.push(url)
         setQuery('')
-        setIsOpen(false)
     }
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -59,14 +54,12 @@ export function SearchAutocomplete({ placeholder, popularServices }: SearchAutoc
             } else {
                 router.push(`/services?q=${encodeURIComponent(query.trim())}`)
                 setQuery('')
-                setIsOpen(false)
             }
         }
     }
 
     const handleKeyDown = (e: React.KeyboardEvent) => {
         if (e.key === 'Escape') {
-            setIsOpen(false)
             inputRef.current?.blur()
         } else if (e.key === 'ArrowDown') {
             e.preventDefault()
@@ -104,7 +97,7 @@ export function SearchAutocomplete({ placeholder, popularServices }: SearchAutoc
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                         onKeyDown={handleKeyDown}
-                        onFocus={() => query.length > 0 && setIsOpen(true)}
+                        onFocus={() => query.length > 0 && inputRef.current?.focus()}
                         placeholder={placeholder || 'e.g., birth certificate, business permit'}
                         className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 pr-12 text-gray-900 placeholder-gray-500 transition-colors focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                         aria-label="Search services"
@@ -113,10 +106,7 @@ export function SearchAutocomplete({ placeholder, popularServices }: SearchAutoc
                     {query && (
                         <button
                             type="button"
-                            onClick={() => {
-                                setQuery('')
-                                setIsOpen(false)
-                            }}
+                            onClick={() => setQuery('')}
                             className="absolute right-12 top-1/2 -translate-y-1/2 rounded-md p-1 text-gray-400 hover:bg-gray-100"
                         >
                             <X className="h-4 w-4" />
@@ -133,7 +123,7 @@ export function SearchAutocomplete({ placeholder, popularServices }: SearchAutoc
             </form>
 
             {/* Autocomplete Dropdown */}
-            {isOpen && query.length > 0 && (
+            {shouldShowDropdown && (
                 <div className="absolute z-[100] mt-1 w-full rounded-lg border border-gray-200 bg-white shadow-2xl">
                     <div className="max-h-[400px] overflow-y-auto p-2">
                         {displayResults.length === 0 ? (
@@ -178,7 +168,6 @@ export function SearchAutocomplete({ placeholder, popularServices }: SearchAutoc
                                             onClick={() => {
                                                 router.push(`/services?q=${encodeURIComponent(query)}`)
                                                 setQuery('')
-                                                setIsOpen(false)
                                             }}
                                             className="w-full rounded-md bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-200"
                                         >
@@ -199,7 +188,7 @@ export function SearchAutocomplete({ placeholder, popularServices }: SearchAutoc
 
             {/* Popular Services - Always render to prevent height change */}
             {popularServices && popularServices.length > 0 && (
-                <div className={`mt-4 flex flex-wrap items-center gap-2 ${isOpen ? 'invisible' : 'visible'}`}>
+                <div className={`mt-4 flex flex-wrap items-center gap-2 ${shouldShowDropdown ? 'invisible' : 'visible'}`}>
                     <span className="text-sm font-medium text-gray-700">Popular:</span>
                     {popularServices.map((service) => (
                         <Link

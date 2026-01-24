@@ -1,7 +1,7 @@
 'use client'
 
 import { Link } from '@/i18n/navigation'
-import { ExternalLink, CreditCard, FileText, Briefcase, ArrowRight } from 'lucide-react'
+import { ExternalLink, CreditCard, FileText, Briefcase } from 'lucide-react'
 
 const onlineServices = [
     {

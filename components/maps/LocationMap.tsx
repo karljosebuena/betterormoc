@@ -8,7 +8,7 @@ import 'leaflet/dist/leaflet.css'
 
 // Fix for default marker icons in Next.js
 const fixLeafletIcons = () => {
-    // @ts-ignore
+    // @ts-expect-error - Leaflet icon URL needs to be deleted for custom icons to work
     delete L.Icon.Default.prototype._getIconUrl
     L.Icon.Default.mergeOptions({
         iconRetinaUrl: '/leaflet/marker-icon-2x.png',

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Calendar, FileText, TrendingUp, ExternalLink } from 'lucide-react'
+import { Calendar, TrendingUp, ExternalLink } from 'lucide-react'
 
 interface NewsItem {
     title: string
