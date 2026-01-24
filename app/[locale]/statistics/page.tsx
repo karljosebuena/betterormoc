@@ -23,6 +23,7 @@ import {
   Camera,
 } from 'lucide-react'
 import { StatisticsCharts } from '@/components/statistics/StatisticsCharts'
+import PopulationTrends from '@/components/statistics/PopulationTrends'
 
 interface Statistic {
   id: number
@@ -251,6 +252,9 @@ export default function StatisticsPage() {
       </div>
 
       <div className="container py-12">
+        {/* Population Trends */}
+        <PopulationTrends />
+
         {/* Charts Section */}
         <div className="mb-12">
           <StatisticsCharts statistics={statistics} />
@@ -266,11 +270,10 @@ export default function StatisticsPage() {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
-                  selectedCategory === category
-                    ? 'bg-blue-900 text-white'
-                    : 'border border-gray-200 bg-white text-gray-700 hover:bg-gray-100'
-                }`}
+                className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${selectedCategory === category
+                  ? 'bg-blue-900 text-white'
+                  : 'border border-gray-200 bg-white text-gray-700 hover:bg-gray-100'
+                  }`}
               >
                 {category === 'all' ? 'All Categories' : category}
               </button>
