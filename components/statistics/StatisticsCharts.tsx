@@ -107,7 +107,7 @@ export function StatisticsCharts({ statistics }: StatisticsChartsProps) {
       label: 'Barangay Health Stations',
       value: parseInt(
         statistics.find((s) => s.label === 'Barangay Health Stations')?.value ||
-        '0'
+          '0'
       ),
     },
   ].filter((h) => h.value > 0)
@@ -147,7 +147,7 @@ export function StatisticsCharts({ statistics }: StatisticsChartsProps) {
     <div className="space-y-12">
       {/* Quick Stats */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="rounded-lg border border-blue-200 bg-gradient-to-br from-blue-50 to-blue-100 p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:border-blue-300">
+        <div className="rounded-lg border border-blue-200 bg-gradient-to-br from-blue-50 to-blue-100 p-6 transition-all duration-300 hover:scale-[1.02] hover:border-blue-300 hover:shadow-lg">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-blue-600 transition-colors duration-300 group-hover:text-blue-700">
@@ -161,7 +161,7 @@ export function StatisticsCharts({ statistics }: StatisticsChartsProps) {
             <Users className="h-12 w-12 text-blue-600 opacity-50 transition-all duration-300 group-hover:scale-110 group-hover:opacity-70" />
           </div>
         </div>
-        <div className="group rounded-lg border border-green-200 bg-gradient-to-br from-green-50 to-green-100 p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:border-green-300">
+        <div className="group rounded-lg border border-green-200 bg-gradient-to-br from-green-50 to-green-100 p-6 transition-all duration-300 hover:scale-[1.02] hover:border-green-300 hover:shadow-lg">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-green-600 transition-colors duration-300 group-hover:text-green-700">
@@ -175,7 +175,7 @@ export function StatisticsCharts({ statistics }: StatisticsChartsProps) {
             <BarChart3 className="h-12 w-12 text-green-600 opacity-50 transition-all duration-300 group-hover:scale-110 group-hover:opacity-70" />
           </div>
         </div>
-        <div className="group rounded-lg border border-purple-200 bg-gradient-to-br from-purple-50 to-purple-100 p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:border-purple-300">
+        <div className="group rounded-lg border border-purple-200 bg-gradient-to-br from-purple-50 to-purple-100 p-6 transition-all duration-300 hover:scale-[1.02] hover:border-purple-300 hover:shadow-lg">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-purple-600 transition-colors duration-300 group-hover:text-purple-700">
@@ -188,7 +188,7 @@ export function StatisticsCharts({ statistics }: StatisticsChartsProps) {
             <TrendingUp className="h-12 w-12 text-purple-600 opacity-50 transition-all duration-300 group-hover:scale-110 group-hover:opacity-70" />
           </div>
         </div>
-        <div className="group rounded-lg border border-indigo-200 bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:border-indigo-300">
+        <div className="group rounded-lg border border-indigo-200 bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 transition-all duration-300 hover:scale-[1.02] hover:border-indigo-300 hover:shadow-lg">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-indigo-600 transition-colors duration-300 group-hover:text-indigo-700">
@@ -244,59 +244,59 @@ export function StatisticsCharts({ statistics }: StatisticsChartsProps) {
         hasAgricultureData ||
         hasEducationData ||
         hasHealthData) && (
-          <div className="rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
-            <div className="mb-8">
-              <h2 className="text-2xl font-bold text-gray-900">
-                Sector Distributions
-              </h2>
-              <p className="mt-1 text-gray-600">
-                Breakdown of key sectors in Ormoc City
-              </p>
-            </div>
-            <div className="grid gap-8 md:grid-cols-2">
-              {hasEconomyData && (
-                <SectorPieChart
-                  title="Economy: Business Types"
-                  data={economyChartData}
-                />
-              )}
-              {hasAgricultureData && (
-                <SectorPieChart
-                  title="Agriculture: Crop Production"
-                  data={agricultureChartData}
-                  colors={[
-                    'rgba(245, 158, 11, 0.8)',
-                    'rgba(251, 146, 60, 0.8)',
-                    'rgba(253, 186, 116, 0.8)',
-                    'rgba(254, 215, 170, 0.8)',
-                  ]}
-                />
-              )}
-              {hasEducationData && (
-                <SectorPieChart
-                  title="Education: Student Distribution"
-                  data={educationChartData}
-                  colors={[
-                    'rgba(99, 102, 241, 0.8)',
-                    'rgba(129, 140, 248, 0.8)',
-                    'rgba(165, 180, 252, 0.8)',
-                  ]}
-                />
-              )}
-              {hasHealthData && (
-                <SectorPieChart
-                  title="Health: Facility Distribution"
-                  data={healthChartData}
-                  colors={[
-                    'rgba(239, 68, 68, 0.8)',
-                    'rgba(248, 113, 113, 0.8)',
-                    'rgba(252, 165, 165, 0.8)',
-                  ]}
-                />
-              )}
-            </div>
+        <div className="rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900">
+              Sector Distributions
+            </h2>
+            <p className="mt-1 text-gray-600">
+              Breakdown of key sectors in Ormoc City
+            </p>
           </div>
-        )}
+          <div className="grid gap-8 md:grid-cols-2">
+            {hasEconomyData && (
+              <SectorPieChart
+                title="Economy: Business Types"
+                data={economyChartData}
+              />
+            )}
+            {hasAgricultureData && (
+              <SectorPieChart
+                title="Agriculture: Crop Production"
+                data={agricultureChartData}
+                colors={[
+                  'rgba(245, 158, 11, 0.8)',
+                  'rgba(251, 146, 60, 0.8)',
+                  'rgba(253, 186, 116, 0.8)',
+                  'rgba(254, 215, 170, 0.8)',
+                ]}
+              />
+            )}
+            {hasEducationData && (
+              <SectorPieChart
+                title="Education: Student Distribution"
+                data={educationChartData}
+                colors={[
+                  'rgba(99, 102, 241, 0.8)',
+                  'rgba(129, 140, 248, 0.8)',
+                  'rgba(165, 180, 252, 0.8)',
+                ]}
+              />
+            )}
+            {hasHealthData && (
+              <SectorPieChart
+                title="Health: Facility Distribution"
+                data={healthChartData}
+                colors={[
+                  'rgba(239, 68, 68, 0.8)',
+                  'rgba(248, 113, 113, 0.8)',
+                  'rgba(252, 165, 165, 0.8)',
+                ]}
+              />
+            )}
+          </div>
+        </div>
+      )}
     </div>
   )
 }

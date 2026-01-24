@@ -102,10 +102,11 @@ export default function OrdinancesPage() {
             <button
               key={year}
               onClick={() => setSelectedYear(year)}
-              className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 ${selectedYear === year
-                  ? 'bg-blue-900 text-white scale-105 shadow-md'
-                  : 'bg-white text-gray-700 hover:bg-gray-100 hover:scale-105 hover:shadow-sm'
-                }`}
+              className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 ${
+                selectedYear === year
+                  ? 'scale-105 bg-blue-900 text-white shadow-md'
+                  : 'bg-white text-gray-700 hover:scale-105 hover:bg-gray-100 hover:shadow-sm'
+              }`}
             >
               {year === 'all' ? 'All Years' : year}
             </button>
@@ -129,7 +130,7 @@ export default function OrdinancesPage() {
             {filteredOrdinances.map((ordinance) => (
               <div
                 key={ordinance.id}
-                className="group rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:scale-[1.01] hover:shadow-lg hover:border-blue-200"
+                className="group rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:scale-[1.01] hover:border-blue-200 hover:shadow-lg"
               >
                 <div className="mb-4 flex items-start justify-between">
                   <div className="flex items-center gap-3">

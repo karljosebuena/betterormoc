@@ -96,11 +96,11 @@ export function BarangayPopulationChart({
             duration: 1500,
             easing: 'easeOutQuart',
             delay: (context: any) => {
-              let delay = 0;
+              let delay = 0
               if (context.type === 'data' && context.mode === 'default') {
-                delay = context.dataIndex * 50;
+                delay = context.dataIndex * 50
               }
-              return delay;
+              return delay
             },
           },
           interaction: {

@@ -60,7 +60,7 @@ export function StatsSection() {
                 href="/statistics"
                 className="group rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:border-blue-900 hover:shadow-lg"
               >
-                <div className="mb-4 inline-flex rounded-lg bg-blue-50 p-3 text-blue-900 transition-all duration-300 group-hover:bg-blue-900 group-hover:text-white group-hover:scale-110">
+                <div className="mb-4 inline-flex rounded-lg bg-blue-50 p-3 text-blue-900 transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-900 group-hover:text-white">
                   <Icon className="h-6 w-6" />
                 </div>
                 <div className="text-3xl font-bold text-gray-900 transition-transform duration-300 group-hover:scale-105">

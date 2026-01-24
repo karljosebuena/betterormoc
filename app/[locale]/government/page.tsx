@@ -82,13 +82,15 @@ export default function GovernmentPage() {
           <div className="grid gap-4 sm:grid-cols-2">
             <Link
               href="/government/officials"
-              className="group flex items-center gap-4 rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:border-blue-300"
+              className="group flex items-center gap-4 rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:scale-[1.02] hover:border-blue-300 hover:shadow-lg"
             >
               <div className="rounded-lg bg-blue-100 p-4 transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-600">
                 <Building2 className="h-8 w-8 text-blue-900 transition-colors duration-300 group-hover:text-white" />
               </div>
               <div className="flex-1">
-                <h3 className="mb-1 text-lg font-bold text-gray-900">City Officials</h3>
+                <h3 className="mb-1 text-lg font-bold text-gray-900">
+                  City Officials
+                </h3>
                 <p className="text-sm text-gray-600">
                   Mayor, Vice Mayor & Sangguniang Panlungsod
                 </p>
@@ -109,13 +111,15 @@ export default function GovernmentPage() {
             </Link>
             <Link
               href="/government/barangays"
-              className="group flex items-center gap-4 rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:border-green-300"
+              className="group flex items-center gap-4 rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:scale-[1.02] hover:border-green-300 hover:shadow-lg"
             >
               <div className="rounded-lg bg-green-100 p-4 transition-all duration-300 group-hover:scale-110 group-hover:bg-green-600">
                 <MapPin className="h-8 w-8 text-green-900 transition-colors duration-300 group-hover:text-white" />
               </div>
               <div className="flex-1">
-                <h3 className="mb-1 text-lg font-bold text-gray-900">Barangay Captains</h3>
+                <h3 className="mb-1 text-lg font-bold text-gray-900">
+                  Barangay Captains
+                </h3>
                 <p className="text-sm text-gray-600">
                   110 Barangays serving Ormoc communities
                 </p>

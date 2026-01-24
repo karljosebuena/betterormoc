@@ -190,7 +190,7 @@ export default function BudgetPage() {
           {/* Budget Highlights */}
           {overview && (
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              <div className="group rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:border-blue-300">
+              <div className="group rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:scale-[1.02] hover:border-blue-300 hover:shadow-lg">
                 <div className="mb-4 inline-flex rounded-lg bg-blue-100 p-3 text-blue-600 transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white">
                   <DollarSign className="h-6 w-6" />
                 </div>
@@ -202,7 +202,7 @@ export default function BudgetPage() {
                 </div>
               </div>
 
-              <div className="group rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:border-green-300">
+              <div className="group rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:scale-[1.02] hover:border-green-300 hover:shadow-lg">
                 <div className="mb-4 inline-flex rounded-lg bg-green-100 p-3 text-green-600 transition-all duration-300 group-hover:scale-110 group-hover:bg-green-600 group-hover:text-white">
                   <TrendingUp className="h-6 w-6" />
                 </div>
@@ -212,7 +212,7 @@ export default function BudgetPage() {
                 <div className="mt-2 text-sm text-gray-600">Total Revenue</div>
               </div>
 
-              <div className="group rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:border-purple-300">
+              <div className="group rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:scale-[1.02] hover:border-purple-300 hover:shadow-lg">
                 <div className="mb-4 inline-flex rounded-lg bg-purple-100 p-3 text-purple-600 transition-all duration-300 group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white">
                   <Heart className="h-6 w-6" />
                 </div>
@@ -224,7 +224,7 @@ export default function BudgetPage() {
                 </div>
               </div>
 
-              <div className="group rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:border-orange-300">
+              <div className="group rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:scale-[1.02] hover:border-orange-300 hover:shadow-lg">
                 <div className="mb-4 inline-flex rounded-lg bg-orange-100 p-3 text-orange-600 transition-all duration-300 group-hover:scale-110 group-hover:bg-orange-600 group-hover:text-white">
                   <Building2 className="h-6 w-6" />
                 </div>
@@ -325,7 +325,7 @@ export default function BudgetPage() {
                 {projects.slice(0, 10).map((project, index) => (
                   <div
                     key={index}
-                    className="flex items-center justify-between rounded-lg border border-gray-200 p-4 transition-all duration-300 hover:scale-[1.01] hover:shadow-md hover:border-blue-200"
+                    className="flex items-center justify-between rounded-lg border border-gray-200 p-4 transition-all duration-300 hover:scale-[1.01] hover:border-blue-200 hover:shadow-md"
                   >
                     <div className="flex-1">
                       <p className="font-medium text-gray-900">

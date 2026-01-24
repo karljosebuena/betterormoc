@@ -3,15 +3,18 @@
 ## 📁 Production Seed File
 
 ### `seed-production.sql` ⭐
+
 **THE ONLY FILE YOU NEED FOR PRODUCTION DATABASE RESETS**
 
 This master file contains ALL latest data:
+
 - ✅ **150+ Statistics** (PSA 2024 Census)
 - ✅ **Complete 2025 Budget** (₱4.5 Billion)
 - ✅ **Officials** (Mayor, Vice Mayor)
 - ✅ **All Categories**: Demographics, Economy, Education, Health, Infrastructure, etc.
 
 **Usage**:
+
 ```bash
 # Method 1: npm script (recommended)
 npm run db:seed-production
@@ -28,6 +31,7 @@ psql "$SUPABASE_DB_URL" -f supabase/seed-production.sql
 ## 📂 Other Files (Keep for Reference)
 
 ### Active Seed Files
+
 - `seed-statistics-ormoc.sql` - Statistics only (for partial updates)
 - `seed-all-data.sql` - Legacy comprehensive seed (deprecated, use seed-production.sql)
 - `seed-budget-2025.sql` - Budget data only
@@ -37,6 +41,7 @@ psql "$SUPABASE_DB_URL" -f supabase/seed-production.sql
 - `seed.sql` - Generated seed file (from scripts/generate-seed.js)
 
 ### Configuration
+
 - `config.toml` - Supabase local configuration
 - `migrations/` - Database schema migrations
 
@@ -57,6 +62,7 @@ psql "$SUPABASE_DB_URL" -f supabase/seed-production.sql
    ```
 
 ### Verify
+
 - Visit `/statistics` - Should show **238,545** population
 - Check data source says **"PSA 2024 Census"**
 - Budget page shows **₱4.5 Billion** for 2025
@@ -66,6 +72,7 @@ psql "$SUPABASE_DB_URL" -f supabase/seed-production.sql
 ## 📊 What's Included in seed-production.sql
 
 ### Statistics (150+ data points)
+
 - Demographics (Population: 238,545)
 - Geography (Land Area: 613.60 km²)
 - Economy (8,500+ businesses)
@@ -81,12 +88,14 @@ psql "$SUPABASE_DB_URL" -f supabase/seed-production.sql
 - Historical Trends (1990-2024)
 
 ### Budget 2025 (₱4.5 Billion)
+
 - Revenue Sources (11 sources)
 - Expenditure Categories (23 categories)
 - Major Projects (15 projects)
 - Budget Documents (3 documents)
 
 ### Officials
+
 - Mayor: Hon. Lucy Torres-Gomez
 - Vice Mayor: Hon. Leo Carmelo "Toto" Locsin Jr.
 
@@ -95,12 +104,14 @@ psql "$SUPABASE_DB_URL" -f supabase/seed-production.sql
 ## 🔧 Maintenance
 
 ### When to Update seed-production.sql
+
 - ✅ New census data released
 - ✅ Budget approved for new fiscal year
 - ✅ New officials elected
 - ✅ Major data corrections
 
 ### How to Update
+
 1. Edit `seed-production.sql` directly
 2. Test locally first
 3. Commit changes
