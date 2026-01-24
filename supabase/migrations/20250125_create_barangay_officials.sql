@@ -1,26 +1,8 @@
--- Migration: Create Barangay Officials Table and Seed Data
--- Description: Creates table for barangay officials (captains and kagawads) with placeholder data
+-- Migration: Seed Barangay Officials Data
+-- Description: Populates barangay_officials table with placeholder data for all 110 barangays
 -- Data Source: Pending verification from DILG Barangay Officials Directory
 -- Last Updated: 2025-01-25
-
--- Create barangay_officials table if it doesn't exist
-CREATE TABLE IF NOT EXISTS barangay_officials (
-  id SERIAL PRIMARY KEY,
-  barangay_id INTEGER NOT NULL REFERENCES barangays(id) ON DELETE CASCADE,
-  name VARCHAR(255) NOT NULL,
-  position VARCHAR(100) NOT NULL, -- 'Barangay Captain', 'Kagawad', 'SK Chairman', 'Secretary', 'Treasurer'
-  contact_number VARCHAR(50),
-  email VARCHAR(255),
-  term_start DATE DEFAULT '2023-11-30', -- Standard barangay election date
-  term_end DATE DEFAULT '2026-11-30',   -- 3-year term
-  display_order INTEGER DEFAULT 0,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
--- Create index for faster queries
-CREATE INDEX IF NOT EXISTS idx_barangay_officials_barangay ON barangay_officials(barangay_id);
-CREATE INDEX IF NOT EXISTS idx_barangay_officials_position ON barangay_officials(position);
+-- Note: Table already exists from migration 010_create_barangay_officials_table.sql
 
 -- Clear existing data
 TRUNCATE TABLE barangay_officials CASCADE;
