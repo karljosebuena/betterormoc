@@ -14,12 +14,34 @@ ALTER SEQUENCE officials_id_seq RESTART WITH 1;
 -- TODO: Update with real data from official sources
 
 -- Executive Leadership
-INSERT INTO officials (name, position, department, email, phone, photo_url, term_start, term_end, display_order) VALUES
+INSERT INTO officials (name, position, department, email, phone, photo_url, term_start, term_end, display_order, bio, achievements, education, office_hours, social_media) VALUES
 -- Mayor
-('Hon. [Mayor Name]', 'City Mayor', 'Office of the City Mayor', 'mayor@ormoc.gov.ph', '(053) 560-8140', NULL, '2025-06-30', '2028-06-30', 1),
+('Hon. Lucy Torres-Gomez', 'City Mayor', 'Office of the City Mayor', 'mayor@ormoc.gov.ph', '+63 53 561 6000', '/images/officials/mayor-lucy-torres-gomez.jpg', '2025-06-30', '2028-06-30', 1, 
+'Lucy Torres-Gomez is the City Mayor of Ormoc, re-elected in 2025 with an overwhelming 90,153 votes. A former actress and model, she has dedicated her public service career to improving the lives of Ormoc citizens through transparent governance, social programs, and infrastructure development.',
+ARRAY[
+  'Re-elected City Mayor in 2025 with 90,153 votes',
+  'Announced P4.5 billion budget for 2025 with focus on social services and infrastructure',
+  'Increased social services budget by 17.39% (P2.7 billion for 2025)',
+  'Led environmental stewardship initiatives including water quality testing laboratory accreditation',
+  'Championed healthcare improvements including plans for city-run hospital',
+  'Established free tertiary education through city college program'
+],
+ARRAY['Bachelor of Arts in Communication Arts, Ateneo de Manila University'],
+'Monday to Friday: 8:00 AM - 5:00 PM (by appointment)',
+'{"facebook": "https://www.facebook.com/lucytorresgomez", "instagram": "https://www.instagram.com/lucytgomez"}'::jsonb),
 
 -- Vice Mayor
-('Hon. [Vice Mayor Name]', 'City Vice Mayor', 'Office of the Vice Mayor', 'vicemayor@ormoc.gov.ph', '(053) 560-8140', NULL, '2025-06-30', '2028-06-30', 2);
+('Hon. Leo Carmelo "Toto" Locsin Jr.', 'City Vice Mayor', 'Office of the Vice Mayor', 'vicemayor@ormoc.gov.ph', '+63 53 561 6000', '/images/officials/vice-mayor-locsin.jpg', '2025-06-30', '2028-06-30', 2,
+'Leo Carmelo "Toto" Locsin Jr. serves as Vice Mayor of Ormoc City, elected as part of the Ormoc Development Team that swept all elective positions in the 2025 midterm elections. He presides over the Sangguniang Panlungsod and works closely with the Mayor on city development initiatives.',
+ARRAY[
+  'Elected Vice Mayor in 2025 as part of Ormoc Development Team',
+  'Presides over Sangguniang Panlungsod sessions',
+  'Supports social services and infrastructure development programs',
+  'Advocates for youth development and sports programs'
+],
+ARRAY['Bachelor of Laws, University of the Philippines'],
+'Monday to Friday: 8:00 AM - 5:00 PM (by appointment)',
+'{}'::jsonb);
 
 -- Sangguniang Panlungsod Members
 -- NOTE: Placeholder data - needs verification from official roster
