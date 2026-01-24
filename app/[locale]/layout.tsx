@@ -66,8 +66,8 @@ export const metadata: Metadata = {
         },
     },
     icons: {
-        icon: '/official_seal.webp',
-        apple: '/official_seal.webp',
+        icon: '/favicon.ico',
+        apple: '/favicon.ico',
     },
 }
 

@@ -69,8 +69,8 @@ export function Header() {
                         {/* Logo */}
                         <Link href="/" className="flex items-center gap-3">
                             <Image
-                                src="/official_seal.webp"
-                                alt="Ormoc City Official Seal"
+                                src="/betterormoc_logo.png"
+                                alt="BetterOrmoc Logo"
                                 width={40}
                                 height={40}
                                 className="h-10 w-10"
