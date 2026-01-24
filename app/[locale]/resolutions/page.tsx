@@ -102,11 +102,10 @@ export default function ResolutionsPage() {
             <button
               key={year}
               onClick={() => setSelectedYear(year)}
-              className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
-                selectedYear === year
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-white text-gray-700 hover:bg-gray-100'
-              }`}
+              className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 ${selectedYear === year
+                  ? 'bg-blue-600 text-white scale-105 shadow-md'
+                  : 'bg-white text-gray-700 hover:bg-gray-100 hover:scale-105 hover:shadow-sm'
+                }`}
             >
               {year === 'all' ? 'All Years' : year}
             </button>
@@ -130,7 +129,7 @@ export default function ResolutionsPage() {
             {filteredResolutions.map((resolution) => (
               <div
                 key={resolution.id}
-                className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+                className="group rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:scale-[1.01] hover:shadow-lg hover:border-blue-200"
               >
                 <div className="mb-4 flex items-start justify-between">
                   <div className="flex items-center gap-3">
