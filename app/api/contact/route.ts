@@ -2,7 +2,11 @@ import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { contactFormSchema } from '@/lib/schemas/contact'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+function getResendClient() {
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey) return null
+  return new Resend(apiKey)
+}
 
 // Simple in-memory rate limiting (for development)
 const rateLimitMap = new Map<string, number[]>()
@@ -12,14 +16,16 @@ const MAX_REQUESTS = 3
 function checkRateLimit(ip: string): boolean {
   const now = Date.now()
   const requests = rateLimitMap.get(ip) || []
-  
+
   // Filter out old requests
-  const recentRequests = requests.filter(time => now - time < RATE_LIMIT_WINDOW)
-  
+  const recentRequests = requests.filter(
+    (time) => now - time < RATE_LIMIT_WINDOW
+  )
+
   if (recentRequests.length >= MAX_REQUESTS) {
     return false
   }
-  
+
   recentRequests.push(now)
   rateLimitMap.set(ip, recentRequests)
   return true
@@ -27,9 +33,17 @@ function checkRateLimit(ip: string): boolean {
 
 export async function POST(request: Request) {
   try {
+    const resend = getResendClient()
+    if (!resend) {
+      return NextResponse.json(
+        { error: 'Email service is not configured.' },
+        { status: 500 }
+      )
+    }
+
     // Get IP for rate limiting
     const ip = request.headers.get('x-forwarded-for') || 'unknown'
-    
+
     // Check rate limit
     if (!checkRateLimit(ip)) {
       return NextResponse.json(
@@ -109,7 +123,7 @@ export async function POST(request: Request) {
     })
   } catch (error) {
     console.error('Contact form error:', error)
-    
+
     if (error instanceof Error && error.name === 'ZodError') {
       return NextResponse.json(
         { error: 'Invalid form data. Please check your inputs.' },
