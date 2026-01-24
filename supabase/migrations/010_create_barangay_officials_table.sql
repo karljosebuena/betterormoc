@@ -21,6 +21,9 @@ CREATE INDEX IF NOT EXISTS idx_barangay_officials_name ON barangay_officials(bar
 -- Enable RLS
 ALTER TABLE barangay_officials ENABLE ROW LEVEL SECURITY;
 
+-- Drop existing policy if it exists (for idempotent migrations)
+DROP POLICY IF EXISTS "Allow public read access on barangay_officials" ON barangay_officials;
+
 -- Create policy for public read access
 CREATE POLICY "Allow public read access on barangay_officials"
     ON barangay_officials
