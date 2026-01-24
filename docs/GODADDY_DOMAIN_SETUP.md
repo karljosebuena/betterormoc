@@ -32,9 +32,9 @@ Look for an existing **A** record with Name `@`.
 
 | Type | Name | Value | TTL |
 | :--- | :--- | :--- | :--- |
-| **A** | `@` | `76.76.21.21` | 1 Hour (or Default) |
+| **A** | `@` | `216.198.79.1` | 1 Hour (or Default) |
 
-> **Info**: `76.76.21.21` is Vercel's global Anycast IP address. It routes traffic to the nearest Vercel edge node for fastest performance.
+> **IMPORTANT**: Vercel has assigned a **specific optimized IP** for your project. Use `216.198.79.1` as shown in your dashboard, NOT the generic `76.76.21.21`.
 
 > **Note**: If there are other "A" records with the name "@" (Parked), **delete them**. You should only have one A record for "@" pointing to Vercel.
 
@@ -45,7 +45,9 @@ Look for an existing **CNAME** record with Name `www`.
 
 | Type | Name | Value | TTL |
 | :--- | :--- | :--- | :--- |
-| **CNAME** | `www` | `cname.vercel-dns.com` | 1 Hour (or Default) |
+| **CNAME** | `www` | `6229b08e9b10bfa2.vercel-dns-017.com` | 1 Hour (or Default) |
+
+> **IMPORTANT**: Use the long CNAME value (`6229b...`) provided in your dashboard, not the generic `cname.vercel-dns.com`.
 
 ---
 
