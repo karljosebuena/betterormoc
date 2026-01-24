@@ -20,6 +20,7 @@
 ✅ **Connected!** Git repository manually connected in Vercel dashboard.
 
 ### Automatic Deployments Enabled:
+
 - **Push to `main`** → Production deployment
 - **Pull Requests** → Preview deployments
 - **Commits** → Automatic builds
@@ -68,6 +69,7 @@ vercel logs
 ## GitHub Actions Integration
 
 Once Git is connected, GitHub Actions will automatically deploy:
+
 - **Pull Requests** → Preview deployments
 - **Main branch** → Production deployments
 

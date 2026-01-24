@@ -17,7 +17,7 @@ interface WeatherResponse {
 export async function GET() {
   try {
     const url = `https://api.open-meteo.com/v1/forecast?latitude=${ORMOC_LAT}&longitude=${ORMOC_LON}&current=temperature_2m&timezone=Asia/Manila`
-    
+
     const response = await fetch(url, {
       next: { revalidate: 1800 }, // Cache for 30 minutes
     })

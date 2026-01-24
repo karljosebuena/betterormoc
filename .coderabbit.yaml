@@ -1,9 +1,9 @@
 # CodeRabbit Configuration
 
-language: "en-US"
+language: 'en-US'
 early_access: false
 reviews:
-  profile: "chill"
+  profile: 'chill'
   request_changes_workflow: false
   high_level_summary: true
   poem: false
@@ -25,6 +25,6 @@ reviews:
     languagetool:
       enabled: true
       enabled_only: false
-      level: "default"
+      level: 'default'
 chat:
   auto_reply: true

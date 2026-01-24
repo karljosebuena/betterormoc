@@ -70,16 +70,16 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 📜 Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `pnpm dev` | Start development server with Turbopack |
-| `pnpm build` | Build for production |
-| `pnpm start` | Start production server |
-| `pnpm lint` | Run ESLint |
-| `pnpm lint:fix` | Fix ESLint errors |
-| `pnpm type-check` | Run TypeScript type checking |
-| `pnpm format` | Format code with Prettier |
-| `pnpm format:check` | Check code formatting |
+| Command             | Description                             |
+| ------------------- | --------------------------------------- |
+| `pnpm dev`          | Start development server with Turbopack |
+| `pnpm build`        | Build for production                    |
+| `pnpm start`        | Start production server                 |
+| `pnpm lint`         | Run ESLint                              |
+| `pnpm lint:fix`     | Fix ESLint errors                       |
+| `pnpm type-check`   | Run TypeScript type checking            |
+| `pnpm format`       | Format code with Prettier               |
+| `pnpm format:check` | Check code formatting                   |
 
 ## 🏗️ Project Structure
 
@@ -105,6 +105,7 @@ betterormoc-ts/
 ## 🎨 Design System
 
 Based on BetterSolano.org with:
+
 - Primary Color: `#1e3a8a` (Blue-900) - Used for primary actions and branding
 - Secondary Color: `#1a5f2a` (Green-800) - Used for accents and nature-related elements
 - Font: Inter (Google Fonts)

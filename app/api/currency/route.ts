@@ -14,7 +14,7 @@ interface ExchangeRateResponse {
 export async function GET() {
   try {
     const url = 'https://api.exchangerate-api.com/v4/latest/USD'
-    
+
     const response = await fetch(url, {
       next: { revalidate: 3600 }, // Cache for 1 hour
     })

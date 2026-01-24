@@ -9,198 +9,205 @@ import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 
 export function Header() {
-    const t = useTranslations('Navigation')
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-    const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
-    const [searchOpen, setSearchOpen] = useState(false)
+  const t = useTranslations('Navigation')
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [searchOpen, setSearchOpen] = useState(false)
 
-    // Global keyboard shortcut for search (Cmd+K / Ctrl+K)
-    useEffect(() => {
-        const handleKeyDown = (e: KeyboardEvent) => {
-            if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-                e.preventDefault()
-                setSearchOpen(true)
-            }
-        }
+  // Global keyboard shortcut for search (Cmd+K / Ctrl+K)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault()
+        setSearchOpen(true)
+      }
+    }
 
-        window.addEventListener('keydown', handleKeyDown)
-        return () => window.removeEventListener('keydown', handleKeyDown)
-    }, [])
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
 
-    const navigation = [
-        { name: t('home'), href: '/' },
-        {
-            name: t('services'),
-            href: '/services',
-            dropdown: [
-                { name: 'Certificates', href: '/services?category=Certificates' },
-                { name: 'Business', href: '/services?category=Business' },
-                { name: 'Tax Payments', href: '/services?category=Taxation' },
-                { name: 'Social Services', href: '/services?category=Social' },
-                { name: 'Health', href: '/services?category=Health' },
-                { name: 'Agriculture', href: '/services?category=Agriculture' },
-                { name: 'Infrastructure', href: '/services?category=Infrastructure' },
-                { name: 'Education', href: '/services?category=Education' },
-                { name: 'Public Safety', href: '/services?category=Safety' },
-                { name: 'Environment', href: '/services?category=Environment' },
-                { name: 'Online Services', href: '/services?category=Online' },
-            ],
-        },
-        { name: t('government'), href: '/government' },
-        { name: t('statistics'), href: '/statistics' },
-        {
-            name: 'Legislative',
-            href: '#',
-            dropdown: [
-                { name: t('ordinances'), href: '/ordinances' },
-                { name: t('resolutions'), href: '/resolutions' },
-            ],
-        },
-        { name: t('budget'), href: '/budget' },
-        { name: t('contact'), href: '/contact' },
-    ]
+  const navigation = [
+    { name: t('home'), href: '/' },
+    {
+      name: t('services'),
+      href: '/services',
+      dropdown: [
+        { name: 'Certificates', href: '/services?category=Certificates' },
+        { name: 'Business', href: '/services?category=Business' },
+        { name: 'Tax Payments', href: '/services?category=Taxation' },
+        { name: 'Social Services', href: '/services?category=Social' },
+        { name: 'Health', href: '/services?category=Health' },
+        { name: 'Agriculture', href: '/services?category=Agriculture' },
+        { name: 'Infrastructure', href: '/services?category=Infrastructure' },
+        { name: 'Education', href: '/services?category=Education' },
+        { name: 'Public Safety', href: '/services?category=Safety' },
+        { name: 'Environment', href: '/services?category=Environment' },
+        { name: 'Online Services', href: '/services?category=Online' },
+      ],
+    },
+    { name: t('government'), href: '/government' },
+    { name: t('statistics'), href: '/statistics' },
+    {
+      name: 'Legislative',
+      href: '#',
+      dropdown: [
+        { name: t('ordinances'), href: '/ordinances' },
+        { name: t('resolutions'), href: '/resolutions' },
+      ],
+    },
+    { name: t('budget'), href: '/budget' },
+    { name: t('contact'), href: '/contact' },
+  ]
 
-    return (
-        <>
-            <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
-            <header className="sticky top-0 z-9999 border-b border-gray-200 bg-white shadow-sm">
-                <div className="container">
-                    <div className="flex items-center justify-between py-4">
-                        {/* Logo */}
-                        <Link href="/" className="flex items-center gap-3">
-                            <Image
-                                src="/official_seal.webp"
-                                alt="Ormoc City Official Seal"
-                                width={40}
-                                height={40}
-                                className="h-10 w-10"
-                            />
-                            <div className="flex flex-col">
-                                <span className="text-lg font-bold leading-none text-gray-900">
-                                    BetterOrmoc
-                                </span>
-                                <span className="text-xs text-gray-500">XOfficial Portal</span>
-                            </div>
-                        </Link>
+  return (
+    <>
+      <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
+      <header className="sticky top-0 z-9999 border-b border-gray-200 bg-white shadow-sm">
+        <div className="container">
+          <div className="flex items-center justify-between py-4">
+            {/* Logo */}
+            <Link href="/" className="flex items-center gap-3">
+              <Image
+                src="/official_seal.webp"
+                alt="Ormoc City Official Seal"
+                width={40}
+                height={40}
+                className="h-10 w-10"
+              />
+              <div className="flex flex-col">
+                <span className="text-lg leading-none font-bold text-gray-900">
+                  BetterOrmoc
+                </span>
+                <span className="text-xs text-gray-500">XOfficial Portal</span>
+              </div>
+            </Link>
 
-                        {/* Desktop Navigation */}
-                        <nav className="hidden items-center gap-6 lg:flex">
-                            {navigation.map((item) => (
-                                <div
-                                    key={item.name}
-                                    className="relative"
-                                    onMouseEnter={() => item.dropdown && setActiveDropdown(item.name)}
-                                    onMouseLeave={() => setActiveDropdown(null)}
-                                >
-                                    {item.dropdown ? (
-                                        <>
-                                            <button className="flex items-center gap-1 text-sm font-medium text-gray-700 transition-colors hover:text-blue-900">
-                                                {item.name}
-                                                <ChevronDown className="h-4 w-4" />
-                                            </button>
-                                            {activeDropdown === item.name && (
-                                                <div className="absolute left-0 top-full pt-1 w-56">
-                                                    <div className="rounded-lg border border-gray-200 bg-white py-2 shadow-lg">
-                                                        {item.dropdown.map((subItem) => (
-                                                            <Link
-                                                                key={subItem.name}
-                                                                href={subItem.href}
-                                                                className="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-900"
-                                                            >
-                                                                {subItem.name}
-                                                            </Link>
-                                                        ))}
-                                                    </div>
-                                                </div>
-                                            )}
-                                        </>
-                                    ) : (
-                                        <Link
-                                            href={item.href}
-                                            className="text-sm font-medium text-gray-700 transition-colors hover:text-blue-900"
-                                        >
-                                            {item.name}
-                                        </Link>
-                                    )}
-                                </div>
+            {/* Desktop Navigation */}
+            <nav className="hidden items-center gap-6 lg:flex">
+              {navigation.map((item) => (
+                <div
+                  key={item.name}
+                  className="relative"
+                  onMouseEnter={() =>
+                    item.dropdown && setActiveDropdown(item.name)
+                  }
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
+                  {item.dropdown ? (
+                    <>
+                      <button className="flex items-center gap-1 text-sm font-medium text-gray-700 transition-colors hover:text-blue-900">
+                        {item.name}
+                        <ChevronDown className="h-4 w-4" />
+                      </button>
+                      {activeDropdown === item.name && (
+                        <div className="absolute top-full left-0 w-56 pt-1">
+                          <div className="rounded-lg border border-gray-200 bg-white py-2 shadow-lg">
+                            {item.dropdown.map((subItem) => (
+                              <Link
+                                key={subItem.name}
+                                href={subItem.href}
+                                className="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-900"
+                              >
+                                {subItem.name}
+                              </Link>
                             ))}
-                        </nav>
-
-                        {/* Language Selector */}
-                        <div className="hidden items-center gap-2 lg:flex">
-                            <LanguageSwitcher />
+                          </div>
                         </div>
-
-                        {/* Mobile Menu Button */}
-                        <button
-                            className="lg:hidden"
-                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        >
-                            {mobileMenuOpen ? (
-                                <X className="h-6 w-6" />
-                            ) : (
-                                <Menu className="h-6 w-6" />
-                            )}
-                        </button>
-                    </div>
-
-                    {/* Mobile Menu */}
-                    {mobileMenuOpen && (
-                        <div className="border-t border-gray-200 py-4 lg:hidden">
-                            <nav className="flex flex-col gap-4">
-                                {navigation.map((item) => (
-                                    <div key={item.name}>
-                                        {item.dropdown ? (
-                                            <>
-                                                <button
-                                                    onClick={() =>
-                                                        setActiveDropdown(activeDropdown === item.name ? null : item.name)
-                                                    }
-                                                    className="flex w-full items-center justify-between text-sm font-medium text-gray-700"
-                                                >
-                                                    {item.name}
-                                                    <ChevronDown
-                                                        className={`h-4 w-4 transition-transform ${activeDropdown === item.name ? 'rotate-180' : ''
-                                                            }`}
-                                                    />
-                                                </button>
-                                                {activeDropdown === item.name && (
-                                                    <div className="ml-4 mt-2 space-y-2">
-                                                        {item.dropdown.map((subItem) => (
-                                                            <Link
-                                                                key={subItem.name}
-                                                                href={subItem.href}
-                                                                className="block text-sm text-gray-600 hover:text-blue-900"
-                                                                onClick={() => setMobileMenuOpen(false)}
-                                                            >
-                                                                {subItem.name}
-                                                            </Link>
-                                                        ))}
-                                                    </div>
-                                                )}
-                                            </>
-                                        ) : (
-                                            <Link
-                                                href={item.href}
-                                                className="text-sm font-medium text-gray-700 transition-colors hover:text-blue-900"
-                                                onClick={() => setMobileMenuOpen(false)}
-                                            >
-                                                {item.name}
-                                            </Link>
-                                        )}
-                                    </div>
-                                ))}
-                                <div className="mt-4 pt-4 border-t border-gray-100">
-                                    <div className="flex items-center gap-2">
-                                        <span className="text-sm font-medium text-gray-700">Language:</span>
-                                        <LanguageSwitcher />
-                                    </div>
-                                </div>
-                            </nav>
-                        </div>
-                    )}
+                      )}
+                    </>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="text-sm font-medium text-gray-700 transition-colors hover:text-blue-900"
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                 </div>
-            </header>
-        </>
-    )
+              ))}
+            </nav>
+
+            {/* Language Selector */}
+            <div className="hidden items-center gap-2 lg:flex">
+              <LanguageSwitcher />
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
+
+          {/* Mobile Menu */}
+          {mobileMenuOpen && (
+            <div className="border-t border-gray-200 py-4 lg:hidden">
+              <nav className="flex flex-col gap-4">
+                {navigation.map((item) => (
+                  <div key={item.name}>
+                    {item.dropdown ? (
+                      <>
+                        <button
+                          onClick={() =>
+                            setActiveDropdown(
+                              activeDropdown === item.name ? null : item.name
+                            )
+                          }
+                          className="flex w-full items-center justify-between text-sm font-medium text-gray-700"
+                        >
+                          {item.name}
+                          <ChevronDown
+                            className={`h-4 w-4 transition-transform ${
+                              activeDropdown === item.name ? 'rotate-180' : ''
+                            }`}
+                          />
+                        </button>
+                        {activeDropdown === item.name && (
+                          <div className="mt-2 ml-4 space-y-2">
+                            {item.dropdown.map((subItem) => (
+                              <Link
+                                key={subItem.name}
+                                href={subItem.href}
+                                className="block text-sm text-gray-600 hover:text-blue-900"
+                                onClick={() => setMobileMenuOpen(false)}
+                              >
+                                {subItem.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className="text-sm font-medium text-gray-700 transition-colors hover:text-blue-900"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    )}
+                  </div>
+                ))}
+                <div className="mt-4 border-t border-gray-100 pt-4">
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-medium text-gray-700">
+                      Language:
+                    </span>
+                    <LanguageSwitcher />
+                  </div>
+                </div>
+              </nav>
+            </div>
+          )}
+        </div>
+      </header>
+    </>
+  )
 }

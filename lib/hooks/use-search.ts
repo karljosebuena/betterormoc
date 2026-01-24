@@ -67,7 +67,7 @@ export function useSearch(query: string) {
   // Perform search
   const results = useMemo(() => {
     if (!query || query.length < 2) return []
-    
+
     const fuseResults = fuse.search(query)
     return fuseResults.map((result) => result.item)
   }, [query, fuse])

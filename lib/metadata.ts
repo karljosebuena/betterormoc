@@ -2,7 +2,8 @@ import { getTranslations } from 'next-intl/server'
 
 export const siteConfig = {
   name: 'BetterOrmoc',
-  description: 'Empowering the people of Ormoc with transparent access to services, programs, and public funds of LGU Ormoc.',
+  description:
+    'Empowering the people of Ormoc with transparent access to services, programs, and public funds of LGU Ormoc.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://betterormoc.vercel.app',
   ogImage: '/og-image.png',
   links: {
@@ -40,7 +41,7 @@ export async function generateMetadata({
   noIndex = false,
 }: MetadataParams) {
   const t = await getTranslations({ locale, namespace: 'metadata' })
-  
+
   const pageTitle = title || t('defaultTitle')
   const fullTitle = `${pageTitle} | ${siteConfig.name}`
   const pageDescription = description || t('defaultDescription')
@@ -65,7 +66,8 @@ export async function generateMetadata({
     },
     openGraph: {
       type: 'website',
-      locale: locale === 'fil' ? 'fil_PH' : locale === 'ceb' ? 'ceb_PH' : 'en_PH',
+      locale:
+        locale === 'fil' ? 'fil_PH' : locale === 'ceb' ? 'ceb_PH' : 'en_PH',
       url,
       title: fullTitle,
       description: pageDescription,

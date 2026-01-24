@@ -28,6 +28,7 @@ supabase start
 ```
 
 This will start:
+
 - PostgreSQL database
 - Supabase Studio (GUI)
 - API server
@@ -78,6 +79,7 @@ supabase status
 ```
 
 Add to `.env.local`:
+
 ```env
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
@@ -128,6 +130,7 @@ supabase db reset --seed
 ## Troubleshooting
 
 ### Port conflicts
+
 ```bash
 # Stop Supabase
 supabase stop
@@ -137,11 +140,13 @@ supabase start --db-port 54323
 ```
 
 ### Reset database
+
 ```bash
 supabase db reset
 ```
 
 ### View logs
+
 ```bash
 supabase logs
 ```

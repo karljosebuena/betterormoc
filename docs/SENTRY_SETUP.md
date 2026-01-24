@@ -22,6 +22,7 @@ npx @sentry/wizard@latest -i nextjs
 ```
 
 This will create:
+
 - `sentry.client.config.ts`
 - `sentry.server.config.ts`
 - `sentry.edge.config.ts`
@@ -38,7 +39,7 @@ This will create:
 To test Sentry integration, you can trigger a test error:
 
 ```typescript
-throw new Error('Sentry test error');
+throw new Error('Sentry test error')
 ```
 
 Check your Sentry dashboard to see if the error was captured.

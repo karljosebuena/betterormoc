@@ -15,109 +15,114 @@ import { notFound } from 'next/navigation'
 import { locales } from '@/i18n/request'
 
 const inter = Inter({
-    subsets: ['latin'],
-    display: 'swap',
-    variable: '--font-inter',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
 })
 
 export const metadata: Metadata = {
-    title: {
-        default: 'BetterOrmoc.org | XOfficial Portal',
-        template: '%s | BetterOrmoc.org',
-    },
+  title: {
+    default: 'BetterOrmoc.org | XOfficial Portal',
+    template: '%s | BetterOrmoc.org',
+  },
+  description:
+    'Empowering the people of Ormoc with transparent access to the services, programs, and public funds of LGU Ormoc.',
+  keywords: [
+    'BetterOrmoc',
+    'Ormoc City',
+    'LGU Ormoc',
+    'municipal services',
+    'government transparency',
+    'Ormoc Philippines',
+  ],
+  authors: [{ name: 'BetterOrmoc Team' }],
+  creator: 'BetterOrmoc Team',
+  publisher: 'BetterOrmoc.org',
+  metadataBase: new URL('https://betterormoc.org'),
+  openGraph: {
+    type: 'website',
+    locale: 'en_PH',
+    url: 'https://betterormoc.org',
+    title: 'BetterOrmoc.org | XOfficial Portal',
     description:
-        'Empowering the people of Ormoc with transparent access to the services, programs, and public funds of LGU Ormoc.',
-    keywords: [
-        'BetterOrmoc',
-        'Ormoc City',
-        'LGU Ormoc',
-        'municipal services',
-        'government transparency',
-        'Ormoc Philippines',
-    ],
-    authors: [{ name: 'BetterOrmoc Team' }],
-    creator: 'BetterOrmoc Team',
-    publisher: 'BetterOrmoc.org',
-    metadataBase: new URL('https://betterormoc.org'),
-    openGraph: {
-        type: 'website',
-        locale: 'en_PH',
-        url: 'https://betterormoc.org',
-        title: 'BetterOrmoc.org | XOfficial Portal',
-        description:
-            'Empowering the people of Ormoc with transparent access to the services, programs, and public funds of LGU Ormoc.',
-        siteName: 'BetterOrmoc.org',
+      'Empowering the people of Ormoc with transparent access to the services, programs, and public funds of LGU Ormoc.',
+    siteName: 'BetterOrmoc.org',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'BetterOrmoc.org | XOfficial Portal',
+    description:
+      'Empowering the people of Ormoc with transparent access to the services, programs, and public funds of LGU Ormoc.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'BetterOrmoc.org | XOfficial Portal',
-        description:
-            'Empowering the people of Ormoc with transparent access to the services, programs, and public funds of LGU Ormoc.',
-    },
-    robots: {
-        index: true,
-        follow: true,
-        googleBot: {
-            index: true,
-            follow: true,
-            'max-video-preview': -1,
-            'max-image-preview': 'large',
-            'max-snippet': -1,
-        },
-    },
-    icons: {
-        icon: '/favicon.ico',
-        apple: '/favicon.ico',
-    },
+  },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
 }
 
 export function generateStaticParams() {
-    return locales.map((locale) => ({ locale }))
+  return locales.map((locale) => ({ locale }))
 }
 
 export default async function LocaleLayout({
-    children,
-    params,
+  children,
+  params,
 }: Readonly<{
-    children: React.ReactNode
-    params: Promise<{ locale: string }>
+  children: React.ReactNode
+  params: Promise<{ locale: string }>
 }>) {
-    // Validate that the incoming locale parameter is valid
-    const { locale } = await params
-    console.log('[LocaleLayout] Received locale:', locale)
-    if (!locales.includes(locale as any)) {
-        console.error('[LocaleLayout] Validation failed for:', locale, 'Valid:', locales)
-        notFound()
-    }
-
-    // Enable static rendering
-    setRequestLocale(locale);
-
-    // Get messages for the locale
-    const messages = await getMessages()
-
-    return (
-        <html lang={locale} className={inter.variable}>
-            <head>
-                {/* Chart.js for statistics and budget visualizations */}
-                <Script
-                    src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"
-                    strategy="afterInteractive"
-                />
-            </head>
-            <body className="antialiased">
-                <NextIntlClientProvider messages={messages}>
-                    <QueryProvider>
-                        <HotlineBar />
-                        <InfoBar />
-                        <DisclaimerBanner />
-                        <Header />
-                        <main>{children}</main>
-                        <Footer />
-                    </QueryProvider>
-                    <Toaster position="top-right" richColors />
-                </NextIntlClientProvider>
-            </body>
-        </html>
+  // Validate that the incoming locale parameter is valid
+  const { locale } = await params
+  console.log('[LocaleLayout] Received locale:', locale)
+  if (!locales.includes(locale as any)) {
+    console.error(
+      '[LocaleLayout] Validation failed for:',
+      locale,
+      'Valid:',
+      locales
     )
+    notFound()
+  }
+
+  // Enable static rendering
+  setRequestLocale(locale)
+
+  // Get messages for the locale
+  const messages = await getMessages()
+
+  return (
+    <html lang={locale} className={inter.variable}>
+      <head>
+        {/* Chart.js for statistics and budget visualizations */}
+        <Script
+          src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"
+          strategy="afterInteractive"
+        />
+      </head>
+      <body className="antialiased">
+        <NextIntlClientProvider messages={messages}>
+          <QueryProvider>
+            <HotlineBar />
+            <InfoBar />
+            <DisclaimerBanner />
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </QueryProvider>
+          <Toaster position="top-right" richColors />
+        </NextIntlClientProvider>
+      </body>
+    </html>
+  )
 }

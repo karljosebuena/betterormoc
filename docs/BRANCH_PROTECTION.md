@@ -14,23 +14,23 @@ Branch protection rules for 'main':
     - Require approvals: 1
     - Dismiss stale pull request approvals when new commits are pushed
     - Require review from Code Owners
-  
+
   ✓ Require status checks to pass before merging
     - Require branches to be up to date before merging
     - Status checks that are required:
       - lint-and-type-check
       - build
-  
+
   ✓ Require conversation resolution before merging
-  
+
   ✓ Require signed commits (optional, recommended for production)
-  
+
   ✓ Require linear history
-  
+
   ✓ Include administrators (enforce rules for admins too)
-  
+
   ✗ Allow force pushes (disabled)
-  
+
   ✗ Allow deletions (disabled)
 ```
 
@@ -42,14 +42,14 @@ Branch protection rules for 'main':
 Branch protection rules for 'develop':
   ✓ Require a pull request before merging
     - Require approvals: 1
-  
+
   ✓ Require status checks to pass before merging
     - Status checks that are required:
       - lint-and-type-check
       - build
-  
+
   ✓ Require conversation resolution before merging
-  
+
   ✗ Allow force pushes (disabled)
 ```
 

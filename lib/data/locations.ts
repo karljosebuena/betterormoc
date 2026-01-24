@@ -1,7 +1,13 @@
 export interface Location {
   id: string
   name: string
-  type: 'government' | 'service-center' | 'health' | 'police' | 'fire' | 'barangay'
+  type:
+    | 'government'
+    | 'service-center'
+    | 'health'
+    | 'police'
+    | 'fire'
+    | 'barangay'
   coordinates: [number, number] // [latitude, longitude]
   address: string
   description: string
@@ -37,7 +43,8 @@ export const ormocLocations: Location[] = [
     type: 'service-center',
     coordinates: [11.0132, 124.6048], // Near City Hall
     address: 'City Hall Complex, Ormoc City',
-    description: 'Civil registration services - birth, marriage, death certificates',
+    description:
+      'Civil registration services - birth, marriage, death certificates',
     services: [
       'Birth Certificate',
       'Marriage Certificate',

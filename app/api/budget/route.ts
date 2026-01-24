@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server'
 export async function GET() {
   try {
     const supabase = await createClient()
-    
+
     // Fetch budget overview
     const { data: overview, error: overviewError } = await supabase
       .from('budget_overview')
@@ -13,7 +13,10 @@ export async function GET() {
       .single()
 
     if (overviewError && overviewError.code !== 'PGRST116') {
-      return NextResponse.json({ error: overviewError.message }, { status: 500 })
+      return NextResponse.json(
+        { error: overviewError.message },
+        { status: 500 }
+      )
     }
 
     // Fetch revenue sources
@@ -35,7 +38,10 @@ export async function GET() {
       .order('amount', { ascending: false })
 
     if (expenditureError) {
-      return NextResponse.json({ error: expenditureError.message }, { status: 500 })
+      return NextResponse.json(
+        { error: expenditureError.message },
+        { status: 500 }
+      )
     }
 
     // Fetch major projects
@@ -46,7 +52,10 @@ export async function GET() {
       .order('budget_allocation', { ascending: false })
 
     if (projectsError) {
-      return NextResponse.json({ error: projectsError.message }, { status: 500 })
+      return NextResponse.json(
+        { error: projectsError.message },
+        { status: 500 }
+      )
     }
 
     // Fetch budget documents
@@ -58,7 +67,10 @@ export async function GET() {
       .order('upload_date', { ascending: false })
 
     if (documentsError) {
-      return NextResponse.json({ error: documentsError.message }, { status: 500 })
+      return NextResponse.json(
+        { error: documentsError.message },
+        { status: 500 }
+      )
     }
 
     return NextResponse.json({
