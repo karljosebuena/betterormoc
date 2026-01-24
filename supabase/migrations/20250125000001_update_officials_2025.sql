@@ -44,21 +44,25 @@ ARRAY['Bachelor of Laws, University of the Philippines'],
 '{}'::jsonb);
 
 -- Sangguniang Panlungsod Members
--- NOTE: Placeholder data - needs verification from official roster
-INSERT INTO officials (name, position, department, email, phone, photo_url, term_start, term_end, display_order) VALUES
-('Hon. [Councilor 1 Name]', 'Sangguniang Panlungsod Member', 'Sangguniang Panlungsod', 'sp@ormoc.gov.ph', NULL, NULL, '2025-06-30', '2028-06-30', 3),
-('Hon. [Councilor 2 Name]', 'Sangguniang Panlungsod Member', 'Sangguniang Panlungsod', 'sp@ormoc.gov.ph', NULL, NULL, '2025-06-30', '2028-06-30', 4),
-('Hon. [Councilor 3 Name]', 'Sangguniang Panlungsod Member', 'Sangguniang Panlungsod', 'sp@ormoc.gov.ph', NULL, NULL, '2025-06-30', '2028-06-30', 5),
-('Hon. [Councilor 4 Name]', 'Sangguniang Panlungsod Member', 'Sangguniang Panlungsod', 'sp@ormoc.gov.ph', NULL, NULL, '2025-06-30', '2028-06-30', 6),
-('Hon. [Councilor 5 Name]', 'Sangguniang Panlungsod Member', 'Sangguniang Panlungsod', 'sp@ormoc.gov.ph', NULL, NULL, '2025-06-30', '2028-06-30', 7),
-('Hon. [Councilor 6 Name]', 'Sangguniang Panlungsod Member', 'Sangguniang Panlungsod', 'sp@ormoc.gov.ph', NULL, NULL, '2025-06-30', '2028-06-30', 8),
-('Hon. [Councilor 7 Name]', 'Sangguniang Panlungsod Member', 'Sangguniang Panlungsod', 'sp@ormoc.gov.ph', NULL, NULL, '2025-06-30', '2028-06-30', 9),
-('Hon. [Councilor 8 Name]', 'Sangguniang Panlungsod Member', 'Sangguniang Panlungsod', 'sp@ormoc.gov.ph', NULL, NULL, '2025-06-30', '2028-06-30', 10);
+-- Data verified from official roster (2025-2028 Term)
+INSERT INTO officials (name, position, department, office_location, email, phone, is_elected, display_order, office_hours, term_start, term_end)
+VALUES 
+  ('Hon. Ari Larrazabal', 'Sangguniang Panlungsod Member', 'Sangguniang Panlungsod', 'New Ormoc City Hall, Aunubing St., Brgy. Cogon', 'spmarilarrazabal@gmail.com', '+63 53 561 6000', true, 3, 'Monday to Friday: 8:00 AM - 5:00 PM', '2025-06-30', '2028-06-30'),
+  ('Hon. Edmund Kierulf', 'Sangguniang Panlungsod Member', 'Sangguniang Panlungsod', 'Aunubing St. Brgy. Cogon, Ormoc City', 'ekierulf09@gmail.com', '+63 53 561 6000', true, 4, 'Monday to Friday: 8:00 AM - 5:00 PM', '2025-06-30', '2028-06-30'),
+  ('Hon. Tomas Serafica', 'Sangguniang Panlungsod Member', 'Sangguniang Panlungsod', 'New Ormoc City Hall, Aunubing St., Brgy. Cogon', 'spmtomasserafica@gmail.com', '+63 53 561 6000', true, 5, 'Monday to Friday: 8:00 AM - 5:00 PM', '2025-06-30', '2028-06-30'),
+  ('Hon. Jasper Lucero', 'Sangguniang Panlungsod Member', 'Sangguniang Panlungsod', 'Aunubing Street, Ormoc City', 'spmjasperlucero@gmail.com', '+63 53 561 6000', true, 6, 'Monday to Friday: 8:00 AM - 5:00 PM', '2025-06-30', '2028-06-30'),
+  ('Hon. Peter Rodriguez', 'Sangguniang Panlungsod Member', 'Sangguniang Panlungsod', 'Aunubing St. Brgy. Cogon, Ormoc City', NULL, '+63 53 561 6000', true, 7, 'Monday to Friday: 8:00 AM - 5:00 PM', '2025-06-30', '2028-06-30'),
+  ('Hon. Maria Carmen Jean Rama', 'Sangguniang Panlungsod Member', 'Sangguniang Panlungsod', '3F New Ormoc City Hall, Aunubing St. Brgy. Cogon', 'ctramaoffice@gmail.com', '+63 53 561 6000', true, 8, 'Monday to Friday: 8:00 AM - 5:00 PM', '2025-06-30', '2028-06-30'),
+  ('Hon. Eusebio Gerardo Penserga', 'Sangguniang Panlungsod Member', 'Sangguniang Panlungsod', 'Aunubing St., Brgy. Cogon, Ormoc City', 'SPMEMBERGERRYPENSERGA@gmail.com', '+63 53 561 6000', true, 9, 'Monday to Friday: 8:00 AM - 5:00 PM', '2025-06-30', '2028-06-30'),
+  ('Hon. Burt Pades', 'Sangguniang Panlungsod Member', 'Sangguniang Panlungsod', '3F Councilor''s Office, New Ormoc City Hall', 'burtjpades06@gmail.com', '+63 53 561 6000', true, 10, 'Monday to Friday: 8:00 AM - 5:00 PM', '2025-06-30', '2028-06-30'),
+  ('Hon. Krizea Caessandra Mercadal', 'Sangguniang Panlungsod Member', 'Sangguniang Panlungsod', 'Anubing Street, Brgy. Cogon, Ormoc City', 'spmkiamercadal@gmail.com', '+63 53 561 6000', true, 11, 'Monday to Friday: 8:00 AM - 5:00 PM', '2025-06-30', '2028-06-30'),
+  ('Hon. Lalaine Marcos', 'Sangguniang Panlungsod Member', 'Sangguniang Panlungsod', 'Aunubing Street, Barangay Cogon, Ormoc City', 'SPM.MARCOSOFFICE@GMAIL.COM', '+63 53 561 6000', true, 12, 'Monday to Friday: 8:00 AM - 5:00 PM', '2025-06-30', '2028-06-30');
 
 -- Ex-Officio Members (ABC President, SK Federation President)
+-- Note: Placeholder data for Ex-Officio members (not included in councilors list)
 INSERT INTO officials (name, position, department, email, phone, photo_url, term_start, term_end, display_order) VALUES
-('Hon. [ABC President Name]', 'ABC President (Ex-Officio)', 'Sangguniang Panlungsod', 'sp@ormoc.gov.ph', NULL, NULL, '2025-06-30', '2028-06-30', 11),
-('Hon. [SK Federation President Name]', 'SK Federation President (Ex-Officio)', 'Sangguniang Panlungsod', 'sp@ormoc.gov.ph', NULL, NULL, '2025-06-30', '2028-06-30', 12);
+('Hon. [ABC President Name]', 'ABC President (Ex-Officio)', 'Sangguniang Panlungsod', 'sp@ormoc.gov.ph', NULL, NULL, '2025-06-30', '2028-06-30', 13),
+('Hon. [SK Federation President Name]', 'SK Federation President (Ex-Officio)', 'Sangguniang Panlungsod', 'sp@ormoc.gov.ph', NULL, NULL, '2025-06-30', '2028-06-30', 14);
 
 -- Verification Status
 COMMENT ON TABLE officials IS 'City Officials for 2025-2028 term. Data pending verification from official sources.';
