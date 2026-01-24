@@ -34,6 +34,8 @@ Look for an existing **A** record with Name `@`.
 | :--- | :--- | :--- | :--- |
 | **A** | `@` | `76.76.21.21` | 1 Hour (or Default) |
 
+> **Info**: `76.76.21.21` is Vercel's global Anycast IP address. It routes traffic to the nearest Vercel edge node for fastest performance.
+
 > **Note**: If there are other "A" records with the name "@" (Parked), **delete them**. You should only have one A record for "@" pointing to Vercel.
 
 ### Step 2.2: The Subdomain (www)
