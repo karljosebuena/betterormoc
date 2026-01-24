@@ -8,10 +8,10 @@ export default function BarangaysPage() {
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Header */}
-            <div className="bg-gradient-to-br from-green-900 to-green-950 py-16 text-white">
+            <div className="bg-gradient-to-br from-blue-900 to-blue-950 py-16 text-white">
                 <div className="container">
                     <h1 className="mb-4 text-4xl font-bold">Barangay Captains</h1>
-                    <p className="text-lg text-green-50">
+                    <p className="text-lg text-blue-50">
                         110 Barangays serving the communities of Ormoc City
                     </p>
                 </div>
