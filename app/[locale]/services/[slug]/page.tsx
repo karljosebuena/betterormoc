@@ -11,11 +11,13 @@ import { ServiceRequirements } from '@/components/services/ServiceRequirements'
 import { ServiceFAQ } from '@/components/services/ServiceFAQ'
 import { OfficeInfoCard } from '@/components/services/OfficeInfoCard'
 import { RelatedServices } from '@/components/services/RelatedServices'
+import { ServiceDownloads } from '@/components/services/ServiceDownloads'
 import type {
   ServiceStep,
   ServiceFAQ as ServiceFAQType,
   OfficeDetails,
   RequirementsByType,
+  ServiceDownload,
 } from '@/lib/supabase/types'
 
 export default function ServiceDetailPage({
@@ -53,6 +55,7 @@ export default function ServiceDetailPage({
   const requirementsByType =
     service.requirements_by_type as unknown as RequirementsByType | null
   const relatedServiceSlugs = service.related_services
+  const downloads = service.downloads as unknown as ServiceDownload[] | null
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -141,6 +144,11 @@ export default function ServiceDetailPage({
                 (service.requirements as unknown as string[]) || undefined
               }
             />
+
+            {/* Downloads */}
+            {downloads && downloads.length > 0 && (
+              <ServiceDownloads downloads={downloads} />
+            )}
 
             {/* FAQ */}
             {faq && faq.length > 0 && <ServiceFAQ faq={faq} />}

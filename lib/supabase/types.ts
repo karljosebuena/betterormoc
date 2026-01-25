@@ -29,6 +29,7 @@ export interface Database {
           external_url: string | null
           created_at: string
           updated_at: string
+          downloads: Json | null
         }
         Insert: {
           id?: string
@@ -49,6 +50,7 @@ export interface Database {
           external_url?: string | null
           created_at?: string
           updated_at?: string
+          downloads?: Json | null
         }
         Update: {
           id?: string
@@ -69,6 +71,7 @@ export interface Database {
           external_url?: string | null
           created_at?: string
           updated_at?: string
+          downloads?: Json | null
         }
       }
       officials: {
@@ -303,4 +306,10 @@ export interface OfficeDetails {
 
 export interface RequirementsByType {
   [key: string]: string[]
+}
+
+export interface ServiceDownload {
+  title: string
+  url: string
+  type: string
 }
