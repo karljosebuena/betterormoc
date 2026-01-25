@@ -4,7 +4,7 @@ DELETE FROM services WHERE slug = 'local-civil-registrar';
 -- Enrich Birth Certificate with Deep FAQs and Related Services
 UPDATE services
 SET 
-  related_services = '["marriage-certificate", "death-certificate", "barangay-clearance"]'::jsonb,
+  related_services = ARRAY['marriage-certificate', 'death-certificate', 'barangay-clearance'],
   faq = '[
     {
       "question": "Can I get a birth certificate registered in another municipality?",
@@ -33,7 +33,7 @@ WHERE slug = 'birth-certificate';
 -- Enrich Marriage Certificate
 UPDATE services
 SET 
-  related_services = '["birth-certificate", "death-certificate", "community-tax-certificate-cedula"]'::jsonb,
+  related_services = ARRAY['birth-certificate', 'death-certificate', 'community-tax-certificate-cedula'],
   faq = '[
     {
       "question": "Can I get a CENOMAR here?",
@@ -57,7 +57,7 @@ WHERE slug = 'marriage-certificate';
 -- Enrich Death Certificate
 UPDATE services
 SET 
-  related_services = '["birth-certificate", "burial-assistance", "transfer-permit"]'::jsonb,
+  related_services = ARRAY['birth-certificate', 'burial-assistance'],
   faq = '[
     {
       "question": "Who can request a Death Certificate?",
