@@ -8,7 +8,11 @@ interface ServiceStepsProps {
   totalFees?: string
 }
 
-export function ServiceSteps({ steps, totalDuration, totalFees }: ServiceStepsProps) {
+export function ServiceSteps({
+  steps,
+  totalDuration,
+  totalFees,
+}: ServiceStepsProps) {
   if (!steps || steps.length === 0) return null
 
   // Sort steps strictly by order
@@ -19,8 +23,12 @@ export function ServiceSteps({ steps, totalDuration, totalFees }: ServiceStepsPr
       <div className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
         <div className="flex items-center justify-between bg-gray-50 px-6 py-4">
           <div>
-            <h2 className="text-xl font-bold text-gray-900">Step-by-Step Process</h2>
-            <p className="text-sm text-gray-500">Complete guide to completing this service</p>
+            <h2 className="text-xl font-bold text-gray-900">
+              Step-by-Step Process
+            </h2>
+            <p className="text-sm text-gray-500">
+              Complete guide to completing this service
+            </p>
           </div>
         </div>
 
@@ -28,12 +36,24 @@ export function ServiceSteps({ steps, totalDuration, totalFees }: ServiceStepsPr
           <table className="w-full min-w-[800px] text-left text-sm">
             <thead className="bg-blue-900 text-white">
               <tr>
-                <th className="px-6 py-4 font-semibold uppercase tracking-wider w-16">Step</th>
-                <th className="px-6 py-4 font-semibold uppercase tracking-wider w-1/3">What to Do</th>
-                <th className="px-6 py-4 font-semibold uppercase tracking-wider">Documents to Present</th>
-                <th className="px-6 py-4 font-semibold uppercase tracking-wider">Fee</th>
-                <th className="px-6 py-4 font-semibold uppercase tracking-wider">Duration</th>
-                <th className="px-6 py-4 font-semibold uppercase tracking-wider">Personnel</th>
+                <th className="w-16 px-6 py-4 font-semibold tracking-wider uppercase">
+                  Step
+                </th>
+                <th className="w-1/3 px-6 py-4 font-semibold tracking-wider uppercase">
+                  What to Do
+                </th>
+                <th className="px-6 py-4 font-semibold tracking-wider uppercase">
+                  Documents to Present
+                </th>
+                <th className="px-6 py-4 font-semibold tracking-wider uppercase">
+                  Fee
+                </th>
+                <th className="px-6 py-4 font-semibold tracking-wider uppercase">
+                  Duration
+                </th>
+                <th className="px-6 py-4 font-semibold tracking-wider uppercase">
+                  Personnel
+                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
@@ -46,13 +66,15 @@ export function ServiceSteps({ steps, totalDuration, totalFees }: ServiceStepsPr
                   </td>
                   <td className="px-6 py-4 align-top">
                     <p className="font-bold text-gray-900">{step.title}</p>
-                    <p className="mt-1 text-gray-600 leading-relaxed text-xs">
+                    <p className="mt-1 text-xs leading-relaxed text-gray-600">
                       {step.description}
                     </p>
                   </td>
                   <td className="px-6 py-4 align-top text-gray-600">
                     {step.documents ? (
-                      <div className="whitespace-pre-line leading-relaxed">{step.documents}</div>
+                      <div className="leading-relaxed whitespace-pre-line">
+                        {step.documents}
+                      </div>
                     ) : (
                       <span className="text-gray-400">—</span>
                     )}
@@ -86,12 +108,10 @@ export function ServiceSteps({ steps, totalDuration, totalFees }: ServiceStepsPr
             {/* Table Footer for Totals */}
             <tfoot className="bg-gray-50 font-bold text-gray-900">
               <tr>
-                <td colSpan={3} className="px-6 py-4 uppercase text-gray-700">
+                <td colSpan={3} className="px-6 py-4 text-gray-700 uppercase">
                   Total Response Time
                 </td>
-                <td className="px-6 py-4 text-green-700">
-                  {totalFees || '—'}
-                </td>
+                <td className="px-6 py-4 text-green-700">{totalFees || '—'}</td>
                 <td className="px-6 py-4" colSpan={2}>
                   {totalDuration || '—'}
                 </td>
@@ -122,7 +142,8 @@ export function ServiceSteps({ steps, totalDuration, totalFees }: ServiceStepsPr
           <div>
             <h3 className="font-semibold text-blue-900">Client Feedback</h3>
             <p className="text-sm text-blue-800">
-              Accomplish Client Feedback Form and drop at designated suggestion box.
+              Accomplish Client Feedback Form and drop at designated suggestion
+              box.
             </p>
           </div>
         </div>

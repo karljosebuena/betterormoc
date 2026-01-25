@@ -130,10 +130,11 @@ export default function FAQPage() {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${selectedCategory === category
-                ? 'bg-blue-900 text-white'
-                : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
+              className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
+                selectedCategory === category
+                  ? 'bg-blue-900 text-white'
+                  : 'bg-white text-gray-700 hover:bg-gray-100'
+              }`}
             >
               {category === 'all' ? 'All Questions' : category}
             </button>

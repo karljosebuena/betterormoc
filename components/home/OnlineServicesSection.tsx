@@ -46,10 +46,10 @@ export function OnlineServicesSection() {
             Access official Ormoc City e-services for faster, more convenient
             transactions.
           </p>
-          <p className="mx-auto mt-2 max-w-2xl text-sm italic text-gray-500">
+          <p className="mx-auto mt-2 max-w-2xl text-sm text-gray-500 italic">
             Note: These links redirect to official LGU Ormoc portals and trusted
-            government partners (e.g. Land Bank). BetterOrmoc is an
-            independent initiative.
+            government partners (e.g. Land Bank). BetterOrmoc is an independent
+            initiative.
           </p>
         </div>
 

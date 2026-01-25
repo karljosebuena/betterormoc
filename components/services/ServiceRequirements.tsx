@@ -65,10 +65,11 @@ export function ServiceRequirements({
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`flex items-center gap-2 rounded-lg px-4 py-2 font-medium transition-colors ${isActive
-                ? 'bg-blue-900 text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
+              className={`flex items-center gap-2 rounded-lg px-4 py-2 font-medium transition-colors ${
+                isActive
+                  ? 'bg-blue-900 text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
             >
               <Icon className="h-4 w-4" />
               <span className="capitalize">If You Are the {tab}</span>

@@ -39,9 +39,7 @@ export default function OfficialsPage() {
             </div>
             <div className="flex-1">
               <p className="text-sm text-yellow-800">
-                <strong className="font-semibold">
-                  Source Credit:
-                </strong>{' '}
+                <strong className="font-semibold">Source Credit:</strong>{' '}
                 Official roster and photos are sourced from the{' '}
                 <a
                   href="https://ormoc.gov.ph/"

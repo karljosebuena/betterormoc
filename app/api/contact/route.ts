@@ -116,7 +116,7 @@ export async function POST(request: Request) {
           console.error('Email send error:', emailError)
         } else {
           emailSent = true
-          
+
           // Send auto-reply to user (fire and forget)
           await resend.emails.send({
             from: 'Ormoc City Hall <noreply@betterormoc.org>',
