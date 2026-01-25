@@ -6,6 +6,7 @@ import { useSearchParams } from 'next/navigation'
 import { useServices } from '@/lib/hooks/use-data'
 import { ServiceCard } from '@/components/services/ServiceCard'
 import { BusinessOnlineServices } from '@/components/services/BusinessOnlineServices'
+import { ResponsibleOffices } from '@/components/services/ResponsibleOffices'
 import { useState, useMemo } from 'react'
 import { Search } from 'lucide-react'
 
@@ -98,8 +99,8 @@ function ServicesPageContent() {
                 key={category}
                 onClick={() => handleCategoryChange(category)}
                 className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 ${selectedCategory === category
-                    ? 'scale-105 bg-blue-900 text-white shadow-md'
-                    : 'bg-white text-gray-700 hover:scale-105 hover:bg-gray-100 hover:shadow-sm'
+                  ? 'scale-105 bg-blue-900 text-white shadow-md'
+                  : 'bg-white text-gray-700 hover:scale-105 hover:bg-gray-100 hover:shadow-sm'
                   }`}
               >
                 {category === 'all' ? 'All Services' : category}
@@ -138,6 +139,11 @@ function ServicesPageContent() {
             ))}
           </div>
         )}
+        {/* Responsible Offices - Show only when filtering by category */}
+        <ResponsibleOffices
+          services={filteredServices}
+          category={selectedCategory}
+        />
       </div>
     </div>
   )
