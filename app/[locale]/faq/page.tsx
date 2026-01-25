@@ -51,7 +51,7 @@ const faqs: FAQItem[] = [
     category: 'Payments',
     question: 'What payment methods are accepted?',
     answer:
-      'For walk-in transactions, cash is widely accepted. For online payments via official portals (like LBP e-GPS or Filipizen), accepted methods typically include credit/debit cards, online banking, and e-wallets like GCash or PayMaya.',
+      'For walk-in transactions, cash is widely accepted. For online payments via official portals (like LBP e-GPS), accepted methods typically include credit/debit cards, online banking, and e-wallets like GCash or PayMaya.',
   },
   {
     category: 'Government',

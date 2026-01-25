@@ -48,7 +48,7 @@ export function OnlineServicesSection() {
           </p>
           <p className="mx-auto mt-2 max-w-2xl text-sm italic text-gray-500">
             Note: These links redirect to official LGU Ormoc portals and trusted
-            government partners (Filipizen, Land Bank). BetterOrmoc is an
+            government partners (e.g. Land Bank). BetterOrmoc is an
             independent initiative.
           </p>
         </div>

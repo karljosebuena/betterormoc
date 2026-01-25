@@ -166,19 +166,19 @@ INSERT INTO services (id, title, slug, category, description, fees, processing_t
 VALUES (52, 'Human Resource Management Office', 'human-resource-management-office', 'Government', 'Employment, personnel records, and HR services', 'Free', 'Varies', 'Human Resource Management Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (53, 'Business Online Billing & Payment', 'business-online-billing-payment', 'Online', 'View and pay your business tax bills online via Filipizen', 'Varies', 'Instant', 'BPLS Office', '[]'::jsonb, NOW(), NOW());
+VALUES (53, 'Business Online Billing & Payment', 'business-online-billing-payment', 'Online', 'View and pay your business tax bills online via official portal', 'Varies', 'Instant', 'BPLS Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (54, 'New Business Application Online', 'new-business-application-online', 'Online', 'Apply for a new business permit online via Filipizen', 'Varies', '3-5 days', 'BPLS Office', '[]'::jsonb, NOW(), NOW());
+VALUES (54, 'New Business Application Online', 'new-business-application-online', 'Online', 'Apply for a new business permit online via official portal', 'Varies', '3-5 days', 'BPLS Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (55, 'Business Permit Renewal Online', 'business-permit-renewal-online', 'Online', 'Renew your existing business permit online via Filipizen', 'Varies', 'Same day', 'BPLS Office', '[]'::jsonb, NOW(), NOW());
+VALUES (55, 'Business Permit Renewal Online', 'business-permit-renewal-online', 'Online', 'Renew your existing business permit online via official portal', 'Varies', 'Same day', 'BPLS Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (56, 'Real Property Tax Online Billing & Payment', 'real-property-tax-online-billing-payment', 'Online', 'View and pay your real property tax (amilyar) online via Filipizen', 'Varies', 'Instant', 'Municipal Treasurer''s Office', '[]'::jsonb, NOW(), NOW());
+VALUES (56, 'Real Property Tax Online Billing & Payment', 'real-property-tax-online-billing-payment', 'Online', 'View and pay your real property tax (amilyar) online via official portal', 'Varies', 'Instant', 'Municipal Treasurer''s Office', '[]'::jsonb, NOW(), NOW());
 
 INSERT INTO services (id, title, slug, category, description, fees, processing_time, office, requirements, created_at, updated_at)
-VALUES (57, 'Online Payment Order', 'online-payment-order', 'Online', 'Process payment orders for various municipal fees online via Filipizen', 'Varies', 'Instant', 'Municipal Treasurer''s Office', '[]'::jsonb, NOW(), NOW());
+VALUES (57, 'Online Payment Order', 'online-payment-order', 'Online', 'Process payment orders for various municipal fees online via official portal', 'Varies', 'Instant', 'Municipal Treasurer''s Office', '[]'::jsonb, NOW(), NOW());
 
 
 -- ============================================
