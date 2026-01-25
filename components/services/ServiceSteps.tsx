@@ -23,7 +23,7 @@ export function ServiceSteps({ steps }: ServiceStepsProps) {
         {sortedSteps.map((step, index) => (
           <div key={index} className="flex gap-4">
             {/* Step Number */}
-            <div className="flex-shrink-0">
+            <div className="shrink-0">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-900 text-lg font-bold text-white">
                 {step.order}
               </div>
@@ -50,7 +50,7 @@ export function ServiceSteps({ steps }: ServiceStepsProps) {
 
       {/* Completion Note */}
       <div className="mt-8 flex items-start gap-3 rounded-lg bg-green-50 p-4">
-        <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-green-600" />
+        <CheckCircle2 className="h-5 w-5 shrink-0 text-green-600" />
         <p className="text-sm text-green-800">
           Complete all steps to successfully obtain your service. Processing
           times may vary.

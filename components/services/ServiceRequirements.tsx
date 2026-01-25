@@ -28,7 +28,7 @@ export function ServiceRequirements({
         <ul className="space-y-2">
           {requirements.map((req, index) => (
             <li key={index} className="flex items-start gap-3 text-gray-600">
-              <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-900"></span>
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-900"></span>
               <span className="capitalize">{String(req)}</span>
             </li>
           ))}
@@ -58,18 +58,17 @@ export function ServiceRequirements({
       {/* Tabs */}
       <div className="mb-6 flex flex-wrap gap-2">
         {tabs.map((tab) => {
-          const Icon = tabIcons[tab] || User
+          const Icon = tabIcons[tab.toLowerCase()] || User
           const isActive = activeTab === tab
 
           return (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`flex items-center gap-2 rounded-lg px-4 py-2 font-medium transition-colors ${
-                isActive
-                  ? 'bg-blue-900 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
+              className={`flex items-center gap-2 rounded-lg px-4 py-2 font-medium transition-colors ${isActive
+                ? 'bg-blue-900 text-white'
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
             >
               <Icon className="h-4 w-4" />
               <span className="capitalize">If You Are the {tab}</span>
@@ -82,7 +81,7 @@ export function ServiceRequirements({
       <ul className="space-y-3">
         {requirementsByType[activeTab]?.map((req, index) => (
           <li key={index} className="flex items-start gap-3">
-            <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-900"></span>
+            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-900"></span>
             <span className="text-gray-700">{req}</span>
           </li>
         ))}
