@@ -1,34 +1,51 @@
 -- Massive Upgrade for Marriage Certificate (License + Registration)
 UPDATE services
 SET 
-  description = 'Complete guide for couples intending to marry in Ormoc City (Marriage License) and for those registering or requesting copies of marriage contracts. The Marriage License is valid anywhere in the Philippines for 120 days.',
+  description = 'Complete guide for couples intending to marry in Ormoc City (Marriage License) and for those registering or requesting copies of marriage contracts.
+  
+> **Important Registration Deadlines:** The Certificate of Marriage (COM) must be registered within **15 days** after the solemnization of marriage. For weddings under Art. 34 or PD 1083, it must be registered within **30 days**.',
   
   -- Combined Steps for License Application AND Registration
   steps = '[
     {
-      "title": "[License] Application",
-      "description": "Submit duly accomplished Marriage License Application Form and requirements to the Local Civil Registrar. Both parties must appear personally.",
-      "order": 1
+      "title": "[License] Present Requirements",
+      "description": "Submit duly accomplished Marriage License Application Form and requirements to the Local Civil Registrar for review.",
+      "order": 1,
+      "duration": "5 mins",
+      "personnel": "LCR Staff",
+      "documents": "Application Form, Birth Cert, CENOMAR, Valid ID"
     },
     {
-      "title": "[License] Counseling & Posting",
-      "description": "Attend Pre-Marriage Counseling (PMC) if required. The Notice of Marriage application will be posted for 10 consecutive days.",
-      "order": 2
+      "title": "[License] Interview & Encoding",
+      "description": "Answer questions for data encoding. Verify drafted information before printing.",
+      "order": 2,
+      "duration": "10 mins",
+      "personnel": "LCR Encoder"
     },
     {
-      "title": "[License] Issuance",
-      "description": "After the 10-day posting period, pay the fees at the Treasurer''s Office and claim the Marriage License at LCR.",
-      "order": 3
+      "title": "[License] Payment of Fees",
+      "description": "Proceed to Treasurer''s Office (MTO) to pay the application and license fees.",
+      "order": 3,
+      "duration": "15 mins",
+      "fee": "₱270.00",
+      "personnel": "MTO Staff",
+      "documents": "Order of Payment"
     },
     {
-      "title": "[Registration] Ceremony & Submission",
-      "description": "After the wedding ceremony, the Solemnizing Officer submit the Certificate of Marriage (COM) to LCR for registration (within 15 days).",
-      "order": 4
+      "title": "[License] Pre-Marriage Counseling",
+      "description": "Proceed to City Population Office / MSWDO for counseling (PMC) scheduling or conduct.",
+      "order": 4,
+      "duration": "4 hours / By Sched",
+      "personnel": "PMC Team",
+      "documents": "Official Receipt"
     },
     {
-      "title": "[Request] Certified Copy",
-      "description": "To get a certified true copy, verify records at LCR, pay the fee of ₱150, and claim your document.",
-      "order": 5
+      "title": "[License] Claiming",
+      "description": "After the 10-day posting period, return to LCR to claim the valid marriage license.",
+      "order": 5,
+      "duration": "5 mins",
+      "personnel": "Releasing Officer",
+      "documents": "Claim Stub"
     }
   ]'::jsonb,
 

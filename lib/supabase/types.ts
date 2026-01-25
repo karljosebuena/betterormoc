@@ -283,6 +283,10 @@ export interface ServiceStep {
   title: string
   description: string
   order: number
+  duration?: string
+  personnel?: string
+  documents?: string
+  fee?: string
 }
 
 export interface ServiceFAQ {
