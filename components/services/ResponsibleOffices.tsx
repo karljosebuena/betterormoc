@@ -16,20 +16,50 @@ export function ResponsibleOffices({
     if (!services || services.length === 0 || category === 'all') return null
 
     // Extract unique offices
-    const uniqueOffices = Array.from(new Set(services.map((s) => s.office)))
-        .filter(Boolean)
-        .sort()
+    // We handle both legacy 'office' string and new 'offices' relation
+    const uniqueOfficesMap = new Map<string, { name: string; slug: string }>()
+
+    services.forEach((service: any) => {
+        // Prefer relation
+        if (service.offices) {
+            const office = service.offices
+            if (office.name && office.slug) {
+                uniqueOfficesMap.set(office.slug, {
+                    name: office.name,
+                    slug: office.slug,
+                })
+                return
+            }
+        }
+
+        // Fallback to legacy string
+        if (service.office && typeof service.office === 'string') {
+            const cached = Array.from(uniqueOfficesMap.values()).find(
+                (o) => o.name === service.office
+            )
+            if (!cached) {
+                // Determine a slug (this fallback is weak if DB has "Civil Registrar" but code slugifies to "civil-registrar")
+                // Hopefully migration migrated all.
+                const slug = service.office
+                    .toLowerCase()
+                    .trim()
+                    .replace(/[^\w\s-]/g, '')
+                    .replace(/[\s_-]+/g, '-')
+                    .replace(/^-+|-+$/g, '')
+
+                uniqueOfficesMap.set(slug, {
+                    name: service.office,
+                    slug: slug,
+                })
+            }
+        }
+    })
+
+    const uniqueOffices = Array.from(uniqueOfficesMap.values()).sort((a, b) =>
+        a.name.localeCompare(b.name)
+    )
 
     if (uniqueOffices.length === 0) return null
-
-    // Helper to slugify office name for URL
-    const slugify = (text: string) =>
-        text
-            .toLowerCase()
-            .trim()
-            .replace(/[^\w\s-]/g, '')
-            .replace(/[\s_-]+/g, '-')
-            .replace(/^-+|-+$/g, '')
 
     return (
         <div className="mt-16">
@@ -39,8 +69,8 @@ export function ResponsibleOffices({
             <div className="grid gap-6 md:grid-cols-2">
                 {uniqueOffices.map((office) => (
                     <Link
-                        key={office}
-                        href={`/offices/${slugify(office as string)}`}
+                        key={office.slug}
+                        href={`/offices/${office.slug}`}
                         className="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-6 transition-all hover:border-blue-900 hover:shadow-md"
                     >
                         <div className="flex items-center gap-4">
@@ -49,7 +79,7 @@ export function ResponsibleOffices({
                             </div>
                             <div>
                                 <h3 className="font-semibold text-gray-900 group-hover:text-blue-900">
-                                    {office}
+                                    {office.name}
                                 </h3>
                                 <p className="text-sm text-gray-500">
                                     View services and office details

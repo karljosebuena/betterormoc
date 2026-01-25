@@ -19,6 +19,7 @@ export interface Database {
           fees: string | null
           processing_time: string | null
           office: string | null
+          office_id: string | null
           contact_info: Json | null
           slug: string
           steps: Json | null
@@ -40,6 +41,7 @@ export interface Database {
           fees?: string | null
           processing_time?: string | null
           office?: string | null
+          office_id?: string | null
           contact_info?: Json | null
           slug: string
           steps?: Json | null
@@ -61,6 +63,7 @@ export interface Database {
           fees?: string | null
           processing_time?: string | null
           office?: string | null
+          office_id?: string | null
           contact_info?: Json | null
           slug?: string
           steps?: Json | null
@@ -72,6 +75,41 @@ export interface Database {
           created_at?: string
           updated_at?: string
           downloads?: Json | null
+        }
+      }
+      offices: {
+        Row: {
+          id: string
+          slug: string
+          name: string
+          description: string | null
+          logo_url: string | null
+          contact_info: Json | null
+          location: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          slug: string
+          name: string
+          description?: string | null
+          logo_url?: string | null
+          contact_info?: Json | null
+          location?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          slug?: string
+          name?: string
+          description?: string | null
+          logo_url?: string | null
+          contact_info?: Json | null
+          location?: string | null
+          created_at?: string
+          updated_at?: string
         }
       }
       officials: {
