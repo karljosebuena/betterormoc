@@ -46,7 +46,7 @@ export function RelatedServices({
                 {service.description}
               </p>
             </div>
-            <ArrowRight className="h-5 w-5 flex-shrink-0 text-gray-400 transition-transform group-hover:translate-x-1 group-hover:text-blue-900" />
+            <ArrowRight className="h-5 w-5 shrink-0 text-gray-400 transition-transform group-hover:translate-x-1 group-hover:text-blue-900" />
           </Link>
         ))}
       </div>
