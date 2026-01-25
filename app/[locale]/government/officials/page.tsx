@@ -24,7 +24,7 @@ export default function OfficialsPage() {
       <div className="border-b border-yellow-200 bg-yellow-50 py-4">
         <div className="container">
           <div className="flex items-start gap-3">
-            <div className="mt-0.5 flex-shrink-0">
+            <div className="mt-0.5 shrink-0">
               <svg
                 className="h-5 w-5 text-yellow-600"
                 fill="currentColor"
@@ -39,15 +39,17 @@ export default function OfficialsPage() {
             </div>
             <div className="flex-1">
               <p className="text-sm text-yellow-800">
-                <strong className="font-semibold">
-                  Data Verification Notice:
-                </strong>{' '}
-                Mayor and Vice Mayor information has been verified from official
-                sources. Sangguniang Panlungsod members and Department Heads
-                data are placeholders pending official roster verification, as
-                this information is not publicly available online. We are
-                actively working to obtain and verify the complete official
-                roster.
+                <strong className="font-semibold">Source Credit:</strong>{' '}
+                Official roster and photos are sourced from the{' '}
+                <a
+                  href="https://ormoc.gov.ph/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium underline hover:text-yellow-900"
+                >
+                  City Government of Ormoc
+                </a>
+                .
               </p>
             </div>
           </div>
@@ -100,8 +102,8 @@ export default function OfficialsPage() {
                   Executive Leadership
                 </h2>
               </div>
-              <div className="grid gap-8 md:grid-cols-2">
-                {officials?.slice(0, 2).map((official) => (
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {officials?.slice(0, 3).map((official) => (
                   <div
                     key={official.id}
                     className="group overflow-hidden rounded-lg border border-gray-200 bg-white shadow-md transition-all duration-300 hover:scale-[1.02] hover:border-blue-300 hover:shadow-xl"
@@ -113,7 +115,7 @@ export default function OfficialsPage() {
                           alt={official.name}
                           width={400}
                           height={400}
-                          className="h-full w-full object-cover"
+                          className="h-full w-full object-cover object-top"
                         />
                       ) : (
                         <div className="flex h-full items-center justify-center text-6xl font-bold text-blue-900">
@@ -165,7 +167,7 @@ export default function OfficialsPage() {
             </div>
 
             {/* Sangguniang Panlungsod */}
-            {officials && officials.length > 2 && (
+            {officials && officials.length > 3 && (
               <div>
                 <div className="mb-8 flex items-center gap-3">
                   <Users className="h-8 w-8 text-blue-900" />
@@ -174,7 +176,7 @@ export default function OfficialsPage() {
                   </h2>
                 </div>
                 <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-4">
-                  {officials.slice(2).map((official) => (
+                  {officials.slice(3).map((official) => (
                     <div
                       key={official.id}
                       className="group overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:scale-[1.02] hover:border-blue-200 hover:shadow-lg"
@@ -186,7 +188,7 @@ export default function OfficialsPage() {
                             alt={official.name}
                             width={300}
                             height={300}
-                            className="h-full w-full object-cover"
+                            className="h-full w-full object-cover object-top"
                           />
                         ) : (
                           <div className="flex h-full items-center justify-center text-4xl font-bold text-gray-400">

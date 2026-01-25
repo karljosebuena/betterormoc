@@ -11,11 +11,14 @@ import { ServiceRequirements } from '@/components/services/ServiceRequirements'
 import { ServiceFAQ } from '@/components/services/ServiceFAQ'
 import { OfficeInfoCard } from '@/components/services/OfficeInfoCard'
 import { RelatedServices } from '@/components/services/RelatedServices'
+import { ServiceDownloads } from '@/components/services/ServiceDownloads'
+import { MarkdownRenderer } from '@/components/ui/MarkdownRenderer'
 import type {
   ServiceStep,
   ServiceFAQ as ServiceFAQType,
   OfficeDetails,
   RequirementsByType,
+  ServiceDownload,
 } from '@/lib/supabase/types'
 
 export default function ServiceDetailPage({
@@ -53,10 +56,11 @@ export default function ServiceDetailPage({
   const requirementsByType =
     service.requirements_by_type as unknown as RequirementsByType | null
   const relatedServiceSlugs = service.related_services
+  const downloads = service.downloads as unknown as ServiceDownload[] | null
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="bg-gradient-to-br from-blue-900 to-blue-950 py-12 text-white">
+      <div className="bg-linear-to-br from-blue-900 to-blue-950 py-12 text-white">
         <div className="container">
           <Link
             href="/services"
@@ -85,10 +89,13 @@ export default function ServiceDetailPage({
               <h2 className="mb-4 text-2xl font-bold text-gray-900">
                 Overview
               </h2>
-              <p className="text-gray-600">
-                {service.description ||
-                  'No description available for this service.'}
-              </p>
+              {service.description ? (
+                <MarkdownRenderer>{service.description}</MarkdownRenderer>
+              ) : (
+                <p className="text-gray-600">
+                  No description available for this service.
+                </p>
+              )}
             </div>
 
             {/* Quick Info */}
@@ -132,7 +139,13 @@ export default function ServiceDetailPage({
             </div>
 
             {/* Step-by-Step Process */}
-            {steps && steps.length > 0 && <ServiceSteps steps={steps} />}
+            {steps && steps.length > 0 && (
+              <ServiceSteps
+                steps={steps}
+                totalDuration={service.processing_time || undefined}
+                totalFees={service.fees || undefined}
+              />
+            )}
 
             {/* Requirements */}
             <ServiceRequirements
@@ -141,6 +154,11 @@ export default function ServiceDetailPage({
                 (service.requirements as unknown as string[]) || undefined
               }
             />
+
+            {/* Downloads */}
+            {downloads && downloads.length > 0 && (
+              <ServiceDownloads downloads={downloads} />
+            )}
 
             {/* FAQ */}
             {faq && faq.length > 0 && <ServiceFAQ faq={faq} />}

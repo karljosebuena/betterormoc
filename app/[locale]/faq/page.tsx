@@ -39,19 +39,19 @@ const faqs: FAQItem[] = [
     category: 'Services',
     question: 'Can I apply for services online?',
     answer:
-      'Yes! Several services are available online through our partner platform Filipizen, including business permit applications, renewals, and tax payments. Check the Online Services category for available options.',
+      'Yes! You can access official online services for Business Permits (BPLO Online), Real Property Tax, and other transactions. BetterOrmoc acts as a directory to help you find these official LGU Ormoc portals easily, but we are an independent initiative and not a direct partner of the city government.',
   },
   {
     category: 'Payments',
     question: 'How do I pay my real property tax?',
     answer:
-      "You can pay at the Municipal Treasurer's Office during office hours, or online through the Filipizen platform. Payment can be made annually or quarterly.",
+      "You can pay at the Municipal Treasurer's Office during office hours, or online through the official Real Property Tax Portal. We provide direct links to these secure government payment channels on our Services page.",
   },
   {
     category: 'Payments',
     question: 'What payment methods are accepted?',
     answer:
-      'We accept cash payments at our offices. Online payments through Filipizen accept credit/debit cards and online banking.',
+      'For walk-in transactions, cash is widely accepted. For online payments via official portals (like LBP e-GPS), accepted methods typically include credit/debit cards, online banking, and e-wallets like GCash or PayMaya.',
   },
   {
     category: 'Government',

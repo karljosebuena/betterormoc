@@ -41,7 +41,7 @@ export function ServiceFAQ({ faq }: ServiceFAQProps) {
                   {item.question}
                 </span>
                 <ChevronDown
-                  className={`h-5 w-5 flex-shrink-0 text-gray-500 transition-transform ${
+                  className={`h-5 w-5 shrink-0 text-gray-500 transition-transform ${
                     isOpen ? 'rotate-180' : ''
                   }`}
                 />

@@ -36,7 +36,7 @@ const onlineServices = [
 
 export function OnlineServicesSection() {
   return (
-    <section className="section bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
+    <section className="section bg-linear-to-br from-blue-50 to-indigo-50 py-16">
       <div className="container">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold text-gray-900">
@@ -44,7 +44,12 @@ export function OnlineServicesSection() {
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-gray-600">
             Access official Ormoc City e-services for faster, more convenient
-            transactions
+            transactions.
+          </p>
+          <p className="mx-auto mt-2 max-w-2xl text-sm text-gray-500 italic">
+            Note: These links redirect to official LGU Ormoc portals and trusted
+            government partners (e.g. Land Bank). BetterOrmoc is an independent
+            initiative.
           </p>
         </div>
 

@@ -19,6 +19,7 @@ export interface Database {
           fees: string | null
           processing_time: string | null
           office: string | null
+          office_id: string | null
           contact_info: Json | null
           slug: string
           steps: Json | null
@@ -26,8 +27,10 @@ export interface Database {
           related_services: string[] | null
           office_details: Json | null
           requirements_by_type: Json | null
+          external_url: string | null
           created_at: string
           updated_at: string
+          downloads: Json | null
         }
         Insert: {
           id?: string
@@ -38,6 +41,7 @@ export interface Database {
           fees?: string | null
           processing_time?: string | null
           office?: string | null
+          office_id?: string | null
           contact_info?: Json | null
           slug: string
           steps?: Json | null
@@ -45,8 +49,10 @@ export interface Database {
           related_services?: string[] | null
           office_details?: Json | null
           requirements_by_type?: Json | null
+          external_url?: string | null
           created_at?: string
           updated_at?: string
+          downloads?: Json | null
         }
         Update: {
           id?: string
@@ -57,6 +63,7 @@ export interface Database {
           fees?: string | null
           processing_time?: string | null
           office?: string | null
+          office_id?: string | null
           contact_info?: Json | null
           slug?: string
           steps?: Json | null
@@ -64,6 +71,43 @@ export interface Database {
           related_services?: string[] | null
           office_details?: Json | null
           requirements_by_type?: Json | null
+          external_url?: string | null
+          created_at?: string
+          updated_at?: string
+          downloads?: Json | null
+        }
+      }
+      offices: {
+        Row: {
+          id: string
+          slug: string
+          name: string
+          description: string | null
+          logo_url: string | null
+          contact_info: Json | null
+          location: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          slug: string
+          name: string
+          description?: string | null
+          logo_url?: string | null
+          contact_info?: Json | null
+          location?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          slug?: string
+          name?: string
+          description?: string | null
+          logo_url?: string | null
+          contact_info?: Json | null
+          location?: string | null
           created_at?: string
           updated_at?: string
         }
@@ -217,6 +261,41 @@ export interface Database {
           updated_at?: string
         }
       }
+      contact_messages: {
+        Row: {
+          id: string
+          name: string
+          email: string
+          phone: string | null
+          subject: string
+          message: string
+          status: 'unread' | 'read' | 'replied' | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          name: string
+          email: string
+          phone?: string | null
+          subject: string
+          message: string
+          status?: 'unread' | 'read' | 'replied' | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          name?: string
+          email?: string
+          phone?: string | null
+          subject?: string
+          message?: string
+          status?: 'unread' | 'read' | 'replied' | null
+          created_at?: string
+          updated_at?: string
+        }
+      }
     }
     Views: {
       [_ in never]: never
@@ -242,6 +321,10 @@ export interface ServiceStep {
   title: string
   description: string
   order: number
+  duration?: string
+  personnel?: string
+  documents?: string
+  fee?: string
 }
 
 export interface ServiceFAQ {
@@ -265,4 +348,10 @@ export interface OfficeDetails {
 
 export interface RequirementsByType {
   [key: string]: string[]
+}
+
+export interface ServiceDownload {
+  title: string
+  url: string
+  type: string
 }

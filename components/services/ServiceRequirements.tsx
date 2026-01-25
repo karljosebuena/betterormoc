@@ -28,7 +28,7 @@ export function ServiceRequirements({
         <ul className="space-y-2">
           {requirements.map((req, index) => (
             <li key={index} className="flex items-start gap-3 text-gray-600">
-              <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-900"></span>
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-900"></span>
               <span className="capitalize">{String(req)}</span>
             </li>
           ))}
@@ -58,7 +58,7 @@ export function ServiceRequirements({
       {/* Tabs */}
       <div className="mb-6 flex flex-wrap gap-2">
         {tabs.map((tab) => {
-          const Icon = tabIcons[tab] || User
+          const Icon = tabIcons[tab.toLowerCase()] || User
           const isActive = activeTab === tab
 
           return (
@@ -82,7 +82,7 @@ export function ServiceRequirements({
       <ul className="space-y-3">
         {requirementsByType[activeTab]?.map((req, index) => (
           <li key={index} className="flex items-start gap-3">
-            <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-900"></span>
+            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-900"></span>
             <span className="text-gray-700">{req}</span>
           </li>
         ))}
