@@ -110,7 +110,7 @@ export function LeadershipSection({
 
         <div className="mt-12 text-center">
           <a
-            href="/government"
+            href="/government/officials"
             className="inline-flex items-center justify-center rounded-lg border-2 border-blue-900 px-8 py-3 text-base font-semibold text-blue-900 transition-all hover:bg-blue-900 hover:text-white"
           >
             View All Officials

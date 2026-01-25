@@ -3,6 +3,10 @@ import { notFound } from 'next/navigation'
 import { Building2, MapPin, Phone, Clock, ArrowRight, Mail } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
 import { Metadata } from 'next'
+import { Database } from '@/lib/supabase/types'
+
+type Office = Database['public']['Tables']['offices']['Row']
+type Service = Database['public']['Tables']['services']['Row']
 
 interface Props {
     params: Promise<{
@@ -14,11 +18,13 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params
     const supabase = await createClient()
-    const { data: office } = await supabase
+    const { data: officeData } = await supabase
         .from('offices')
         .select('name, description')
         .eq('slug', slug)
         .single()
+
+    const office = officeData as unknown as Office
 
     if (!office) {
         return {
@@ -37,26 +43,27 @@ export default async function OfficePage({ params }: Props) {
     const supabase = await createClient()
 
     // Fetch office details
-    const { data: office } = await supabase
+    const { data: officeData } = await supabase
         .from('offices')
         .select('*')
         .eq('slug', slug)
         .single()
 
+    const office = officeData as unknown as Office
+
     if (!office) {
         // Fallback: If not found in offices table, check if it matches a legacy service.office slug
-        // But since we want to enforce the new schema, we might just 404.
-        // However, for transition, let's keep it strict. 
-        // If the user hasn't run the migration, this will fail/404.
         notFound()
     }
 
     // Fetch services for this office by ID
-    const { data: services } = await supabase
+    const { data: servicesData } = await supabase
         .from('services')
         .select('*')
         .eq('office_id', office.id)
         .order('title', { ascending: true })
+
+    const services = servicesData as Service[]
 
     // Parse contact info safely
     const contactInfo = office.contact_info as any || {}

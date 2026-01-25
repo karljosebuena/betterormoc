@@ -51,7 +51,7 @@ export async function POST(request: Request) {
 
     // 1. Save to Database (Primary Storage)
     const supabase = await createClient()
-    const { data: dbData, error: dbError } = await supabase
+    const result = await supabase
       .from('contact_messages')
       .insert({
         name: validatedData.name,
@@ -59,9 +59,12 @@ export async function POST(request: Request) {
         phone: validatedData.phone,
         subject: validatedData.subject,
         message: validatedData.message,
-      })
+      } as any)
       .select()
       .single()
+
+    const dbData = result.data as any
+    const dbError = result.error
 
     if (dbError) {
       console.error('Database save error:', dbError)

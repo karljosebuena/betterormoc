@@ -7,7 +7,8 @@ interface ServiceCardProps {
 }
 
 export function ServiceCard({ service }: ServiceCardProps) {
-  const CardContent = () => (
+  // Determine content to allow reuse in Link or anchor
+  const content = (
     <>
       <div className="flex items-start justify-between">
         <h3 className="mb-3 text-lg font-semibold text-gray-900 group-hover:text-blue-900">
@@ -64,14 +65,14 @@ export function ServiceCard({ service }: ServiceCardProps) {
         rel="noopener noreferrer"
         className={cardClasses}
       >
-        <CardContent />
+        {content}
       </a>
     )
   }
 
   return (
     <Link href={`/services/${service.slug}`} className={cardClasses}>
-      <CardContent />
+      {content}
     </Link>
   )
 }
