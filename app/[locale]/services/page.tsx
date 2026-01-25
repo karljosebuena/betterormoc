@@ -75,7 +75,7 @@ function ServicesPageContent() {
 
       <div className="container py-12">
         {/* Business Online Services - Show only for Business category */}
-        {selectedCategory === 'Business' && <BusinessOnlineServices />}
+        {/* {selectedCategory === 'Business' && <BusinessOnlineServices />} */}
 
         {/* Search and Filter */}
         <div className="mb-8 space-y-4">
@@ -97,11 +97,10 @@ function ServicesPageContent() {
               <button
                 key={category}
                 onClick={() => handleCategoryChange(category)}
-                className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 ${
-                  selectedCategory === category
+                className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 ${selectedCategory === category
                     ? 'scale-105 bg-blue-900 text-white shadow-md'
                     : 'bg-white text-gray-700 hover:scale-105 hover:bg-gray-100 hover:shadow-sm'
-                }`}
+                  }`}
               >
                 {category === 'all' ? 'All Services' : category}
               </button>
