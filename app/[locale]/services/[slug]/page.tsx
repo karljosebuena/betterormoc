@@ -12,6 +12,7 @@ import { ServiceFAQ } from '@/components/services/ServiceFAQ'
 import { OfficeInfoCard } from '@/components/services/OfficeInfoCard'
 import { RelatedServices } from '@/components/services/RelatedServices'
 import { ServiceDownloads } from '@/components/services/ServiceDownloads'
+import { MarkdownRenderer } from '@/components/ui/MarkdownRenderer'
 import type {
   ServiceStep,
   ServiceFAQ as ServiceFAQType,
@@ -59,7 +60,7 @@ export default function ServiceDetailPage({
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="bg-gradient-to-br from-blue-900 to-blue-950 py-12 text-white">
+      <div className="bg-linear-to-br from-blue-900 to-blue-950 py-12 text-white">
         <div className="container">
           <Link
             href="/services"
@@ -88,10 +89,13 @@ export default function ServiceDetailPage({
               <h2 className="mb-4 text-2xl font-bold text-gray-900">
                 Overview
               </h2>
-              <p className="text-gray-600">
-                {service.description ||
-                  'No description available for this service.'}
-              </p>
+              {service.description ? (
+                <MarkdownRenderer>{service.description}</MarkdownRenderer>
+              ) : (
+                <p className="text-gray-600">
+                  No description available for this service.
+                </p>
+              )}
             </div>
 
             {/* Quick Info */}
