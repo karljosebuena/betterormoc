@@ -135,7 +135,13 @@ export default function ServiceDetailPage({
             </div>
 
             {/* Step-by-Step Process */}
-            {steps && steps.length > 0 && <ServiceSteps steps={steps} />}
+            {steps && steps.length > 0 && (
+              <ServiceSteps
+                steps={steps}
+                totalDuration={service.processing_time || undefined}
+                totalFees={service.fees || undefined}
+              />
+            )}
 
             {/* Requirements */}
             <ServiceRequirements
