@@ -26,6 +26,7 @@ export interface Database {
           related_services: string[] | null
           office_details: Json | null
           requirements_by_type: Json | null
+          external_url: string | null
           created_at: string
           updated_at: string
         }
@@ -45,6 +46,7 @@ export interface Database {
           related_services?: string[] | null
           office_details?: Json | null
           requirements_by_type?: Json | null
+          external_url?: string | null
           created_at?: string
           updated_at?: string
         }
@@ -64,6 +66,7 @@ export interface Database {
           related_services?: string[] | null
           office_details?: Json | null
           requirements_by_type?: Json | null
+          external_url?: string | null
           created_at?: string
           updated_at?: string
         }
