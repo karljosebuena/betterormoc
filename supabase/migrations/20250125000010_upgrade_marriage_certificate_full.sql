@@ -4,48 +4,74 @@ SET
   description = 'Complete guide for couples intending to marry in Ormoc City (Marriage License) and for those registering or requesting copies of marriage contracts.
   
 > **Important Registration Deadlines:** The Certificate of Marriage (COM) must be registered within **15 days** after the solemnization of marriage. For weddings under Art. 34 or PD 1083, it must be registered within **30 days**.',
+  fees = '₱270.00',
+  processing_time = '10 days, 5 hours and 10 minutes',
   
   -- Combined Steps for License Application AND Registration
   steps = '[
     {
       "title": "[License] Present Requirements",
-      "description": "Submit duly accomplished Marriage License Application Form and requirements to the Local Civil Registrar for review.",
+      "description": "Submit requirements for review. Personnel will check for completeness.",
       "order": 1,
-      "duration": "5 mins",
-      "personnel": "LCR Staff",
-      "documents": "Application Form, Birth Cert, CENOMAR, Valid ID"
+      "duration": "2 mins",
+      "personnel": "LCR Staff (Bernadette/Juvy)",
+      "documents": "Birth Certificate, Parental Consent/Advice (if applicable), CENOMAR, Valid ID"
     },
     {
       "title": "[License] Interview & Encoding",
-      "description": "Answer questions for data encoding. Verify drafted information before printing.",
+      "description": "Answer questions for encoding in the Application Form.",
       "order": 2,
-      "duration": "10 mins",
+      "duration": "3 mins",
+      "personnel": "LCR Encoder (Edgar Mc)"
+    },
+    {
+      "title": "[License] Printing",
+      "description": "Wait for the printing of the documents.",
+      "order": 3,
+      "duration": "2 mins",
       "personnel": "LCR Encoder"
     },
     {
-      "title": "[License] Payment of Fees",
-      "description": "Proceed to Treasurer''s Office (MTO) to pay the application and license fees.",
-      "order": 3,
-      "duration": "15 mins",
-      "fee": "₱270.00",
-      "personnel": "MTO Staff",
+      "title": "[License] Payment",
+      "description": "Pay the required fees at the MTO.",
+      "order": 4,
+      "duration": "10 mins",
+      "fee": "₱268.00 (+₱250 Solemnization if applicable)",
+      "personnel": "MTO Collection Officer",
       "documents": "Order of Payment"
     },
     {
-      "title": "[License] Pre-Marriage Counseling",
-      "description": "Proceed to City Population Office / MSWDO for counseling (PMC) scheduling or conduct.",
-      "order": 4,
-      "duration": "4 hours / By Sched",
-      "personnel": "PMC Team",
-      "documents": "Official Receipt"
+      "title": "[License] Schedule PMC",
+      "description": "Proceed to MSWDO for the schedule of PMC (Pre-Marriage Counseling).",
+      "order": 5,
+      "duration": "45 mins",
+      "personnel": "MSWDO Staff",
+      "documents": "Application for Marriage License, Official Receipt"
     },
     {
-      "title": "[License] Claiming",
-      "description": "After the 10-day posting period, return to LCR to claim the valid marriage license.",
-      "order": 5,
+      "title": "[License] Attend PMC",
+      "description": "Attend the PMC (every Thursday at 8:00 AM) at the designated room.",
+      "order": 6,
+      "duration": "4 hours",
+      "personnel": "PMC Team",
+      "documents": "Application Form, OR"
+    },
+    {
+      "title": "[License] Return to MCRO",
+      "description": "After the PMC, go back to MCRO for the schedule of issuance of the Marriage License.",
+      "order": 7,
       "duration": "5 mins",
+      "personnel": "LCR Staff",
+      "documents": "Application Form, Certificate of PMC"
+    },
+    {
+      "title": "[License] Issuance",
+      "description": "Issuance of the marriage license after the completion of the requirements and period of 10 days posting.",
+      "order": 8,
+      "duration": "3 mins",
+      "fee": "₱2.00 (License Fee)",
       "personnel": "Releasing Officer",
-      "documents": "Claim Stub"
+      "documents": "Application Form duly signed, PMC Cert, OR"
     }
   ]'::jsonb,
 
