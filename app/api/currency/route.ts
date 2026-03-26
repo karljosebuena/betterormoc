@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 
 export const runtime = 'edge'
-export const revalidate = 3600 // 1 hour
+export const dynamic = 'force-dynamic'
 
 interface ExchangeRateResponse {
   base: string
@@ -16,7 +16,7 @@ export async function GET() {
     const url = 'https://api.exchangerate-api.com/v4/latest/USD'
 
     const response = await fetch(url, {
-      next: { revalidate: 3600 }, // Cache for 1 hour
+      cache: 'no-store',
     })
 
     if (!response.ok) {

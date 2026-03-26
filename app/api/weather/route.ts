@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 
 export const runtime = 'edge'
-export const revalidate = 1800 // 30 minutes
+export const dynamic = 'force-dynamic'
 
 // Ormoc City coordinates
 const ORMOC_LAT = 11.0064
@@ -19,7 +19,7 @@ export async function GET() {
     const url = `https://api.open-meteo.com/v1/forecast?latitude=${ORMOC_LAT}&longitude=${ORMOC_LON}&current=temperature_2m&timezone=Asia/Manila`
 
     const response = await fetch(url, {
-      next: { revalidate: 1800 }, // Cache for 30 minutes
+      cache: 'no-store',
     })
 
     if (!response.ok) {
