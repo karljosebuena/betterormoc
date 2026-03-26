@@ -35,6 +35,7 @@ psql "$SUPABASE_DB_URL" -f supabase/seed-production.sql
 - `seed-statistics-ormoc.sql` - Statistics only (for partial updates)
 - `seed-all-data.sql` - Legacy comprehensive seed (deprecated, use seed-production.sql)
 - `seed-budget-2025.sql` - Budget data only
+- `seed-dpwh-projects.sql` - DPWH infrastructure projects (from DPWH Transparency Portal)
 - `seed-officials-2025.sql` - Officials only
 - `seed-ordinances-2024-2025.sql` - Ordinances
 - `seed-resolutions-2024-2025.sql` - Resolutions
@@ -47,7 +48,27 @@ psql "$SUPABASE_DB_URL" -f supabase/seed-production.sql
 
 ---
 
-## 🚀 Quick Start
+## Known Issues: CLI Migrations
+
+The `pnpm db:push` and `pnpm db:seed-production` CLI commands **do not work reliably** with the Supabase free tier shared pooler:
+
+- **Direct connection (port 5432)** fails with IPv6 routing errors (`no route to host`)
+- **Shared pooler (port 6543)** fails with `Tenant or user not found` because `supabase db push` requires a direct connection, not a pooler
+- **Password special characters** (`%`, `#`, etc.) must be URL-encoded (`%25`, `%23`) in the connection string, but even after encoding the above issues persist
+
+### Workaround: Use the Supabase SQL Editor
+
+Run migrations and seeds directly in the browser:
+
+1. Open **https://supabase.com/dashboard/project/qmypmpbacylvhgmsorkt/sql**
+2. For **new migrations**: paste the SQL from `migrations/` files and run
+3. For **seed data**: paste the SQL from `seed-*.sql` files and run
+
+This applies to all database operations (schema changes, seed data, manual queries).
+
+---
+
+## Quick Start
 
 ### Production Database Reset
 
@@ -56,10 +77,11 @@ psql "$SUPABASE_DB_URL" -f supabase/seed-production.sql
    ```bash
    export SUPABASE_DB_URL='postgresql://postgres.qmypmpbacylvhgmsorkt:[PASSWORD]@aws-0-us-west-1.pooler.supabase.com:6543/postgres'
    ```
-3. **Run the seed**:
+3. **Run the seed** (if CLI works):
    ```bash
    npm run db:seed-production
    ```
+4. **If CLI fails**, use the SQL Editor workaround above
 
 ### Verify
 
@@ -119,7 +141,7 @@ psql "$SUPABASE_DB_URL" -f supabase/seed-production.sql
 
 ---
 
-## 📝 Data Sources
+## Data Sources
 
 - **PSA 2024 Census** - Population and demographics
 - **LGU Ormoc** - Budget, officials, programs
@@ -127,6 +149,7 @@ psql "$SUPABASE_DB_URL" -f supabase/seed-production.sql
 - **DTI** - Business and economic data
 - **DOH** - Health statistics
 - **DepEd** - Education data
+- **DPWH Transparency Portal** - Infrastructure projects (https://transparency.dpwh.gov.ph/)
 
 ---
 
