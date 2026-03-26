@@ -35,7 +35,6 @@ psql "$SUPABASE_DB_URL" -f supabase/seed-production.sql
 - `seed-statistics-ormoc.sql` - Statistics only (for partial updates)
 - `seed-all-data.sql` - Legacy comprehensive seed (deprecated, use seed-production.sql)
 - `seed-budget-2025.sql` - Budget data only
-- `seed-dpwh-projects.sql` - DPWH infrastructure projects (from DPWH Transparency Portal)
 - `seed-officials-2025.sql` - Officials only
 - `seed-ordinances-2024-2025.sql` - Ordinances
 - `seed-resolutions-2024-2025.sql` - Resolutions
